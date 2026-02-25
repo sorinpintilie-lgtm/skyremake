@@ -79,6 +79,7 @@ function Button({ href, children, ghost = false }: { href: string; children: Rea
 function Hero() {
   const m = useMotion();
   const hero = siteText.home.hero;
+  const hasHeroEyebrow = Boolean(hero.eyebrow?.trim());
   return (
     <section id="home" className="relative min-h-[100svh] pt-14 sm:pt-16">
       <LightRays
@@ -105,8 +106,13 @@ function Hero() {
             transition={m.t(0.04, 1)}
             className="lg:col-span-7"
           >
-            <div className="text-xs uppercase tracking-[0.28em] text-white/60">{hero.eyebrow}</div>
-            <h1 className="mt-5 text-balance text-[clamp(2.2rem,10.4vw,4.3rem)] font-semibold leading-[0.98] tracking-[-0.03em] text-white sm:mt-6 sm:text-7xl lg:text-8xl">
+            {hasHeroEyebrow ? <div className="text-xs uppercase tracking-[0.28em] text-white/60">{hero.eyebrow}</div> : null}
+            <h1
+              className={[
+                "text-balance text-[clamp(2.2rem,10.4vw,4.3rem)] font-semibold leading-[0.98] tracking-[-0.03em] text-white sm:text-7xl lg:text-8xl",
+                hasHeroEyebrow ? "mt-5 sm:mt-6" : "mt-0",
+              ].join(" ")}
+            >
               {hero.title}
             </h1>
             <p className="mt-3 max-w-2xl text-pretty text-[15px] font-medium text-white/88 sm:mt-4 sm:text-xl">

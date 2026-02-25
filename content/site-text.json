@@ -61,12 +61,12 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Sky",
+      "eyebrow": "",
       "title": "Site-uri construite cu atenție la detalii.",
       "subhead": "Punem în aceeași direcție analiza, proiectarea și dezvoltarea, pentru o prezentare clară și un parcurs ușor de urmărit.",
       "primaryCta": "Vezi portofoliul",
       "secondaryCta": "Începe un proiect",
-      "meta": "20+ lansări, magazine și site-uri de prezentare, România și Uniunea Europeană",
+      "meta": "Am livrat peste 20 de proiecte active, inclusiv magazine online și site-uri de prezentare, pentru clienți din România și Uniunea Europeană",
       "note": "Răspundem în mai puțin de 24 de ore",
       "mobilePills": ["Structură clară", "Comportament bun pe mobil"],
       "imageTag": "Interfață",
