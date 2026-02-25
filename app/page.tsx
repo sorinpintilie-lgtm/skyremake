@@ -498,8 +498,17 @@ function ExplorePages() {
               />
               <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.92),rgba(0,0,0,0.52))]" />
               <div className="relative z-10 p-6 sm:p-8">
-                <div className="text-[11px] uppercase tracking-[0.22em] text-white/58">{page.label}</div>
-                <h4 className="mt-3 text-3xl font-semibold tracking-tight text-white">{page.title}</h4>
+                {page.label.trim().toLowerCase() !== page.title.trim().toLowerCase() ? (
+                  <div className="text-[11px] uppercase tracking-[0.22em] text-white/58">{page.label}</div>
+                ) : null}
+                <h4
+                  className={[
+                    "text-3xl font-semibold tracking-tight text-white",
+                    page.label.trim().toLowerCase() !== page.title.trim().toLowerCase() ? "mt-3" : "mt-0",
+                  ].join(" ")}
+                >
+                  {page.title}
+                </h4>
                 <p className="mt-3 max-w-[45ch] text-sm text-white/72">{page.text}</p>
                 <div className="mt-6">
                   <Link

@@ -83,12 +83,13 @@ export function SectionIntro({
   description,
   center = false,
 }: {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   description?: string;
   center?: boolean;
 }) {
   const m = useMotionPreset();
+  const hasEyebrow = Boolean(eyebrow?.trim()) && eyebrow?.trim().toLowerCase() !== title.trim().toLowerCase();
 
   return (
     <motion.div
@@ -98,8 +99,13 @@ export function SectionIntro({
       transition={m.t(0.03, 0.8)}
       className={["reveal-blur", center ? "mx-auto max-w-3xl text-center" : "max-w-3xl"].join(" ")}
     >
-      <div className="text-xs uppercase tracking-[0.28em] text-white/60">{eyebrow}</div>
-      <h2 className="mt-3 text-balance text-[clamp(1.9rem,8.4vw,3.7rem)] font-semibold tracking-[-0.03em] text-white sm:mt-4 sm:text-6xl">
+      {hasEyebrow ? <div className="text-xs uppercase tracking-[0.28em] text-white/60">{eyebrow}</div> : null}
+      <h2
+        className={[
+          "text-balance text-[clamp(1.9rem,8.4vw,3.7rem)] font-semibold tracking-[-0.03em] text-white sm:text-6xl",
+          hasEyebrow ? "mt-3 sm:mt-4" : "mt-0",
+        ].join(" ")}
+      >
         {title}
       </h2>
       {description && (

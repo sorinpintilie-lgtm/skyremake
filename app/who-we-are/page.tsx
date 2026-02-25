@@ -72,8 +72,7 @@ export default function WhoWeArePage() {
               transition={m.t(0.02, 0.8)}
               className="sky-surface reveal-blur col-span-7 overflow-hidden rounded-[24px] p-5 sm:rounded-[28px] sm:p-8 lg:col-span-7"
             >
-              <div className="text-xs uppercase tracking-[0.26em] text-white/55">{whoText.operations.teamShapeTitle}</div>
-              <h3 className="mt-3 text-2xl font-semibold tracking-[-0.02em] text-white sm:text-5xl">
+              <h3 className="text-2xl font-semibold tracking-[-0.02em] text-white sm:text-5xl">
                 {whoText.operations.teamShapeTitle}
               </h3>
 

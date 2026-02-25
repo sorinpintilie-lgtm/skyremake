@@ -128,10 +128,9 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={m.t(0.04, 0.8)}
-              className="sky-surface reveal-blur col-span-7 flex h-full flex-col overflow-hidden rounded-[24px] p-5 sm:rounded-[28px] sm:p-8 lg:col-span-7"
+            className="sky-surface reveal-blur col-span-7 flex h-full flex-col overflow-hidden rounded-[24px] p-5 sm:rounded-[28px] sm:p-8 lg:col-span-7"
             >
-              <p className="text-xs uppercase tracking-[0.24em] text-white/55">{contactText.brief.title}</p>
-              <h3 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-5xl">
+              <h3 className="text-2xl font-semibold tracking-tight text-white sm:text-5xl">
                 {contactText.brief.title}
               </h3>
               <p className="mt-4 max-w-[58ch] text-xs leading-relaxed text-white/72 sm:text-sm">
