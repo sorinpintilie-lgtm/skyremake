@@ -1,0 +1,614 @@
+{
+  "shared": {
+    "navLinks": [
+      { "href": "/", "label": "Acasă" },
+      { "href": "/who-we-are", "label": "Cine suntem" },
+      { "href": "/what-we-do", "label": "Ce facem" },
+      { "href": "/work", "label": "Portofoliu" },
+      { "href": "/contact", "label": "Contact" }
+    ],
+    "headerStartLabel": "Începe",
+    "footer": {
+      "kicker": "realizat de",
+      "copyright": "© 2026 SKY.RO™"
+    }
+  },
+  "magicBento": {
+    "cards": [
+      {
+        "color": "#000000",
+        "title": "Analiză de comportament",
+        "description": "Urmărim traseul vizitatorilor și punctele în care aleg să trimită un mesaj.",
+        "label": "Date",
+        "meta": "În timp real"
+      },
+      {
+        "color": "#000000",
+        "title": "Panou de lucru",
+        "description": "Conținut, verificări și pași de publicare în același loc.",
+        "label": "Control",
+        "meta": "Privire de ansamblu"
+      },
+      {
+        "color": "#000000",
+        "title": "Colaborare în echipă",
+        "description": "Observațiile rămân clare și fiecare schimbare este ușor de urmărit.",
+        "label": "Colaborare",
+        "meta": "Flux comun"
+      },
+      {
+        "color": "#000000",
+        "title": "Automatizare",
+        "description": "Formulare, notificări și actualizări legate într-un traseu simplu.",
+        "label": "Eficiență",
+        "meta": "Mai puțini pași repetați"
+      },
+      {
+        "color": "#000000",
+        "title": "Legături între sisteme",
+        "description": "Site-ul comunică bine cu instrumentele folosite în activitatea zilnică.",
+        "label": "Conectare",
+        "meta": "Date unite"
+      },
+      {
+        "color": "#000000",
+        "title": "Siguranță",
+        "description": "Acces controlat, rute securizate și urmărire constantă a funcționării.",
+        "label": "Protecție",
+        "meta": "Măsuri clare"
+      }
+    ]
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Sky",
+      "title": "Site-uri construite cu atenție la detaliu.",
+      "subhead": "Punem în aceeași direcție analiza, proiectarea și dezvoltarea, pentru o prezentare clară și un parcurs ușor de urmărit.",
+      "primaryCta": "Vezi portofoliul",
+      "secondaryCta": "Începe un proiect",
+      "meta": "20+ lansări, magazine și site-uri de prezentare, România și Uniunea Europeană",
+      "note": "Răspundem în mai puțin de 24 de ore",
+      "mobilePills": ["Structură clară", "Comportament bun pe mobil"],
+      "imageTag": "Interfață",
+      "imageNote": "Textul și imaginea rămân lizibile pe toate dimensiunile de ecran."
+    },
+    "signatureDirection": {
+      "eyebrow": "Direcție",
+      "title": "O prezentare clară de la primul ecran până la decizie.",
+      "body": "Fiecare secțiune are un rol clar, iar vizitatorul înțelege repede ce oferi și ce pas urmează."
+    },
+    "bentoNarrative": {
+      "eyebrow": "Capabilități",
+      "title": "Lucruri concrete care susțin rezultatul.",
+      "body": "Planificare, sistem vizual, dezvoltare și verificare într-un proces clar.",
+      "workedWithTitle": "Am colaborat cu",
+      "workedWith": [
+        { "name": "5Dent Clinic", "mark": "5D" },
+        { "name": "HR Fluent", "mark": "HF" },
+        { "name": "Dacus.ro", "mark": "DC" }
+      ],
+      "metrics": [
+        { "value": "34%", "label": "creștere a cererilor, în proiecte recente" },
+        { "value": "2,2s", "label": "țintă de încărcare pe mobil" },
+        { "value": "20+", "label": "proiecte publicate" }
+      ],
+      "quote": "Procesul a rămas clar și stabil de la prima discuție până la publicare.",
+      "quoteAuthor": "Fondator, magazin online"
+    },
+    "interactiveShowcase": {
+      "eyebrow": "Selecție interactivă",
+      "title": "Parcurge proiectele noastre.",
+      "body": "Am inclus proiecte relevante pentru claritate, stabilitate și rezultate concrete.",
+      "linkLabel": "Vezi detalii",
+      "items": [
+        {
+          "project": "haionline.ro",
+          "type": "Platformă digitală extinsă",
+          "outcome": "Structură clară pentru servicii multiple",
+          "href": "https://haionline.ro"
+        },
+        {
+          "project": "Dacus.ro",
+          "type": "Construire magazin",
+          "outcome": "Flux de comandă mai clar",
+          "href": "https://dacus.ro"
+        },
+        {
+          "project": "HR Fluent",
+          "type": "Pagini de prezentare pentru servicii",
+          "outcome": "Încărcare mai rapidă pe pagini importante",
+          "href": "https://hrfluent.com"
+        },
+        {
+          "project": "DrDent",
+          "type": "Site pentru clinică dentară",
+          "outcome": "Mai multe programări inițiate",
+          "href": "https://drdent.ro"
+        }
+      ]
+    },
+    "deliveryLayers": {
+      "eyebrow": "Etape de lucru",
+      "title": "Cum ducem proiectele la capăt.",
+      "body": "Păstrăm o ordine clară a deciziilor, astfel încât publicarea să fie previzibilă.",
+      "cards": [
+        {
+          "title": "Înțelegerea contextului",
+          "benefit": "Stabilim obiectivul, publicul și mesajul principal înainte de proiectarea paginilor.",
+          "proof": "Analiză"
+        },
+        {
+          "title": "Sistem vizual coerent",
+          "benefit": "Tipografie, spațiere și componente unitare, pentru o citire ușoară.",
+          "proof": "Proiectare"
+        },
+        {
+          "title": "Dezvoltare corectă",
+          "benefit": "Paginile rămân rapide și stabile, inclusiv pe dispozitive mai lente.",
+          "proof": "Implementare"
+        },
+        {
+          "title": "Conținut ordonat",
+          "benefit": "Textul urmează logica de decizie a vizitatorului.",
+          "proof": "Mesaj"
+        },
+        {
+          "title": "Testare în utilizare reală",
+          "benefit": "Validăm afișarea, lizibilitatea și interacțiunea înainte de publicare.",
+          "proof": "Verificare"
+        },
+        {
+          "title": "Îmbunătățire continuă",
+          "benefit": "Urmărim datele de folosire și ajustăm acolo unde este nevoie.",
+          "proof": "Optimizare"
+        },
+        {
+          "title": "Publicare și urmărire",
+          "benefit": "Lansăm cu pași clari și monitorizăm funcționarea după publicare.",
+          "proof": "Publicare"
+        }
+      ],
+      "toggleMore": "Arată mai multe",
+      "toggleLess": "Arată mai puține"
+    },
+    "exploreSky": {
+      "eyebrow": "Navigare",
+      "title": "Parcurge paginile principale.",
+      "subhead": "Echipă, servicii, portofoliu și contact, fiecare în pagina sa.",
+      "openLabel": "Deschide",
+      "pages": [
+        {
+          "href": "/who-we-are",
+          "label": "Cine suntem",
+          "title": "Cine suntem",
+          "text": "Modul nostru de lucru, rolurile și principiile de bază.",
+          "image": "/sky/panel-1.jpg"
+        },
+        {
+          "href": "/what-we-do",
+          "label": "Ce facem",
+          "title": "Ce facem",
+          "text": "Etapele de lucru, de la analiză până la publicare.",
+          "image": "/sky/panel-2.jpg"
+        },
+        {
+          "href": "/work",
+          "label": "Portofoliu",
+          "title": "Portofoliu",
+          "text": "Proiecte reprezentative din domenii diferite.",
+          "image": "/sky/panel-3.jpg"
+        },
+        {
+          "href": "/contact",
+          "label": "Contact",
+          "title": "Contact",
+          "text": "Trimite un mesaj scurt și primești pașii următori.",
+          "image": "/sky/contact.jpg"
+        }
+      ]
+    },
+    "fourSteps": {
+      "steps": [
+        {
+          "img": "/discover.png",
+          "title": "Planificăm",
+          "summary": "Pornim de la obiectiv, public și context.",
+          "chips": ["Discuție", "Analiză", "Poziționare"]
+        },
+        {
+          "img": "/Shape.png",
+          "title": "Structurăm",
+          "summary": "Stabilim structura paginilor și regulile de prezentare.",
+          "chips": ["Structură", "Schițe", "Sistem vizual"]
+        },
+        {
+          "img": "/bulid.png",
+          "title": "Construim",
+          "summary": "Dezvoltăm, verificăm și pregătim publicarea.",
+          "chips": ["Dezvoltare", "Verificare", "Măsurare", "Căutare"]
+        },
+        {
+          "img": "/lunch.png",
+          "title": "Publicăm",
+          "summary": "Lansăm și urmărim folosirea în situații reale.",
+          "chips": ["Publicare", "Instruire", "Ajustări"]
+        }
+      ]
+    },
+    "footerCta": {
+      "label": "Contact",
+      "title": "Spune-ne ce vrei să construiești.",
+      "body": "Trimite contextul și obiectivul. Îți răspundem cu o direcție clară.",
+      "buttons": [
+        { "href": "mailto:hello@sky.ro", "label": "Scrie-ne" },
+        { "href": "https://wa.me/40700000000?text=Salut%20Sky%2C%20vreau%20sa%20incep%20un%20proiect.", "label": "Mesaj" },
+        { "href": "https://cal.com/sky/fit-call", "label": "Programează" }
+      ],
+      "quickForm": {
+        "namePlaceholder": "Nume",
+        "emailPlaceholder": "Adresă de e-mail",
+        "submitLabel": "Trimite",
+        "note": "hello@sky.ro"
+      }
+    }
+  },
+  "whoWeAre": {
+    "hero": {
+      "pageLabel": "Cine suntem",
+      "title": "O echipă specializată, orientată către rezultate clare.",
+      "description": "Suntem o echipă care gestionează direct strategia, proiectarea și dezvoltarea, cu responsabilitate completă pe parcursul proiectului.",
+      "primaryCta": "Începe un proiect",
+      "secondaryCta": "Vezi serviciile",
+      "heroBadge": "Echipă",
+      "heroStats": [
+        { "value": "Experiență aplicată", "label": "Echipă specializată" },
+        { "value": "70+", "label": "Proiecte livrate" },
+        { "value": "Asumare completă", "label": "De la strategie la lansare" }
+      ],
+      "heroPoints": [
+        "Comunici direct cu echipa care gestionează proiectul.",
+        "Primești decizii clare și pași concreți, fără întârzieri.",
+        "Păstrăm atenția pe claritate, viteză și stabilitate."
+      ],
+      "heroNote": "Mod de lucru"
+    },
+    "identity": {
+      "eyebrow": "Identitate",
+      "title": "Standard profesional unitar.",
+      "description": "Etapele sunt clar definite, iar responsabilitatea este asumată de la analiză până la publicare."
+    },
+    "principles": [
+      {
+        "title": "Claritate",
+        "body": "Interfața trebuie să fie ușor de citit și simplu de urmărit.",
+        "stat": "Decizii clare"
+      },
+      {
+        "title": "Coerență",
+        "body": "Paginile trebuie să urmeze aceeași logică vizuală și același ton.",
+        "stat": "Aceeași direcție"
+      },
+      {
+        "title": "Control",
+        "body": "Verificăm înainte de publicare, apoi urmărim după lansare.",
+        "stat": "Pași stabili"
+      }
+    ],
+    "operations": {
+      "teamShapeTitle": "Ce livrăm ca echipă",
+      "teamShape": [
+        {
+          "role": "Strategie",
+          "focus": "Stabilim obiectivele și ordinea informației."
+        },
+        {
+          "role": "Proiectare",
+          "focus": "Definim coerența vizuală pe toate paginile."
+        },
+        {
+          "role": "Dezvoltare",
+          "focus": "Asigurăm funcționarea stabilă pe toate dispozitivele."
+        }
+      ],
+      "howWeWorkLabel": "Cum lucrăm",
+      "howWeWorkTitle": "Etape scurte, reacție rapidă.",
+      "howWeWorkBody": "Înțelegere, direcție, implementare, verificare și ajustare.",
+      "flow": [
+        { "label": "Înțelegere", "copy": "Obiectiv, public, context" },
+        { "label": "Direcție", "copy": "Structură, mesaj, priorități" },
+        { "label": "Implementare", "copy": "Proiectare și dezvoltare" },
+        { "label": "Ajustare", "copy": "Măsurare și îmbunătățiri" }
+      ],
+      "cta": "Vezi portofoliul"
+    },
+    "proof": {
+      "eyebrow": "Rezultate",
+      "title": "Un proces bine condus, cu rezultate vizibile.",
+      "description": "Lucrăm cu obiective clare, pași asumați și verificări constante.",
+      "quote": "Am avut claritate în fiecare etapă, iar lansarea s-a desfășurat fără blocaje.",
+      "author": "Manager operațional, clinică dentară",
+      "stats": ["70+ proiecte livrate", "Echipă specializată", "Proiecte în România și Uniunea Europeană"]
+    },
+    "culture": {
+      "eyebrow": "Cultură",
+      "title": "Învățăm din fiecare proiect.",
+      "description": "Păstrăm ce funcționează, simplificăm unde este prea mult și revenim cu ajustări utile."
+    }
+  },
+  "whatWeDo": {
+    "hero": {
+      "pageLabel": "Ce facem",
+      "title": "De la analiză la publicare, într-o succesiune clară.",
+      "description": "Planificăm, proiectăm, dezvoltăm și urmărim rezultatul după lansare.",
+      "primaryCta": "Trimite contextul",
+      "secondaryCta": "Vezi exemple",
+      "heroBadge": "Etape",
+      "heroStats": [
+        { "value": "Etape principale", "label": "4" },
+        { "value": "Proces unitar", "label": "1" },
+        { "value": "Decizii întâmplătoare", "label": "0" }
+      ],
+      "heroPoints": [
+        "Stabilim mesajul înainte de proiectarea interfețelor.",
+        "Construim un sistem vizual ușor de întreținut.",
+        "Verificăm și ajustăm după publicare."
+      ],
+      "heroNote": "Mod de livrare"
+    },
+    "capabilities": {
+      "eyebrow": "Servicii",
+      "title": "Servicii construite pe nevoi reale.",
+      "description": "Fiecare etapă este susținută de următoarea, astfel încât rezultatul final să rămână coerent."
+    },
+    "serviceColumns": [
+      {
+        "title": "Site-uri de prezentare",
+        "points": ["Mesaj clar", "Structură ușor de parcurs", "Pași de contact vizibili"]
+      },
+      {
+        "title": "Platforme de conținut",
+        "points": ["Secțiuni ordonate", "Fluxuri mai complexe", "Administrare clară"]
+      },
+      {
+        "title": "Îmbunătățire continuă",
+        "points": ["Viteză de încărcare", "Vizibilitate în căutare", "Decizii pe date"]
+      }
+    ],
+    "statsCards": [
+      {
+        "label": "Tehnologii",
+        "text": "Folosim instrumente moderne, alese după nevoia proiectului."
+      },
+      {
+        "label": "Ritm de lucru",
+        "text": "Stabilim calendarul în funcție de obiective, priorități și complexitatea proiectului."
+      },
+      {
+        "label": "Ce primești",
+        "text": "Structură, proiectare, dezvoltare, verificare și sprijin la publicare."
+      }
+    ],
+    "deliveryArchitecture": {
+      "eyebrow": "Arhitectură de lucru",
+      "title": "Etape care se leagă firesc.",
+      "body": "Fiecare etapă are rolul ei, iar împreună formează un proces stabil.",
+      "layerLabel": "Etapă",
+      "layers": [
+        {
+          "id": "01",
+          "title": "Analiză și mesaj",
+          "body": "Obiective, public, priorități și ordinea conținutului."
+        },
+        {
+          "id": "02",
+          "title": "Proiectare",
+          "body": "Reguli vizuale clare și pagini coerente."
+        },
+        {
+          "id": "03",
+          "title": "Dezvoltare",
+          "body": "Implementare corectă, verificată pe dispozitive reale."
+        },
+        {
+          "id": "04",
+          "title": "Publicare și urmărire",
+          "body": "Lansare controlată și ajustări pe baza datelor."
+        }
+      ]
+    },
+    "engagement": {
+      "eyebrow": "Colaborare",
+      "title": "Stabilim împreună forma de colaborare potrivită.",
+      "description": "Poți alege proiect cu obiective clare sau colaborare continuă, în același standard de lucru.",
+      "projectMode": {
+        "label": "Proiect",
+        "title": "Obiective clare, pași clari.",
+        "body": "Potrivit pentru lansări noi sau refaceri complete."
+      },
+      "partnershipMode": {
+        "label": "Colaborare continuă",
+        "title": "Îmbunătățiri periodice.",
+        "body": "Potrivit pentru echipe care vor optimizare constantă."
+      },
+      "cta": "Programează o discuție"
+    }
+  },
+  "work": {
+    "hero": {
+      "pageLabel": "Portofoliu",
+      "title": "Proiecte publicate, construite pentru rezultate.",
+      "description": "Selecție de site-uri și platforme din domenii diferite, cu rezultate observabile.",
+      "primaryCta": "Vreau ceva similar",
+      "secondaryCta": "Vezi serviciile",
+      "heroBadge": "Selecție",
+      "heroStats": [
+        { "value": "70+", "label": "Site-uri publicate" },
+        { "value": "Mai multe", "label": "Domenii" },
+        { "value": "Relevante", "label": "Proiecte de referință" }
+      ],
+      "heroPoints": [
+        "Fiecare proiect pune accent pe claritate și parcurs logic.",
+        "Selecția include proiecte independente și proiecte din ecosisteme mai mari.",
+        "Contează stabilitatea, lizibilitatea și viteza."
+      ],
+      "heroNote": "Context"
+    },
+    "showcase": {
+      "eyebrow": "Selecție interactivă",
+      "title": "Explorează proiectele.",
+      "description": "Fiecare element trimite către un proiect publicat sau către un rezultat relevant."
+    },
+    "featuredWork": [
+      { "link": "https://haionline.ro", "title": "haionline.ro", "description": "Platformă digitală extinsă" },
+      { "link": "https://dacus.ro", "title": "dacus.ro", "description": "Magazin online" },
+      { "link": "https://drdent.ro", "title": "drdent.ro", "description": "Clinică dentară" },
+      { "link": "https://hrfluent.com", "title": "hrfluent.com", "description": "Servicii pentru companii" },
+      { "link": "https://pilotcenter.net", "title": "pilotcenter.net", "description": "Instruire" },
+      { "link": "https://enumismatica.ro", "title": "enumismatica.ro", "description": "Produs de nișă" },
+      { "link": "https://5dent.haionline.ro", "title": "5dent.haionline.ro", "description": "Proiect medical" },
+      { "link": "https://clinicilepink.haionline.ro", "title": "clinicilepink.haionline.ro", "description": "Proiect medical" },
+      { "link": "https://prolife.haionline.ro", "title": "prolife.haionline.ro", "description": "Pagini pentru cereri" },
+      { "link": "https://ultraestetic.haionline.ro", "title": "ultraestetic.haionline.ro", "description": "Servicii de estetică" },
+      { "link": "https://worlddentistry.haionline.ro", "title": "worlddentistry.haionline.ro", "description": "Clinică" },
+      { "link": "https://ringabell.ro", "title": "ringabell.ro", "description": "Magazin online" }
+    ],
+    "outcomes": {
+      "eyebrow": "Rezultate",
+      "title": "Proiecte cu impact clar în activitatea clientului.",
+      "description": "Prezentăm pe scurt ce am livrat și ce s-a îmbunătățit după publicare.",
+      "shippedLabel": "Implementare",
+      "resultLabel": "Rezultat",
+      "linkLabel": "Vezi proiectul",
+      "cases": [
+        {
+          "name": "Dacus.ro",
+          "vertical": "Comerț online",
+          "shipped": "Construire magazin online",
+          "result": "Parcurs clar de la produs la comandă",
+          "href": "https://dacus.ro"
+        },
+        {
+          "name": "Pilot Center",
+          "vertical": "Instruire",
+          "shipped": "Actualizare platformă pentru cereri",
+          "result": "Parcurs mai clar către contact",
+          "href": "https://pilotcenter.net"
+        },
+        {
+          "name": "Enumismatica",
+          "vertical": "Produs de nișă",
+          "shipped": "Refacere site de prezentare",
+          "result": "Mesaj mai clar pentru publicul potrivit",
+          "href": "https://enumismatica.ro"
+        },
+        {
+          "name": "DrDent",
+          "vertical": "Clinică dentară",
+          "shipped": "Reorganizare servicii și pagini",
+          "result": "Mai multe programări inițiate",
+          "href": "https://drdent.ro"
+        },
+        {
+          "name": "HR Fluent",
+          "vertical": "Servicii pentru companii",
+          "shipped": "Pagini de prezentare cu structură clară",
+          "result": "Încărcare mai rapidă",
+          "href": "https://hrfluent.com"
+        },
+        {
+          "name": "haionline.ro",
+          "vertical": "Platformă servicii",
+          "shipped": "Organizare extinsă a conținutului",
+          "result": "Navigare mai clară între servicii",
+          "href": "https://haionline.ro"
+        }
+      ]
+    },
+    "positioning": {
+      "body": "Selecția arată proiecte stabile, clare și ușor de folosit."
+    },
+    "threeBlocks": [
+      {
+        "title": "Mesaj mai clar",
+        "body": "Vizitatorul înțelege mai repede oferta."
+      },
+      {
+        "title": "Implicare mai bună",
+        "body": "Parcursul de citire rămâne coerent pe toate paginile."
+      },
+      {
+        "title": "Stabilitate",
+        "body": "Site-ul rămâne funcțional în utilizare zilnică."
+      }
+    ],
+    "cta": "Începe proiectul"
+  },
+  "contact": {
+    "hero": {
+      "pageLabel": "Contact",
+      "title": "Spune-ne pe scurt ce ai nevoie.",
+      "description": "Trimite contextul, obiectivul și termenul dorit. Îți răspundem cu pași concreți.",
+      "primaryCta": "Scrie-ne",
+      "secondaryCta": "Vezi echipa",
+      "heroBadge": "Mesaj inițial",
+      "heroStats": [
+        { "value": "Răspuns în aceeași zi lucrătoare", "label": "Timp de răspuns" },
+        { "value": "Comunicare directă cu echipa", "label": "Interacțiune" },
+        { "value": "Pași clari pentru început", "label": "Direcție" }
+      ],
+      "heroPoints": [
+        "Descrie obiectivul și termenul dorit.",
+        "Primești recomandare și ordine de lucru.",
+        "Stabilim împreună următorii pași."
+      ],
+      "heroNote": "Discuție inițială"
+    },
+    "directChannels": {
+      "eyebrow": "Canale directe",
+      "title": "Comunicare directă, clară și orientată pe soluții.",
+      "description": "Discuți direct cu echipa care lucrează la proiect."
+    },
+    "contactChannels": [
+      {
+        "title": "Adresă de e-mail",
+        "value": "hello@sky.ro",
+        "href": "mailto:hello@sky.ro",
+        "detail": "Pentru detalii, estimări și calendar."
+      },
+      {
+        "title": "Telefon",
+        "value": "+40 744 000 111",
+        "href": "tel:+40744000111",
+        "detail": "Pentru o discuție scurtă de orientare."
+      },
+      {
+        "title": "Parteneriate",
+        "value": "partners@sky.ro",
+        "href": "mailto:partners@sky.ro",
+        "detail": "Pentru colaborări pe termen lung."
+      }
+    ],
+    "brief": {
+      "title": "Date utile pentru primul răspuns.",
+      "body": "Trimite obiectivul, contextul și termenul dorit, iar noi revenim cu o direcție clară.",
+      "steps": [
+        "Trimite obiectivul și contextul",
+        "Primești recomandarea noastră",
+        "Stabilim etapele de lucru"
+      ]
+    },
+    "response": {
+      "label": "Interval obișnuit de răspuns",
+      "value": "În aceeași zi lucrătoare",
+      "body": "În majoritatea situațiilor, revenim cu răspuns în aceeași zi lucrătoare.",
+      "directEmail": "hello@sky.ro"
+    },
+    "form": {
+      "namePlaceholder": "Nume",
+      "emailPlaceholder": "Adresă de e-mail",
+      "briefPlaceholder": "Mesaj scurt",
+      "submitLabel": "Trimite"
+    },
+    "cta": "Vezi serviciile"
+  }
+}
