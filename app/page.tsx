@@ -196,29 +196,37 @@ function BentoStory() {
           className="reveal-blur mb-8 rounded-[24px] border border-white/12 bg-white/[0.03] p-4 sm:mb-10 sm:p-6"
         >
           <div className="text-[11px] uppercase tracking-[0.2em] text-white/58">{bento.workedWithTitle}</div>
-          <div className="mobile-snap-row -mx-1 mt-3 flex gap-2.5 overflow-x-auto px-1 pb-1 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-2.5 sm:overflow-visible sm:px-0 sm:pb-0">
+          <div className="mobile-snap-row -mx-1 mt-3 flex gap-3 overflow-x-auto px-1 pb-1 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-3 sm:overflow-visible sm:px-0 sm:pb-0">
             {workedWith.map((client, index) => (
-              <div
+              <article
                 key={client.name}
                 className={[
-                  "mobile-snap-card flex min-w-[78%] shrink-0 items-center gap-3 rounded-xl border border-white/10 bg-black/28 px-3.5 py-3 sm:min-w-0",
+                  "mobile-snap-card group relative min-w-[78%] shrink-0 overflow-hidden rounded-[18px] border border-white/12 bg-[linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0.02)_45%,rgba(0,0,0,0.45))] p-4 sm:min-w-0",
                   index === workedWith.length - 1 ? "sm:col-span-1" : "",
                 ].join(" ")}
               >
-                <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/16 bg-white/[0.05] text-[11px] font-semibold tracking-[0.08em] text-white/85">
-                  {client.mark}
+                <div className="pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full bg-white/10 blur-2xl transition group-hover:bg-white/15" />
+                <div className="relative">
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-white/52">Client</p>
+                  <h4 className="mt-2 text-base font-semibold tracking-tight text-white/92">{client.name}</h4>
+                  <div className="mt-3 inline-flex items-center rounded-full border border-white/18 bg-black/30 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/74">
+                    {client.mark}
+                  </div>
                 </div>
-                <div className="text-sm font-medium text-white/82">{client.name}</div>
-              </div>
+              </article>
             ))}
           </div>
 
-          <div className="mobile-snap-row -mx-1 mt-4 flex gap-2.5 overflow-x-auto px-1 pb-1 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-2.5 sm:overflow-visible sm:px-0 sm:pb-0">
+          <div className="mobile-snap-row -mx-1 mt-4 flex gap-3 overflow-x-auto px-1 pb-1 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-3 sm:overflow-visible sm:px-0 sm:pb-0">
             {credibilityMetrics.map((metric) => (
-              <div key={metric.value} className="mobile-snap-card min-w-[74%] shrink-0 rounded-xl border border-white/10 bg-black/22 p-3.5 sm:min-w-0">
-                <div className="text-lg font-semibold tracking-tight text-white sm:text-xl">{metric.value}</div>
-                <p className="mt-1 text-xs leading-relaxed text-white/63 sm:text-[13px]">{metric.label}</p>
-              </div>
+              <article
+                key={metric.value}
+                className="mobile-snap-card min-w-[74%] shrink-0 rounded-[18px] border border-white/12 bg-[linear-gradient(160deg,rgba(255,255,255,0.06),rgba(0,0,0,0.4))] p-4 sm:min-w-0"
+              >
+                <p className="text-2xl font-semibold leading-none tracking-tight text-white sm:text-[1.75rem]">{metric.value}</p>
+                <div className="mt-3 h-px w-full bg-white/10" />
+                <p className="mt-2 text-xs leading-relaxed text-white/66 sm:text-[13px]">{metric.label}</p>
+              </article>
             ))}
           </div>
 
