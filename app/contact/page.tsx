@@ -122,13 +122,13 @@ export default function ContactPage() {
 
       <section className="section-divider relative py-8 sm:py-14">
         <Container>
-          <div className="grid grid-cols-12 gap-4 sm:gap-5 lg:items-stretch">
+          <div className="mobile-snap-row -mx-1 flex gap-3 overflow-x-auto px-1 pb-1 sm:mx-0 sm:grid sm:grid-cols-12 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0 lg:items-stretch">
             <motion.div
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={m.t(0.04, 0.8)}
-            className="sky-surface reveal-blur col-span-7 flex h-full flex-col overflow-hidden rounded-[24px] p-5 sm:rounded-[28px] sm:p-8 lg:col-span-7"
+              className="sky-surface reveal-blur mobile-snap-card min-w-[92%] shrink-0 flex h-full flex-col overflow-hidden rounded-[24px] p-5 sm:col-span-7 sm:min-w-0 sm:rounded-[28px] sm:p-8 lg:col-span-7"
             >
               <h3 className="text-2xl font-semibold tracking-tight text-white sm:text-5xl">
                 {contactText.brief.title}
@@ -153,7 +153,7 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={m.t(0.1, 0.8)}
-              className="sky-surface reveal-blur col-span-5 flex h-full flex-col overflow-hidden rounded-[24px] p-4 sm:rounded-[28px] sm:p-8 lg:col-span-5"
+              className="sky-surface reveal-blur mobile-snap-card min-w-[84%] shrink-0 flex h-full flex-col overflow-hidden rounded-[24px] p-4 sm:col-span-5 sm:min-w-0 sm:rounded-[28px] sm:p-8 lg:col-span-5"
             >
               <p className="text-xs uppercase tracking-[0.24em] text-white/55">{contactText.response.label}</p>
               <div className="mt-7 flex flex-1 flex-col gap-3.5">

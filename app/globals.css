@@ -112,6 +112,8 @@ button:hover {
 html,
 body {
   height: 100%;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 html {
@@ -252,10 +254,20 @@ html {
 .mobile-snap-row {
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  scroll-padding-inline: 0.75rem;
+  overscroll-behavior-x: contain;
 }
 
 .mobile-snap-card {
   scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+@media (hover: none) {
+  a:hover,
+  button:hover {
+    transform: none;
+  }
 }
 
 #infinite-grid-menu-canvas {
@@ -436,6 +448,18 @@ html {
 }
 
 @media (max-width: 640px) {
+  input,
+  textarea,
+  select,
+  button {
+    font-size: 16px;
+  }
+
+  a,
+  button {
+    min-height: 42px;
+  }
+
   .face-meta {
     left: 0.55rem;
     right: 0.55rem;

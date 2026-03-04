@@ -42,7 +42,7 @@ export default function WhoWeArePage() {
             description={whoText.identity.description}
           />
 
-          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
+          <div className="mobile-snap-row -mx-1 mt-8 flex gap-3 overflow-x-auto px-1 pb-1 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3">
             {principles.map((item, i) => (
               <motion.article
                 key={item.title}
@@ -50,7 +50,7 @@ export default function WhoWeArePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-10%" }}
                 transition={m.t(i * 0.05, 0.78)}
-                className="sky-surface-soft reveal-blur rounded-[24px] p-4 sm:p-6"
+                className="sky-surface-soft reveal-blur mobile-snap-card min-w-[84%] shrink-0 rounded-[24px] p-4 sm:min-w-0 sm:p-6"
               >
                 <p className="text-xs uppercase tracking-[0.22em] text-white/50">0{i + 1}</p>
                 <h3 className="mt-2 text-xl font-semibold tracking-tight text-white sm:mt-3 sm:text-2xl">{item.title}</h3>
@@ -64,13 +64,13 @@ export default function WhoWeArePage() {
 
       <section className="section-divider relative py-10 sm:py-14">
         <Container>
-          <div className="grid grid-cols-12 gap-4 sm:gap-5">
+          <div className="mobile-snap-row -mx-1 flex gap-3 overflow-x-auto px-1 pb-1 sm:mx-0 sm:grid sm:grid-cols-12 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0">
             <motion.div
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={m.t(0.02, 0.8)}
-              className="sky-surface reveal-blur col-span-7 overflow-hidden rounded-[24px] p-5 sm:rounded-[28px] sm:p-8 lg:col-span-7"
+              className="sky-surface reveal-blur mobile-snap-card min-w-[92%] shrink-0 overflow-hidden rounded-[24px] p-5 sm:col-span-7 sm:min-w-0 sm:rounded-[28px] sm:p-8 lg:col-span-7"
             >
               <h3 className="text-2xl font-semibold tracking-[-0.02em] text-white sm:text-5xl">
                 {whoText.operations.teamShapeTitle}
@@ -93,7 +93,7 @@ export default function WhoWeArePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={m.t(0.08, 0.8)}
-              className="sky-surface reveal-blur relative col-span-5 overflow-hidden rounded-[24px] p-4 sm:rounded-[28px] sm:p-8 lg:col-span-5"
+              className="sky-surface reveal-blur mobile-snap-card relative min-w-[84%] shrink-0 overflow-hidden rounded-[24px] p-4 sm:col-span-5 sm:min-w-0 sm:rounded-[28px] sm:p-8 lg:col-span-5"
             >
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(62%_70%_at_80%_0%,rgba(255,255,255,0.16),rgba(255,255,255,0))]" />
               <div className="relative">
@@ -128,14 +128,14 @@ export default function WhoWeArePage() {
             center
           />
 
-          <div className="reveal-blur mx-auto mt-8 grid max-w-5xl grid-cols-12 gap-3 sm:gap-4">
-            <article className="sky-surface-soft col-span-7 rounded-[24px] p-4 sm:rounded-[26px] sm:p-6 lg:col-span-8">
+          <div className="mobile-snap-row reveal-blur -mx-1 mx-auto mt-8 flex max-w-5xl gap-3 overflow-x-auto px-1 pb-1 sm:mx-auto sm:grid sm:grid-cols-12 sm:gap-4 sm:overflow-visible sm:px-0 sm:pb-0">
+            <article className="sky-surface-soft mobile-snap-card min-w-[88%] shrink-0 rounded-[24px] p-4 sm:col-span-7 sm:min-w-0 sm:rounded-[26px] sm:p-6 lg:col-span-8">
               <p className="text-sm leading-relaxed text-white/78">“{proof.quote}”</p>
               <p className="mt-4 text-[11px] uppercase tracking-[0.22em] text-white/56">{proof.author}</p>
             </article>
-            <div className="col-span-5 grid gap-3 lg:col-span-4">
+            <div className="mobile-snap-card min-w-[76%] shrink-0 sm:col-span-5 sm:min-w-0 sm:grid sm:gap-3 lg:col-span-4">
               {proof.stats.map((item) => (
-                <div key={item} className="sky-surface-soft rounded-2xl px-3 py-3 text-xs text-white/78 sm:px-4 sm:py-4 sm:text-sm">
+                <div key={item} className="sky-surface-soft mb-2 rounded-2xl px-3 py-3 text-xs text-white/78 last:mb-0 sm:mb-0 sm:px-4 sm:py-4 sm:text-sm">
                   {item}
                 </div>
               ))}

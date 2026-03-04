@@ -56,7 +56,7 @@ function useMotion() {
 }
 
 const Container = ({ children }: { children: React.ReactNode }) => (
-  <div className="mx-auto w-full max-w-[1240px] px-4 sm:px-8 lg:px-10">{children}</div>
+  <div className="mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-10">{children}</div>
 );
 
 function Button({ href, children, ghost = false }: { href: string; children: React.ReactNode; ghost?: boolean }) {
@@ -99,12 +99,12 @@ function Hero() {
       />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[78vh] bg-[radial-gradient(72%_62%_at_50%_0%,rgba(255,255,255,0.16),rgba(255,255,255,0.04)_26%,rgba(0,0,0,0)_62%)]" />
       <Container>
-        <div className="relative z-10 grid items-end gap-6 pb-10 pt-8 sm:gap-10 sm:pb-14 sm:pt-12 lg:grid-cols-12">
+        <div className="mobile-snap-row relative z-10 -mx-1 flex items-end gap-3 overflow-x-auto px-1 pb-10 pt-8 sm:mx-0 sm:grid sm:grid-cols-6 sm:gap-8 sm:overflow-visible sm:px-0 sm:pb-14 sm:pt-12 lg:grid-cols-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={m.t(0.04, 1)}
-            className="lg:col-span-7"
+            className="mobile-snap-card min-w-[92%] shrink-0 rounded-[24px] border border-white/10 bg-black/34 p-4 backdrop-blur sm:col-span-4 sm:min-w-0 sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-none lg:col-span-7"
           >
             {hasHeroEyebrow ? <div className="text-xs uppercase tracking-[0.28em] text-white/60">{hero.eyebrow}</div> : null}
             <h1
@@ -145,16 +145,16 @@ function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={m.t(0.12, 1)}
-            className="reveal-blur lg:col-span-5"
+            className="reveal-blur mobile-snap-card min-w-[76%] shrink-0 sm:col-span-2 sm:min-w-0 lg:col-span-5"
           >
-            <div className="relative aspect-[10/9] overflow-hidden rounded-[24px] sm:aspect-[4/5]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[24px] sm:aspect-[4/5]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/ochi.png" alt="Sky showcase" className="mono-ui-media h-full w-full object-cover" />
               <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.82),rgba(0,0,0,0.06))]" />
               <div className="absolute left-3 top-3 rounded-full border border-white/20 bg-black/38 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-white/72 backdrop-blur sm:hidden">
                 {hero.imageTag}
               </div>
-              <div className="absolute bottom-3 right-3 max-w-[60%] rounded-2xl border border-white/16 bg-black/48 px-3 py-2.5 text-[11px] leading-relaxed text-white/75 backdrop-blur sm:hidden">
+              <div className="absolute bottom-3 right-3 max-w-[74%] rounded-2xl border border-white/16 bg-black/48 px-3 py-2.5 text-[11px] leading-relaxed text-white/75 backdrop-blur sm:hidden">
                 {hero.imageNote}
               </div>
             </div>
@@ -196,13 +196,13 @@ function BentoStory() {
           className="reveal-blur mb-8 rounded-[24px] border border-white/12 bg-white/[0.03] p-4 sm:mb-10 sm:p-6"
         >
           <div className="text-[11px] uppercase tracking-[0.2em] text-white/58">{bento.workedWithTitle}</div>
-          <div className="mt-3 grid grid-cols-2 gap-2.5 sm:grid-cols-3">
+          <div className="mobile-snap-row -mx-1 mt-3 flex gap-2.5 overflow-x-auto px-1 pb-1 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-2.5 sm:overflow-visible sm:px-0 sm:pb-0">
             {workedWith.map((client, index) => (
               <div
                 key={client.name}
                 className={[
-                  "flex items-center gap-3 rounded-xl border border-white/10 bg-black/28 px-3.5 py-3",
-                  index === workedWith.length - 1 ? "col-span-2 sm:col-span-1" : "",
+                  "mobile-snap-card flex min-w-[78%] shrink-0 items-center gap-3 rounded-xl border border-white/10 bg-black/28 px-3.5 py-3 sm:min-w-0",
+                  index === workedWith.length - 1 ? "sm:col-span-1" : "",
                 ].join(" ")}
               >
                 <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/16 bg-white/[0.05] text-[11px] font-semibold tracking-[0.08em] text-white/85">
@@ -213,9 +213,9 @@ function BentoStory() {
             ))}
           </div>
 
-          <div className="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-3">
+          <div className="mobile-snap-row -mx-1 mt-4 flex gap-2.5 overflow-x-auto px-1 pb-1 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-2.5 sm:overflow-visible sm:px-0 sm:pb-0">
             {credibilityMetrics.map((metric) => (
-              <div key={metric.value} className="rounded-xl border border-white/10 bg-black/22 p-3.5">
+              <div key={metric.value} className="mobile-snap-card min-w-[74%] shrink-0 rounded-xl border border-white/10 bg-black/22 p-3.5 sm:min-w-0">
                 <div className="text-lg font-semibold tracking-tight text-white sm:text-xl">{metric.value}</div>
                 <p className="mt-1 text-xs leading-relaxed text-white/63 sm:text-[13px]">{metric.label}</p>
               </div>
@@ -263,18 +263,18 @@ function StoryPanels() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={m.t(i * 0.05, 0.75)}
-              className="sky-surface-soft reveal-blur mobile-snap-card grid min-w-[92%] shrink-0 grid-cols-12 overflow-hidden rounded-[24px] sm:min-w-0 sm:rounded-[28px]"
+              className="sky-surface-soft reveal-blur mobile-snap-card grid min-w-[92%] shrink-0 grid-cols-6 overflow-hidden rounded-[24px] sm:min-w-0 sm:grid-cols-12 sm:rounded-[28px]"
             >
-              <div className="relative col-span-7 min-h-[220px] sm:min-h-[260px] lg:col-span-7 lg:min-h-[360px]">
+              <div className="relative col-span-3 min-h-[220px] sm:col-span-7 sm:min-h-[260px] lg:min-h-[360px]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={p.img} alt="" className="mono-ui-media absolute inset-0 h-full w-full object-cover" />
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.15),rgba(0,0,0,0.58))] lg:bg-[linear-gradient(to_top,rgba(0,0,0,0.2),rgba(0,0,0,0.55))]" />
               </div>
-              <div className="col-span-5 flex items-center p-4 sm:p-10 lg:col-span-5">
+              <div className="col-span-3 flex items-center p-4 sm:col-span-5 sm:p-10">
                 <div>
                   <div className="text-xs uppercase tracking-[0.24em] text-white/55">0{i + 1}</div>
-                  <h3 className="mt-2 text-[1.55rem] font-semibold tracking-tight text-white sm:mt-3 sm:text-4xl">{p.title}</h3>
-                  <p className="mt-3 max-w-sm text-sm text-white/72 sm:mt-4 sm:text-base">{p.summary}</p>
+                  <h3 className="mt-2 text-[1.3rem] font-semibold tracking-tight text-white sm:mt-3 sm:text-4xl">{p.title}</h3>
+                  <p className="mt-2 max-w-sm text-sm text-white/72 sm:mt-4 sm:text-base">{p.summary}</p>
                   <div className="mt-3 flex flex-wrap gap-1.5 sm:mt-4 sm:gap-2">
                     {p.chips.map((step) => (
                       <span
@@ -318,7 +318,7 @@ function OrbitShowcase() {
           <p className="mx-auto mt-3 max-w-2xl text-sm text-white/70 sm:text-base">{showcase.body}</p>
         </div>
 
-        <div className="reveal-blur relative h-[430px] overflow-hidden rounded-[24px] sm:h-[560px] sm:rounded-[28px]">
+        <div className="reveal-blur relative h-[360px] overflow-hidden rounded-[24px] sm:h-[560px] sm:rounded-[28px]">
           <InfiniteMenu
             items={items.map((item, index) => ({
               ...item,
@@ -636,9 +636,9 @@ export default function Page() {
       <div className="relative z-10">
         <header className="sticky top-0 z-40 border-b border-white/10 bg-black/36 backdrop-blur-xl supports-[backdrop-filter]:bg-black/28">
           <Container>
-            <div className="flex h-16 items-center justify-between">
-              <Link href="/" className="relative h-9 w-[152px] opacity-95">
-                <Image src="/sky/logo.png" alt="Sky" fill className="object-contain" sizes="152px" />
+            <div className="flex h-14 items-center justify-between sm:h-16">
+              <Link href="/" className="relative h-8 w-[132px] opacity-95 sm:h-9 sm:w-[152px]">
+                <Image src="/sky/logo.png" alt="Sky" fill className="object-contain" sizes="(max-width: 640px) 132px, 152px" />
               </Link>
 
               <nav className="hidden items-center gap-7 text-sm font-medium md:flex">
@@ -708,8 +708,8 @@ export default function Page() {
           <Container>
             <div className="relative flex flex-col items-center justify-center gap-4 border-t border-white/10 py-14 text-center">
               <p className="text-sm uppercase tracking-[0.28em] text-white/65">{shared.footer.kicker}</p>
-              <Link href="#home" className="relative h-14 w-[220px] opacity-95 transition hover:opacity-100">
-                <Image src="/sky/logo.png" alt="sky.ro" fill className="object-contain" sizes="220px" />
+              <Link href="#home" className="relative h-12 w-[180px] opacity-95 transition hover:opacity-100 sm:h-14 sm:w-[220px]">
+                <Image src="/sky/logo.png" alt="sky.ro" fill className="object-contain" sizes="(max-width: 640px) 180px, 220px" />
               </Link>
               <p className="text-[11px] tracking-[0.16em] text-white/35">{shared.footer.copyright}</p>
             </div>

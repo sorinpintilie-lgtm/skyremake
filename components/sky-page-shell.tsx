@@ -43,7 +43,7 @@ export function useMotionPreset() {
 }
 
 export function Container({ children }: { children: React.ReactNode }) {
-  return <div className="mx-auto w-full max-w-[1240px] px-4 sm:px-8 lg:px-10">{children}</div>;
+  return <div className="mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-10">{children}</div>;
 }
 
 export function SkyButton({ href, children, ghost = false }: { href: string; children: React.ReactNode; ghost?: boolean }) {
@@ -170,9 +170,9 @@ export default function SkyPageShell({
       <div className="relative z-10">
         <header className="sticky top-0 z-40 border-b border-white/10 bg-black/36 backdrop-blur-xl supports-[backdrop-filter]:bg-black/28">
           <Container>
-            <div className="flex h-16 items-center justify-between">
-              <Link href="/" className="relative h-9 w-[152px] opacity-95">
-                <Image src="/sky/logo.png" alt="Sky" fill className="object-contain" sizes="152px" />
+            <div className="flex h-14 items-center justify-between sm:h-16">
+              <Link href="/" className="relative h-8 w-[132px] opacity-95 sm:h-9 sm:w-[152px]">
+                <Image src="/sky/logo.png" alt="Sky" fill className="object-contain" sizes="(max-width: 640px) 132px, 152px" />
               </Link>
 
               <nav className="hidden items-center gap-7 text-sm font-medium md:flex">
@@ -249,12 +249,12 @@ export default function SkyPageShell({
             {heroLayout === "editorial" && (
               <Container>
                 <div className="relative z-10 pb-12 pt-10 sm:pb-16 sm:pt-18">
-                  <div className="grid grid-cols-12 items-end gap-4 sm:gap-6 lg:gap-6">
+                  <div className="grid grid-cols-6 items-start gap-3 sm:grid-cols-12 sm:items-end sm:gap-6 lg:gap-6">
                     <motion.div
                       initial={{ opacity: 0, y: 18 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={m.t(0.04, 1)}
-                      className="col-span-7 sm:col-span-8 lg:col-span-8"
+                      className="col-span-6 sm:col-span-8 lg:col-span-8"
                     >
                       <div className="text-xs uppercase tracking-[0.3em] text-white/58">{pageLabel}</div>
                       <h1 className="mt-5 max-w-[14ch] text-balance text-[clamp(2rem,10.8vw,4.8rem)] font-semibold leading-[0.96] tracking-[-0.04em] text-white sm:mt-6 sm:text-7xl lg:text-8xl">
@@ -276,9 +276,9 @@ export default function SkyPageShell({
                       initial={{ opacity: 0, y: 16 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={m.t(0.12, 0.95)}
-                      className="reveal-blur col-span-5 sm:col-span-4 lg:col-span-4"
+                      className="reveal-blur col-span-6 sm:col-span-4 lg:col-span-4"
                     >
-                      <div className="relative aspect-[3/4] overflow-hidden rounded-[20px] sm:aspect-[4/5] sm:rounded-[24px]">
+                      <div className="relative aspect-[16/10] overflow-hidden rounded-[20px] sm:aspect-[4/5] sm:rounded-[24px]">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src={heroImage} alt="Sky page visual" className="mono-ui-media h-full w-full object-cover" />
                         <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.84),rgba(0,0,0,0.16))]" />
@@ -291,14 +291,14 @@ export default function SkyPageShell({
                       initial={{ opacity: 0, y: 14 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={m.t(0.14, 0.9)}
-                      className="mt-6 grid grid-cols-12 gap-2.5 sm:mt-8 sm:gap-3"
+                      className="mobile-snap-row -mx-1 mt-6 flex gap-2.5 overflow-x-auto px-1 pb-1 sm:mx-0 sm:mt-8 sm:grid sm:grid-cols-12 sm:gap-3 sm:overflow-visible sm:px-0 sm:pb-0"
                     >
                       {trimmedStats.length > 0 && (
-                        <div className="col-span-7 grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 lg:col-span-6">
+                        <div className="mobile-snap-card min-w-[90%] shrink-0 sm:col-span-7 sm:min-w-0 sm:grid sm:grid-cols-3 sm:gap-3 lg:col-span-6">
                           {trimmedStats.map((stat) => (
                             <div
                               key={`${stat.value}-${stat.label}`}
-                              className="sky-surface-soft rounded-2xl px-3 py-3 sm:px-4 sm:py-4"
+                              className="sky-surface-soft mb-2 rounded-2xl px-3 py-3 last:mb-0 sm:mb-0 sm:px-4 sm:py-4"
                             >
                               <p className="text-xl font-semibold tracking-tight text-white sm:text-2xl">{stat.value}</p>
                               <p className="mt-1 text-[11px] uppercase tracking-[0.2em] text-white/58">{stat.label}</p>
@@ -307,7 +307,7 @@ export default function SkyPageShell({
                         </div>
                       )}
                       {trimmedPoints.length > 0 && (
-                        <div className="col-span-5 grid gap-2.5 lg:col-span-6">
+                        <div className="mobile-snap-card min-w-[84%] shrink-0 sm:col-span-5 sm:min-w-0 sm:grid sm:gap-2.5 lg:col-span-6">
                           {trimmedPoints.slice(0, 3).map((point) => (
                             <div key={point} className="rounded-xl border border-white/12 bg-black/35 px-2.5 py-2 text-xs text-white/78 sm:px-3 sm:text-sm">
                               {point}
@@ -324,12 +324,12 @@ export default function SkyPageShell({
             {heroLayout === "architecture" && (
               <Container>
                 <div className="relative z-10 pb-12 pt-10 sm:pb-16 sm:pt-18">
-                  <div className="grid grid-cols-12 gap-4 sm:gap-6 lg:gap-6">
+                  <div className="mobile-snap-row -mx-1 flex gap-3 overflow-x-auto px-1 pb-1 sm:mx-0 sm:grid sm:grid-cols-12 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 lg:gap-6">
                     <motion.aside
                       initial={{ opacity: 0, y: 16 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={m.t(0.03, 0.95)}
-                      className="reveal-blur col-span-5 sm:col-span-4 lg:col-span-3"
+                      className="reveal-blur mobile-snap-card min-w-[86%] shrink-0 sm:col-span-4 sm:min-w-0 lg:col-span-3"
                     >
                       <div className="sky-surface rounded-[26px] p-5">
                         <p className="text-[11px] uppercase tracking-[0.24em] text-white/55">{pageLabel}</p>
@@ -350,7 +350,7 @@ export default function SkyPageShell({
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={m.t(0.08, 1)}
-                      className="col-span-7 sm:col-span-8 lg:col-span-6"
+                      className="mobile-snap-card min-w-[92%] shrink-0 sm:col-span-8 sm:min-w-0 lg:col-span-6"
                     >
                       <div className="text-xs uppercase tracking-[0.28em] text-white/60">{tonePanelLabel}</div>
                       <h1 className="mt-4 text-balance text-[clamp(2rem,10.2vw,4.7rem)] font-semibold leading-[0.98] tracking-[-0.035em] text-white sm:mt-5 sm:text-7xl">
@@ -382,10 +382,10 @@ export default function SkyPageShell({
                       initial={{ opacity: 0, y: 18 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={m.t(0.12, 0.95)}
-                      className="reveal-blur col-span-12 sm:col-span-12 lg:col-span-3"
+                      className="reveal-blur mobile-snap-card min-w-[82%] shrink-0 sm:col-span-12 sm:min-w-0 lg:col-span-3"
                     >
                       <div className="overflow-hidden rounded-[22px]">
-                        <div className="relative aspect-[3/4] overflow-hidden">
+                        <div className="relative aspect-[16/10] overflow-hidden sm:aspect-[3/4]">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img src={heroImage} alt="Sky page visual" className="mono-ui-media h-full w-full object-cover" />
                           <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.82),rgba(0,0,0,0.18))]" />
@@ -411,8 +411,8 @@ export default function SkyPageShell({
                     <img src={heroImage} alt="Sky page visual" className="mono-ui-media absolute inset-0 h-full w-full object-cover" />
                     <div className="absolute inset-0 bg-[radial-gradient(58%_70%_at_75%_20%,rgba(255,255,255,0.12),rgba(255,255,255,0)),linear-gradient(to_top,rgba(0,0,0,0.93),rgba(0,0,0,0.34))]" />
 
-                    <div className="relative grid min-h-[62svh] grid-cols-12 items-end gap-4 px-4 pb-5 pt-5 sm:min-h-[72svh] sm:gap-8 sm:px-10 sm:pb-10 sm:pt-7">
-                      <div className="col-span-7 lg:col-span-8">
+                    <div className="relative grid min-h-[62svh] grid-cols-6 items-end gap-3 px-3 pb-4 pt-4 sm:min-h-[72svh] sm:grid-cols-12 sm:gap-8 sm:px-10 sm:pb-10 sm:pt-7">
+                      <div className="col-span-6 lg:col-span-8">
                         <h1 className="mt-4 max-w-[16ch] text-balance text-[clamp(2rem,10.2vw,4.8rem)] font-semibold leading-[0.96] tracking-[-0.035em] text-white sm:mt-6 sm:text-7xl lg:text-8xl">
                           {title}
                         </h1>
@@ -427,11 +427,11 @@ export default function SkyPageShell({
                         </div>
                       </div>
 
-                      <div className="col-span-5 pb-0.5 lg:col-span-4 lg:pb-1">
+                      <div className="col-span-6 pb-0.5 sm:col-span-5 lg:col-span-4 lg:pb-1">
                         {trimmedStats.length > 0 && (
-                          <div className="grid gap-2.5">
+                          <div className="mobile-snap-row -mx-0.5 flex gap-2 overflow-x-auto px-0.5 pb-1 sm:mx-0 sm:grid sm:gap-2.5 sm:overflow-visible sm:px-0 sm:pb-0">
                             {trimmedStats.map((stat) => (
-                              <div key={stat.label} className="rounded-2xl border border-white/16 bg-black/48 px-3 py-2.5 backdrop-blur sm:px-4 sm:py-3">
+                              <div key={stat.label} className="mobile-snap-card min-w-[78%] shrink-0 rounded-2xl border border-white/16 bg-black/48 px-3 py-2.5 backdrop-blur sm:min-w-0 sm:px-4 sm:py-3">
                                 <p className="text-xl font-semibold tracking-tight text-white sm:text-2xl">{stat.value}</p>
                                 <p className="mt-0.5 text-[11px] uppercase tracking-[0.2em] text-white/58">{stat.label}</p>
                               </div>
@@ -441,10 +441,10 @@ export default function SkyPageShell({
                       </div>
 
                       {trimmedPoints.length > 0 && (
-                        <div className="lg:col-span-12">
-                          <div className="grid gap-2.5 sm:grid-cols-3">
+                        <div className="col-span-6 sm:col-span-12 lg:col-span-12">
+                          <div className="mobile-snap-row -mx-0.5 flex gap-2 overflow-x-auto px-0.5 pb-1 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-2.5 sm:overflow-visible sm:px-0 sm:pb-0">
                             {trimmedPoints.slice(0, 3).map((point) => (
-                              <div key={point} className="rounded-xl border border-white/14 bg-black/45 px-3 py-2 text-sm text-white/82 backdrop-blur">
+                              <div key={point} className="mobile-snap-card min-w-[84%] shrink-0 rounded-xl border border-white/14 bg-black/45 px-3 py-2 text-sm text-white/82 backdrop-blur sm:min-w-0">
                                 {point}
                               </div>
                             ))}
@@ -460,12 +460,12 @@ export default function SkyPageShell({
             {heroLayout === "concierge" && (
               <Container>
                 <div className="relative z-10 pb-12 pt-10 sm:pb-16 sm:pt-18">
-                  <div className="grid grid-cols-12 gap-4 sm:gap-5 lg:items-stretch">
+                  <div className="mobile-snap-row -mx-1 flex gap-3 overflow-x-auto px-1 pb-1 sm:mx-0 sm:grid sm:grid-cols-12 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0 lg:items-stretch">
                     <motion.div
                       initial={{ opacity: 0, y: 18 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={m.t(0.04, 1)}
-                      className="col-span-7 flex h-full flex-col lg:col-span-7"
+                      className="mobile-snap-card min-w-[92%] shrink-0 sm:col-span-7 sm:min-w-0 lg:col-span-7"
                     >
                       <div className="text-xs uppercase tracking-[0.3em] text-white/58">{pageLabel}</div>
                       <h1 className="mt-5 max-w-[14ch] text-balance text-[clamp(2rem,10.2vw,4.4rem)] font-semibold leading-[0.97] tracking-[-0.04em] text-white sm:mt-6 sm:text-7xl">
@@ -483,9 +483,9 @@ export default function SkyPageShell({
                       </div>
 
                       {trimmedStats.length > 0 && (
-                        <div className="mt-auto grid gap-3 pt-8 sm:grid-cols-3">
+                        <div className="mobile-snap-row -mx-1 mt-7 flex gap-2.5 overflow-x-auto px-1 pb-1 sm:mx-0 sm:mt-auto sm:grid sm:grid-cols-3 sm:gap-3 sm:overflow-visible sm:px-0 sm:pb-0 sm:pt-8">
                           {trimmedStats.map((stat) => (
-                            <div key={stat.label} className="rounded-2xl border border-white/12 bg-white/[0.03] px-4 py-4">
+                            <div key={stat.label} className="mobile-snap-card min-w-[78%] shrink-0 rounded-2xl border border-white/12 bg-white/[0.03] px-4 py-4 sm:min-w-0">
                               <p className="text-2xl font-semibold tracking-tight text-white">{stat.value}</p>
                               <p className="mt-1 text-[11px] uppercase tracking-[0.2em] text-white/58">{stat.label}</p>
                             </div>
@@ -498,7 +498,7 @@ export default function SkyPageShell({
                       initial={{ opacity: 0, y: 16 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={m.t(0.12, 0.95)}
-                      className="reveal-blur col-span-5 h-full lg:col-span-5"
+                      className="reveal-blur mobile-snap-card min-w-[84%] shrink-0 sm:col-span-5 sm:min-w-0 lg:col-span-5"
                     >
                       <div className="flex h-full flex-col overflow-hidden">
                         <div className="relative overflow-hidden rounded-[22px]">
@@ -557,9 +557,9 @@ export default function SkyPageShell({
                     initial={{ opacity: 0, y: 14 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={m.t(0.12, 0.95)}
-                    className="mx-auto mt-8 grid max-w-5xl grid-cols-12 gap-3 sm:mt-12 sm:gap-4"
+                    className="mobile-snap-row -mx-1 mt-8 flex gap-3 overflow-x-auto px-1 pb-1 sm:mx-auto sm:mt-12 sm:grid sm:max-w-5xl sm:grid-cols-12 sm:gap-4 sm:overflow-visible sm:px-0 sm:pb-0"
                   >
-                    <div className="sky-surface reveal-blur col-span-7 overflow-hidden rounded-[24px] p-4 sm:rounded-[28px] sm:p-6 lg:col-span-8">
+                    <div className="sky-surface reveal-blur mobile-snap-card min-w-[90%] shrink-0 overflow-hidden rounded-[24px] p-4 sm:col-span-7 sm:min-w-0 sm:rounded-[28px] sm:p-6 lg:col-span-8">
                       <div className="text-[11px] uppercase tracking-[0.24em] text-white/54">{heroNote ?? tonePanelLabel}</div>
                       {trimmedPoints.length > 0 && (
                         <div className="mt-4 space-y-2.5">
@@ -577,9 +577,9 @@ export default function SkyPageShell({
                     </div>
 
                     {trimmedStats.length > 0 && (
-                      <div className="col-span-5 grid gap-3 lg:col-span-4">
+                      <div className="mobile-snap-card min-w-[82%] shrink-0 sm:col-span-5 sm:min-w-0 sm:grid sm:gap-3 lg:col-span-4">
                         {trimmedStats.map((stat) => (
-                          <div key={stat.label} className="sky-surface-soft rounded-2xl px-4 py-4">
+                          <div key={stat.label} className="sky-surface-soft mb-2 rounded-2xl px-4 py-4 last:mb-0 sm:mb-0">
                             <p className="text-2xl font-semibold tracking-tight text-white">{stat.value}</p>
                             <p className="mt-1 text-[11px] uppercase tracking-[0.2em] text-white/58">{stat.label}</p>
                           </div>
@@ -593,12 +593,12 @@ export default function SkyPageShell({
 
             {heroLayout === "split" && (
               <Container>
-                <div className="relative z-10 grid grid-cols-12 items-end gap-4 pb-10 pt-8 sm:gap-10 sm:pb-14 sm:pt-12">
+                <div className="relative z-10 grid grid-cols-6 items-end gap-3 pb-10 pt-8 sm:grid-cols-12 sm:gap-10 sm:pb-14 sm:pt-12">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={m.t(0.04, 1)}
-                    className="col-span-7 lg:col-span-7"
+                    className="col-span-6 lg:col-span-7"
                   >
                     <div className="text-xs uppercase tracking-[0.28em] text-white/60">{pageLabel}</div>
                     <h1 className="mt-4 text-balance text-[clamp(2rem,10.2vw,4.9rem)] font-semibold leading-[0.98] tracking-[-0.03em] text-white sm:mt-6 sm:text-7xl lg:text-8xl">
@@ -616,11 +616,11 @@ export default function SkyPageShell({
                     </div>
 
                     {trimmedStats.length > 0 && (
-                      <div className="mt-7 grid gap-2.5 sm:grid-cols-3 sm:gap-3">
+                      <div className="mobile-snap-row -mx-1 mt-7 flex gap-2 overflow-x-auto px-1 pb-1 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-3 sm:overflow-visible sm:px-0 sm:pb-0">
                         {trimmedStats.map((stat) => (
                           <div
                             key={`${stat.value}-${stat.label}`}
-                            className="rounded-2xl border border-white/12 bg-white/[0.035] px-4 py-3"
+                            className="mobile-snap-card min-w-[78%] shrink-0 rounded-2xl border border-white/12 bg-white/[0.035] px-4 py-3 sm:min-w-0"
                           >
                             <p className="text-2xl font-semibold tracking-tight text-white">{stat.value}</p>
                             <p className="mt-1 text-[11px] uppercase tracking-[0.2em] text-white/58">{stat.label}</p>
@@ -634,10 +634,10 @@ export default function SkyPageShell({
                     initial={{ opacity: 0, y: 18 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={m.t(0.12, 1)}
-                    className="reveal-blur col-span-5 lg:col-span-5"
+                    className="reveal-blur col-span-6 lg:col-span-5"
                   >
                     <div className="relative overflow-hidden rounded-[20px] sm:rounded-[24px]">
-                      <div className="relative aspect-[3/4] overflow-hidden sm:aspect-[4/5]">
+                      <div className="relative aspect-[16/10] overflow-hidden sm:aspect-[4/5]">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src={heroImage} alt="Sky page visual" className="mono-ui-media h-full w-full object-cover" />
                         <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.82),rgba(0,0,0,0.08))]" />

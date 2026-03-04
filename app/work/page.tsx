@@ -63,7 +63,7 @@ export default function WorkPage() {
             center
           />
 
-          <div className="reveal-blur relative mt-8 h-[420px] overflow-hidden rounded-[24px] sm:h-[560px] sm:rounded-[28px]">
+          <div className="reveal-blur relative mt-8 h-[360px] overflow-hidden rounded-[24px] sm:h-[560px] sm:rounded-[28px]">
             <InfiniteMenu
               items={featuredWork.map((item, index) => ({
                 ...item,
@@ -125,7 +125,7 @@ export default function WorkPage() {
               {workText.threeBlocks.map((block) => (
                 <article
                   key={block.title}
-                  className="mobile-snap-card min-w-[84%] shrink-0 rounded-2xl border border-white/12 bg-black/30 p-4 md:min-w-0"
+                  className="mobile-snap-card min-w-[82%] shrink-0 rounded-2xl border border-white/12 bg-black/30 p-4 md:min-w-0"
                 >
                   <h4 className="text-lg font-semibold tracking-tight text-white">{block.title}</h4>
                   <p className="mt-2 text-sm leading-relaxed text-white/72">{block.body}</p>

@@ -64,13 +64,13 @@ export default function WhatWeDoPage() {
             ))}
           </div>
 
-          <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-3">
+          <div className="mobile-snap-row -mx-1 mt-6 flex gap-3 overflow-x-auto px-1 pb-1 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 md:pb-0">
             {whatWeDoText.statsCards.map((card, index) => (
               <article
                 key={card.label}
                 className={[
-                  "sky-surface-soft rounded-2xl p-4",
-                  index === 2 ? "col-span-2 md:col-span-1" : "",
+                  "sky-surface-soft mobile-snap-card min-w-[84%] shrink-0 rounded-2xl p-4 md:min-w-0",
+                  index === 2 ? "md:col-span-1" : "",
                 ].join(" ")}
               >
                 <p className="text-[11px] uppercase tracking-[0.2em] text-white/55">{card.text}</p>
@@ -83,8 +83,8 @@ export default function WhatWeDoPage() {
 
       <section className="section-divider relative py-8 sm:py-14">
         <Container>
-          <div className="reveal-blur mt-8 grid grid-cols-12 gap-4 sm:mt-10 sm:gap-8 lg:items-end">
-            <div className="col-span-5 lg:col-span-5">
+          <div className="mobile-snap-row reveal-blur -mx-1 mt-8 flex gap-4 overflow-x-auto px-1 pb-1 sm:mt-10 sm:grid sm:grid-cols-12 sm:gap-8 sm:overflow-visible sm:px-0 sm:pb-0 lg:items-end">
+            <div className="mobile-snap-card min-w-[90%] shrink-0 sm:col-span-5 sm:min-w-0 lg:col-span-5">
               <div className="rounded-2xl bg-black/45 p-6 backdrop-blur-xl">
                 <div className="text-[11px] uppercase tracking-[0.24em] text-white/55">{whatWeDoText.deliveryArchitecture.eyebrow}</div>
                 <h4 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">{whatWeDoText.deliveryArchitecture.title}</h4>
@@ -94,8 +94,23 @@ export default function WhatWeDoPage() {
               </div>
             </div>
 
-            <div className="col-span-7 lg:col-span-7">
-              <div className="relative h-[380px] overflow-hidden sm:h-[500px]">
+            <div className="mobile-snap-card min-w-[94%] shrink-0 sm:col-span-7 sm:min-w-0 lg:col-span-7">
+              <div className="mobile-snap-row -mx-1 flex gap-3 overflow-x-auto px-1 pb-1 sm:hidden">
+                {deliveryLayers.map((layer) => (
+                  <article
+                    key={`mobile-${layer.id}`}
+                    className="mobile-snap-card min-w-[88%] shrink-0 rounded-[22px] border border-white/12 bg-black/42 p-5"
+                  >
+                    <div className="text-xs uppercase tracking-[0.24em] text-white/55">
+                      {layer.id} / {whatWeDoText.deliveryArchitecture.layerLabel}
+                    </div>
+                    <h4 className="mt-3 text-2xl font-semibold tracking-tight text-white">{layer.title}</h4>
+                    <p className="mt-3 text-sm text-white/74">{layer.body}</p>
+                  </article>
+                ))}
+              </div>
+
+              <div className="relative hidden h-[500px] overflow-hidden sm:block">
                 <CardSwap
                   cardDistance={44}
                   verticalDistance={54}
