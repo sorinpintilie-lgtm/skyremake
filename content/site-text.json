@@ -568,26 +568,26 @@
       "title": "Comunicare directă, clară și orientată pe soluții.",
       "description": "Discuți direct cu echipa care lucrează la proiect."
     },
-    "contactChannels": [
-      {
-        "title": "Adresă de e-mail",
-        "value": "hello@sky.ro",
-        "href": "mailto:hello@sky.ro",
-        "detail": "Pentru detalii, estimări și calendar."
-      },
-      {
-        "title": "Telefon",
-        "value": "+40 744 000 111",
-        "href": "tel:+40744000111",
-        "detail": "Pentru o discuție scurtă de orientare."
-      },
-      {
-        "title": "Parteneriate",
-        "value": "partners@sky.ro",
-        "href": "mailto:partners@sky.ro",
-        "detail": "Pentru colaborări pe termen lung."
-      }
-    ],
+      "contactChannels": [
+        {
+          "title": "Adresă de e-mail",
+          "value": "contact@sky.ro",
+          "href": "mailto:contact@sky.ro",
+          "detail": "Pentru detalii, estimări și calendar."
+        },
+        {
+          "title": "Telefon",
+          "value": "+40 0720088880",
+          "href": "tel:+400720088880",
+          "detail": "Pentru o discuție scurtă de orientare."
+        },
+        {
+          "title": "Parteneriate",
+          "value": "contact@sky.ro",
+          "href": "mailto:contact@sky.ro",
+          "detail": "Pentru colaborări pe termen lung."
+        }
+      ],
     "brief": {
       "title": "Date utile pentru primul răspuns.",
       "body": "Trimite obiectivul, contextul și termenul dorit, iar noi revenim cu o direcție clară.",

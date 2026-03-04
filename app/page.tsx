@@ -502,16 +502,9 @@ function ExplorePages() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={m.t(i * 0.05, 0.75)}
-              className="sky-surface-soft reveal-blur mobile-snap-card group relative min-w-[90%] shrink-0 overflow-hidden rounded-[26px] md:min-w-0"
+              className="sky-surface-soft reveal-blur mobile-snap-card group min-w-[90%] shrink-0 rounded-[26px] border border-white/12 bg-[radial-gradient(90%_120%_at_10%_0%,rgba(255,255,255,0.12),rgba(255,255,255,0.02)_44%,rgba(0,0,0,0.52))] md:min-w-0"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={page.image}
-                alt=""
-                className="mono-ui-media absolute inset-0 h-full w-full object-cover opacity-35 transition duration-500 group-hover:scale-[1.03]"
-              />
-              <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.92),rgba(0,0,0,0.52))]" />
-              <div className="relative z-10 p-6 sm:p-8">
+              <div className="p-6 sm:p-8">
                 {page.label.trim().toLowerCase() !== page.title.trim().toLowerCase() ? (
                   <div className="text-[11px] uppercase tracking-[0.22em] text-white/58">{page.label}</div>
                 ) : null}

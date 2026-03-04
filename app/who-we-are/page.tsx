@@ -64,13 +64,13 @@ export default function WhoWeArePage() {
 
       <section className="section-divider relative py-10 sm:py-14">
         <Container>
-          <div className="mobile-snap-row -mx-1 flex gap-3 overflow-x-auto px-1 pb-1 sm:mx-0 sm:grid sm:grid-cols-12 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0">
+          <div className="mobile-snap-row -mx-1 flex gap-3 overflow-x-auto px-1 pb-1 sm:mx-0 sm:grid sm:grid-cols-12 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0 lg:items-stretch">
             <motion.div
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={m.t(0.02, 0.8)}
-              className="sky-surface reveal-blur mobile-snap-card min-w-[92%] shrink-0 overflow-hidden rounded-[24px] p-5 sm:col-span-7 sm:min-w-0 sm:rounded-[28px] sm:p-8 lg:col-span-7"
+              className="sky-surface reveal-blur mobile-snap-card min-w-[92%] shrink-0 overflow-hidden rounded-[24px] p-5 sm:col-span-7 sm:min-w-0 sm:rounded-[28px] sm:p-8 lg:col-span-7 lg:flex lg:h-full lg:flex-col"
             >
               <h3 className="text-2xl font-semibold tracking-[-0.02em] text-white sm:text-5xl">
                 {whoText.operations.teamShapeTitle}
@@ -93,7 +93,7 @@ export default function WhoWeArePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={m.t(0.08, 0.8)}
-              className="sky-surface reveal-blur mobile-snap-card relative min-w-[84%] shrink-0 overflow-hidden rounded-[24px] p-4 sm:col-span-5 sm:min-w-0 sm:rounded-[28px] sm:p-8 lg:col-span-5"
+              className="sky-surface reveal-blur mobile-snap-card relative min-w-[84%] shrink-0 overflow-hidden rounded-[24px] p-4 sm:col-span-5 sm:min-w-0 sm:rounded-[28px] sm:p-8 lg:col-span-5 lg:flex lg:h-full lg:flex-col"
             >
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(62%_70%_at_80%_0%,rgba(255,255,255,0.16),rgba(255,255,255,0))]" />
               <div className="relative">
