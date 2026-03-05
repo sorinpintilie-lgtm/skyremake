@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
+import { createPortal } from "react-dom";
 import { motion, useReducedMotion } from "framer-motion";
 import snapshotManifest from "@/public/snapshots/index.json";
 import { Particles } from "@/components/particles";
@@ -622,6 +623,7 @@ export default function Page() {
   const pathname = usePathname();
   const shared = siteText.shared;
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const [hasMounted, setHasMounted] = React.useState(false);
 
   React.useEffect(() => {
     setMobileMenuOpen(false);
@@ -656,12 +658,16 @@ export default function Page() {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, []);
 
+  React.useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-[#010101] text-white selection:bg-white selection:text-black">
       <Particles quantity={120} staticity={52} ease={74} size={0.62} color="#ffffff" className="z-0 opacity-[0.62] blur-[0.6px]" />
 
       <div className="relative z-10">
-        <header className="sticky top-0 z-[120] border-b border-white/10 bg-black/36 backdrop-blur-xl supports-[backdrop-filter]:bg-black/28">
+        <header className="sticky top-0 z-[60] border-b border-white/10 bg-black/36 backdrop-blur-xl supports-[backdrop-filter]:bg-black/28">
           <Container>
             <div className="flex h-14 items-center justify-between sm:h-16">
               <Link href="/" className="relative h-8 w-[132px] opacity-95 sm:h-9 sm:w-[152px]">
@@ -729,83 +735,88 @@ export default function Page() {
               </button>
             </div>
           </Container>
+        </header>
 
-          <div
-            className={[
-              "fixed inset-0 z-[140] md:hidden",
-              mobileMenuOpen ? "pointer-events-auto" : "pointer-events-none",
-            ].join(" ")}
-          >
-            <button
-              type="button"
-              aria-label="Închide meniul"
-              onClick={() => setMobileMenuOpen(false)}
-              className={[
-                "absolute inset-0 z-[140] bg-black/50 backdrop-blur-[2px] transition-opacity duration-300",
-                mobileMenuOpen ? "opacity-100" : "opacity-0",
-              ].join(" ")}
-            />
-
-            <aside
-              id="sky-ro-mobile-drawer-home"
-              className={[
-                "absolute right-0 top-0 z-[150] flex h-full w-[min(88vw,360px)] flex-col overflow-hidden border-l border-white/30 bg-white/[0.10] p-4 ring-1 ring-white/20 shadow-[-16px_0_48px_rgba(0,0,0,0.35)] backdrop-blur-[22px] supports-[backdrop-filter]:bg-white/[0.08] transition-transform duration-300",
-                mobileMenuOpen ? "translate-x-0" : "translate-x-full",
-              ].join(" ")}
-            >
-              <div className="flex items-center justify-between">
-                <p className="text-[11px] uppercase tracking-[0.2em] text-white/58">Navigație</p>
+        {hasMounted
+          ? createPortal(
+              <div
+                className={[
+                  "fixed inset-0 z-[120] md:hidden",
+                  mobileMenuOpen ? "pointer-events-auto" : "pointer-events-none",
+                ].join(" ")}
+              >
                 <button
                   type="button"
+                  aria-label="Închide meniul"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/16 bg-white/[0.04] text-lg leading-none text-white/86 transition hover:border-white/28 hover:bg-white/[0.1]"
-                  aria-label="Închide"
-                >
-                  ×
-                </button>
-              </div>
+                  className={[
+                    "absolute inset-0 z-[120] bg-black/50 backdrop-blur-[2px] transition-opacity duration-300",
+                    mobileMenuOpen ? "opacity-100" : "opacity-0",
+                  ].join(" ")}
+                />
 
-              <nav className="mt-4 grid gap-2.5">
-                {navLinks.map((link, index) => {
-                  const isActive = pathname === link.href;
-                  return (
-                    <Link
-                      key={`drawer-${link.href}`}
-                      href={link.href}
+                <aside
+                  id="sky-ro-mobile-drawer-home"
+                  className={[
+                    "absolute right-0 top-0 z-[130] flex h-full w-[min(88vw,360px)] flex-col overflow-hidden border-l border-white/30 bg-white/[0.10] p-4 ring-1 ring-white/20 shadow-[-16px_0_48px_rgba(0,0,0,0.35)] backdrop-blur-[22px] supports-[backdrop-filter]:bg-white/[0.08] transition-transform duration-300",
+                    mobileMenuOpen ? "translate-x-0" : "translate-x-full",
+                  ].join(" ")}
+                >
+                  <div className="flex items-center justify-between">
+                    <p className="text-[11px] uppercase tracking-[0.2em] text-white/58">Navigație</p>
+                    <button
+                      type="button"
                       onClick={() => setMobileMenuOpen(false)}
-                      className={[
-                        "rounded-2xl border px-4 py-3 transition",
-                        isActive
-                          ? "border-white/34 bg-white/[0.12]"
-                          : "border-white/12 bg-white/[0.03] hover:border-white/26 hover:bg-white/[0.08]",
-                      ].join(" ")}
+                      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/16 bg-white/[0.04] text-lg leading-none text-white/86 transition hover:border-white/28 hover:bg-white/[0.1]"
+                      aria-label="Închide"
                     >
-                      <p className="text-[10px] uppercase tracking-[0.18em] text-white/46">0{index + 1}</p>
-                      <p className="mt-1 text-sm font-medium text-white/90">{link.label}</p>
-                    </Link>
-                  );
-                })}
-              </nav>
+                      ×
+                    </button>
+                  </div>
 
-              <div className="mt-auto grid gap-2.5 pt-5">
-                <a
-                  href="#contact"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="inline-flex h-11 items-center justify-center rounded-full bg-white px-5 text-sm font-medium text-black transition hover:bg-white/90"
-                >
-                  {shared.headerStartLabel}
-                </a>
-                <a
-                  href="#work"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="inline-flex h-11 items-center justify-center rounded-full border border-white/20 bg-white/[0.04] px-5 text-sm font-medium text-white transition hover:border-white/32 hover:bg-white/[0.1]"
-                >
-                  {siteText.home.hero.primaryCta}
-                </a>
-              </div>
-            </aside>
-          </div>
-        </header>
+                  <nav className="mt-4 grid gap-2.5">
+                    {navLinks.map((link, index) => {
+                      const isActive = pathname === link.href;
+                      return (
+                        <Link
+                          key={`drawer-${link.href}`}
+                          href={link.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className={[
+                            "rounded-2xl border px-4 py-3 transition",
+                            isActive
+                              ? "border-white/34 bg-white/[0.12]"
+                              : "border-white/12 bg-white/[0.03] hover:border-white/26 hover:bg-white/[0.08]",
+                          ].join(" ")}
+                        >
+                          <p className="text-[10px] uppercase tracking-[0.18em] text-white/46">0{index + 1}</p>
+                          <p className="mt-1 text-sm font-medium text-white/90">{link.label}</p>
+                        </Link>
+                      );
+                    })}
+                  </nav>
+
+                  <div className="mt-auto grid gap-2.5 pt-5">
+                    <a
+                      href="#contact"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="inline-flex h-11 items-center justify-center rounded-full bg-white px-5 text-sm font-medium text-black transition hover:bg-white/90"
+                    >
+                      {shared.headerStartLabel}
+                    </a>
+                    <a
+                      href="#work"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="inline-flex h-11 items-center justify-center rounded-full border border-white/20 bg-white/[0.04] px-5 text-sm font-medium text-white transition hover:border-white/32 hover:bg-white/[0.1]"
+                    >
+                      {siteText.home.hero.primaryCta}
+                    </a>
+                  </div>
+                </aside>
+              </div>,
+              document.body,
+            )
+          : null}
 
         <main>
           <Hero />
