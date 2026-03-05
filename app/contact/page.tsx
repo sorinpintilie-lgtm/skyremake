@@ -24,9 +24,9 @@ export default function ContactPage() {
     event.preventDefault();
     if (!email.trim() || !brief.trim()) return;
 
-    const subject = encodeURIComponent(`Cerere proiect | ${name.trim() || "Brief nou"}`);
+    const subject = encodeURIComponent(`Solicitare proiect | ${name.trim() || "Brief nou"}`);
     const body = encodeURIComponent(
-      `Nume: ${name.trim() || "Necompletat"}\nEmail: ${email.trim()}\n\nBrief:\n${brief.trim()}\n\nAș vrea să discut acest proiect cu Sky.`,
+      `Nume: ${name.trim() || "Necompletat"}\nEmail: ${email.trim()}\n\nBrief:\n${brief.trim()}\n\nVreau să discut acest proiect cu echipa Sky.`,
     );
 
     window.location.href = `mailto:hello@sky.ro?subject=${subject}&body=${body}`;

@@ -544,9 +544,9 @@ function Contact() {
     event.preventDefault();
     if (!quickEmail.trim()) return;
 
-    const subject = encodeURIComponent(`Cerere proiect | ${quickName.trim() || "Brief website"}`);
+    const subject = encodeURIComponent(`Solicitare proiect | ${quickName.trim() || "Brief nou"}`);
     const body = encodeURIComponent(
-      `Nume: ${quickName.trim() || "Necompletat"}\nEmail: ${quickEmail.trim()}\n\nSpune-ne ce construiești și ce înseamnă succes pentru tine.`,
+      `Nume: ${quickName.trim() || "Necompletat"}\nEmail: ${quickEmail.trim()}\n\nDescrie pe scurt ce vrei să construiești și ce rezultat urmărești.`,
     );
 
     window.location.href = `mailto:hello@sky.ro?subject=${subject}&body=${body}`;
@@ -621,6 +621,32 @@ function Contact() {
 export default function Page() {
   const pathname = usePathname();
   const shared = siteText.shared;
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
+
+  React.useEffect(() => {
+    if (!mobileMenuOpen || typeof window === "undefined") return;
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMobileMenuOpen(false);
+    };
+
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, [mobileMenuOpen]);
+
+  React.useEffect(() => {
+    if (typeof document === "undefined") return;
+    const { body } = document;
+    const previousOverflow = body.style.overflow;
+    if (mobileMenuOpen) body.style.overflow = "hidden";
+    return () => {
+      body.style.overflow = previousOverflow;
+    };
+  }, [mobileMenuOpen]);
 
   React.useEffect(() => {
     if (typeof window === "undefined") return;
@@ -666,31 +692,119 @@ export default function Page() {
                 })}
               </nav>
 
-              <Button href="#contact" ghost>
-                {shared.headerStartLabel}
-              </Button>
-            </div>
+              <div className="hidden md:block">
+                <Button href="#contact" ghost>
+                  {shared.headerStartLabel}
+                </Button>
+              </div>
 
-            <div className="mobile-snap-row -mx-1 flex gap-2 overflow-x-auto pb-2 pl-1 pr-1 md:hidden">
-              {navLinks.map((link) => {
-                const isActive = pathname === link.href;
-                return (
-                  <Link
-                    key={`mobile-${link.href}`}
-                    href={link.href}
+              <button
+                type="button"
+                aria-label={mobileMenuOpen ? "Închide meniul" : "Deschide meniul"}
+                aria-expanded={mobileMenuOpen}
+                aria-controls="sky-ro-mobile-drawer-home"
+                onClick={() => setMobileMenuOpen((prev) => !prev)}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/16 bg-white/[0.04] text-white transition hover:border-white/26 hover:bg-white/[0.1] md:hidden"
+              >
+                <span className="relative block h-4 w-4">
+                  <span
                     className={[
-                      "mobile-snap-card shrink-0 rounded-full border px-3.5 py-1.5 text-xs font-medium tracking-[0.01em]",
-                      isActive
-                        ? "border-white/34 bg-white/[0.12] text-white"
-                        : "border-white/16 bg-white/[0.04] text-white/78",
+                      "absolute left-0 top-0.5 h-[1.5px] w-4 bg-white transition-transform duration-300",
+                      mobileMenuOpen ? "translate-y-[5px] rotate-45" : "",
                     ].join(" ")}
-                  >
-                    {link.label}
-                  </Link>
-                );
-              })}
+                  />
+                  <span
+                    className={[
+                      "absolute left-0 top-[7px] h-[1.5px] w-4 bg-white transition-opacity duration-200",
+                      mobileMenuOpen ? "opacity-0" : "opacity-100",
+                    ].join(" ")}
+                  />
+                  <span
+                    className={[
+                      "absolute left-0 top-[13px] h-[1.5px] w-4 bg-white transition-transform duration-300",
+                      mobileMenuOpen ? "-translate-y-[7px] -rotate-45" : "",
+                    ].join(" ")}
+                  />
+                </span>
+              </button>
             </div>
           </Container>
+
+          <div
+            className={[
+              "fixed inset-0 z-[70] md:hidden",
+              mobileMenuOpen ? "pointer-events-auto" : "pointer-events-none",
+            ].join(" ")}
+          >
+            <button
+              type="button"
+              aria-label="Închide meniul"
+              onClick={() => setMobileMenuOpen(false)}
+              className={[
+                "absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-300",
+                mobileMenuOpen ? "opacity-100" : "opacity-0",
+              ].join(" ")}
+            />
+
+            <aside
+              id="sky-ro-mobile-drawer-home"
+              className={[
+                "absolute right-0 top-0 flex h-full w-[min(88vw,360px)] flex-col border-l border-white/12 bg-[#050505]/95 p-4 shadow-[-16px_0_48px_rgba(0,0,0,0.45)] transition-transform duration-300",
+                mobileMenuOpen ? "translate-x-0" : "translate-x-full",
+              ].join(" ")}
+            >
+              <div className="flex items-center justify-between">
+                <p className="text-[11px] uppercase tracking-[0.2em] text-white/58">Navigație</p>
+                <button
+                  type="button"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/16 bg-white/[0.04] text-lg leading-none text-white/86 transition hover:border-white/28 hover:bg-white/[0.1]"
+                  aria-label="Închide"
+                >
+                  ×
+                </button>
+              </div>
+
+              <nav className="mt-4 grid gap-2.5">
+                {navLinks.map((link, index) => {
+                  const isActive = pathname === link.href;
+                  return (
+                    <Link
+                      key={`drawer-${link.href}`}
+                      href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={[
+                        "rounded-2xl border px-4 py-3 transition",
+                        isActive
+                          ? "border-white/34 bg-white/[0.12]"
+                          : "border-white/12 bg-white/[0.03] hover:border-white/26 hover:bg-white/[0.08]",
+                      ].join(" ")}
+                    >
+                      <p className="text-[10px] uppercase tracking-[0.18em] text-white/46">0{index + 1}</p>
+                      <p className="mt-1 text-sm font-medium text-white/90">{link.label}</p>
+                    </Link>
+                  );
+                })}
+              </nav>
+
+              <div className="mt-auto grid gap-2.5 pt-5">
+                <a
+                  href="#contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="inline-flex h-11 items-center justify-center rounded-full bg-white px-5 text-sm font-medium text-black transition hover:bg-white/90"
+                >
+                  {shared.headerStartLabel}
+                </a>
+                <a
+                  href="#work"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="inline-flex h-11 items-center justify-center rounded-full border border-white/20 bg-white/[0.04] px-5 text-sm font-medium text-white transition hover:border-white/32 hover:bg-white/[0.1]"
+                >
+                  {siteText.home.hero.primaryCta}
+                </a>
+              </div>
+            </aside>
+          </div>
         </header>
 
         <main>
