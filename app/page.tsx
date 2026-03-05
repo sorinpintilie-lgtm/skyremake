@@ -99,12 +99,12 @@ function Hero() {
       />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[78vh] bg-[radial-gradient(72%_62%_at_50%_0%,rgba(255,255,255,0.16),rgba(255,255,255,0.04)_26%,rgba(0,0,0,0)_62%)]" />
       <Container>
-        <div className="mobile-snap-row relative z-10 -mx-1 flex items-end gap-3 overflow-x-auto px-1 pb-10 pt-8 sm:mx-0 sm:grid sm:grid-cols-6 sm:gap-8 sm:overflow-visible sm:px-0 sm:pb-14 sm:pt-12 lg:grid-cols-12">
+        <div className="relative z-10 grid grid-cols-1 items-end gap-6 pb-10 pt-8 sm:grid-cols-6 sm:gap-8 sm:pb-14 sm:pt-12 lg:grid-cols-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={m.t(0.04, 1)}
-            className="mobile-snap-card min-w-[92%] shrink-0 rounded-[24px] border border-white/10 bg-black/34 p-4 backdrop-blur sm:col-span-4 sm:min-w-0 sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-none lg:col-span-7"
+            className="rounded-[24px] border border-white/10 bg-black/34 p-4 backdrop-blur sm:col-span-4 sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-none lg:col-span-7"
           >
             {hasHeroEyebrow ? <div className="text-xs uppercase tracking-[0.28em] text-white/60">{hero.eyebrow}</div> : null}
             <h1
@@ -145,7 +145,7 @@ function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={m.t(0.12, 1)}
-            className="reveal-blur mobile-snap-card min-w-[76%] shrink-0 sm:col-span-2 sm:min-w-0 lg:col-span-5"
+            className="reveal-blur sm:col-span-2 lg:col-span-5"
           >
             <div className="relative aspect-[4/5] overflow-hidden rounded-[24px] sm:aspect-[4/5]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
