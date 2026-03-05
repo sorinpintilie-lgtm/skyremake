@@ -1,11 +1,26 @@
 {
   "shared": {
     "navLinks": [
-      { "href": "/", "label": "Acasă" },
-      { "href": "/who-we-are", "label": "Cine suntem" },
-      { "href": "/what-we-do", "label": "Ce facem" },
-      { "href": "/work", "label": "Portofoliu" },
-      { "href": "/contact", "label": "Contact" }
+      {
+        "href": "/",
+        "label": "Acasă"
+      },
+      {
+        "href": "/who-we-are",
+        "label": "Cine suntem"
+      },
+      {
+        "href": "/what-we-do",
+        "label": "Ce facem"
+      },
+      {
+        "href": "/work",
+        "label": "Portofoliu"
+      },
+      {
+        "href": "/contact",
+        "label": "Contact"
+      }
     ],
     "headerStartLabel": "Începe",
     "footer": {
@@ -68,7 +83,10 @@
       "secondaryCta": "Începe un proiect",
       "meta": "Construim magazine online și site-uri de prezentare clare, rapide și ușor de folosit.",
       "note": "Răspundem în mai puțin de 24 de ore",
-      "mobilePills": ["Structură clară", "Comportament bun pe mobil"],
+      "mobilePills": [
+        "Structură clară",
+        "Comportament bun pe mobil"
+      ],
       "imageTag": "Interfață",
       "imageNote": "Textul și imaginea rămân lizibile pe toate dimensiunile de ecran."
     },
@@ -83,14 +101,32 @@
       "body": "Planificare, sistem vizual, dezvoltare și verificare într-un proces clar.",
       "workedWithTitle": "Am colaborat cu",
       "workedWith": [
-        { "name": "5Dent Clinic", "mark": "5D" },
-        { "name": "HR Fluent", "mark": "HF" },
-        { "name": "Dacus.ro", "mark": "DC" }
+        {
+          "name": "5Dent Clinic",
+          "mark": "5D"
+        },
+        {
+          "name": "HR Fluent",
+          "mark": "HF"
+        },
+        {
+          "name": "Dacus.ro",
+          "mark": "DC"
+        }
       ],
       "metrics": [
-        { "value": "34%", "label": "creștere a cererilor, în proiecte recente" },
-        { "value": "2,2s", "label": "țintă de încărcare pe mobil" },
-        { "value": "20+", "label": "proiecte publicate" }
+        {
+          "value": "34%",
+          "label": "creștere a cererilor, în proiecte recente"
+        },
+        {
+          "value": "2,2s",
+          "label": "țintă de încărcare pe mobil"
+        },
+        {
+          "value": "20+",
+          "label": "proiecte publicate"
+        }
       ],
       "quote": "Procesul a rămas clar și stabil de la prima discuție până la publicare.",
       "quoteAuthor": "Fondator, magazin online"
@@ -213,25 +249,42 @@
           "img": "/discover.png",
           "title": "Planificăm",
           "summary": "Pornim de la obiectiv, public și context.",
-          "chips": ["Discuție", "Analiză", "Poziționare"]
+          "chips": [
+            "Discuție",
+            "Analiză",
+            "Poziționare"
+          ]
         },
         {
           "img": "/Shape.png",
           "title": "Structurăm",
           "summary": "Stabilim structura paginilor și regulile de prezentare.",
-          "chips": ["Structură", "Schițe", "Sistem vizual"]
+          "chips": [
+            "Structură",
+            "Schițe",
+            "Sistem vizual"
+          ]
         },
         {
           "img": "/bulid.png",
           "title": "Construim",
           "summary": "Dezvoltăm, verificăm și pregătim publicarea.",
-          "chips": ["Dezvoltare", "Verificare", "Măsurare", "Căutare"]
+          "chips": [
+            "Dezvoltare",
+            "Verificare",
+            "Măsurare",
+            "Căutare"
+          ]
         },
         {
           "img": "/lunch.png",
           "title": "Publicăm",
           "summary": "Lansăm și urmărim folosirea în situații reale.",
-          "chips": ["Publicare", "Instruire", "Ajustări"]
+          "chips": [
+            "Publicare",
+            "Instruire",
+            "Ajustări"
+          ]
         }
       ]
     },
@@ -240,9 +293,18 @@
       "title": "Spune-ne ce vrei să construiești.",
       "body": "Trimite contextul și obiectivul. Îți răspundem cu o direcție clară.",
       "buttons": [
-        { "href": "mailto:hello@sky.ro", "label": "Scrie-ne" },
-        { "href": "https://wa.me/40700000000?text=Salut%20Sky%2C%20vreau%20sa%20incep%20un%20proiect.", "label": "Mesaj" },
-        { "href": "https://cal.com/sky/fit-call", "label": "Programează" }
+        {
+          "href": "mailto:hello@sky.ro",
+          "label": "Scrie-ne"
+        },
+        {
+          "href": "https://wa.me/40700000000?text=Salut%20Sky%2C%20vreau%20sa%20incep%20un%20proiect.",
+          "label": "Mesaj"
+        },
+        {
+          "href": "https://cal.com/sky/fit-call",
+          "label": "Programează"
+        }
       ],
       "quickForm": {
         "namePlaceholder": "Nume",
@@ -261,9 +323,18 @@
       "secondaryCta": "Vezi serviciile",
       "heroBadge": "Echipă",
       "heroStats": [
-        { "value": "Experiență aplicată", "label": "Echipă specializată" },
-        { "value": "70+", "label": "Proiecte livrate" },
-        { "value": "Asumare completă", "label": "De la strategie la lansare" }
+        {
+          "value": "Experiență aplicată",
+          "label": "Echipă specializată"
+        },
+        {
+          "value": "70+",
+          "label": "Proiecte livrate"
+        },
+        {
+          "value": "Asumare completă",
+          "label": "De la strategie la lansare"
+        }
       ],
       "heroPoints": [
         "Comunici direct cu echipa care gestionează proiectul.",
@@ -314,10 +385,22 @@
       "howWeWorkTitle": "Etape scurte, reacție rapidă.",
       "howWeWorkBody": "Înțelegere, direcție, implementare, verificare și ajustare.",
       "flow": [
-        { "label": "Înțelegere", "copy": "Obiectiv, public, context" },
-        { "label": "Direcție", "copy": "Structură, mesaj, priorități" },
-        { "label": "Implementare", "copy": "Proiectare și dezvoltare" },
-        { "label": "Ajustare", "copy": "Măsurare și îmbunătățiri" }
+        {
+          "label": "Înțelegere",
+          "copy": "Obiectiv, public, context"
+        },
+        {
+          "label": "Direcție",
+          "copy": "Structură, mesaj, priorități"
+        },
+        {
+          "label": "Implementare",
+          "copy": "Proiectare și dezvoltare"
+        },
+        {
+          "label": "Ajustare",
+          "copy": "Măsurare și îmbunătățiri"
+        }
       ],
       "cta": "Vezi portofoliul"
     },
@@ -327,7 +410,11 @@
       "description": "Lucrăm cu obiective clare, pași asumați și verificări constante.",
       "quote": "Am avut claritate în fiecare etapă, iar lansarea s-a desfășurat fără blocaje.",
       "author": "Manager operațional, clinică dentară",
-      "stats": ["70+ proiecte livrate", "Echipă specializată", "Proiecte în România și Uniunea Europeană"]
+      "stats": [
+        "70+ proiecte livrate",
+        "Echipă specializată",
+        "Proiecte în România și Uniunea Europeană"
+      ]
     },
     "culture": {
       "eyebrow": "Cultură",
@@ -344,9 +431,18 @@
       "secondaryCta": "Vezi exemple",
       "heroBadge": "Etape",
       "heroStats": [
-        { "value": "Etape principale", "label": "4" },
-        { "value": "Proces unitar", "label": "1" },
-        { "value": "Decizii întâmplătoare", "label": "0" }
+        {
+          "value": "Etape principale",
+          "label": "4"
+        },
+        {
+          "value": "Proces unitar",
+          "label": "1"
+        },
+        {
+          "value": "Decizii întâmplătoare",
+          "label": "0"
+        }
       ],
       "heroPoints": [
         "Stabilim mesajul înainte de proiectarea interfețelor.",
@@ -363,15 +459,27 @@
     "serviceColumns": [
       {
         "title": "Site-uri de prezentare",
-        "points": ["Mesaj clar", "Structură ușor de parcurs", "Pași de contact vizibili"]
+        "points": [
+          "Mesaj clar",
+          "Structură ușor de parcurs",
+          "Pași de contact vizibili"
+        ]
       },
       {
         "title": "Platforme de conținut",
-        "points": ["Secțiuni ordonate", "Fluxuri mai complexe", "Administrare clară"]
+        "points": [
+          "Secțiuni ordonate",
+          "Fluxuri mai complexe",
+          "Administrare clară"
+        ]
       },
       {
         "title": "Îmbunătățire continuă",
-        "points": ["Viteză de încărcare", "Vizibilitate în căutare", "Decizii pe date"]
+        "points": [
+          "Viteză de încărcare",
+          "Vizibilitate în căutare",
+          "Decizii pe date"
+        ]
       }
     ],
     "statsCards": [
@@ -442,9 +550,18 @@
       "secondaryCta": "Vezi serviciile",
       "heroBadge": "Selecție",
       "heroStats": [
-        { "value": "70+", "label": "Site-uri publicate" },
-        { "value": "Mai multe", "label": "Domenii" },
-        { "value": "Relevante", "label": "Proiecte de referință" }
+        {
+          "value": "70+",
+          "label": "Site-uri publicate"
+        },
+        {
+          "value": "Mai multe",
+          "label": "Domenii"
+        },
+        {
+          "value": "Relevante",
+          "label": "Proiecte de referință"
+        }
       ],
       "heroPoints": [
         "Fiecare proiect pune accent pe claritate și parcurs logic.",
@@ -459,18 +576,371 @@
       "description": "Fiecare element trimite către un proiect publicat sau către un rezultat relevant."
     },
     "featuredWork": [
-      { "link": "https://haionline.ro", "title": "haionline.ro", "description": "Platformă digitală extinsă" },
-      { "link": "https://dacus.ro", "title": "dacus.ro", "description": "Magazin online" },
-      { "link": "https://drdent.ro", "title": "drdent.ro", "description": "Clinică dentară" },
-      { "link": "https://hrfluent.com", "title": "hrfluent.com", "description": "Servicii pentru companii" },
-      { "link": "https://pilotcenter.net", "title": "pilotcenter.net", "description": "Instruire" },
-      { "link": "https://enumismatica.ro", "title": "enumismatica.ro", "description": "Produs de nișă" },
-      { "link": "https://5dent.haionline.ro", "title": "5dent.haionline.ro", "description": "Proiect medical" },
-      { "link": "https://clinicilepink.haionline.ro", "title": "clinicilepink.haionline.ro", "description": "Proiect medical" },
-      { "link": "https://prolife.haionline.ro", "title": "prolife.haionline.ro", "description": "Pagini pentru cereri" },
-      { "link": "https://ultraestetic.haionline.ro", "title": "ultraestetic.haionline.ro", "description": "Servicii de estetică" },
-      { "link": "https://worlddentistry.haionline.ro", "title": "worlddentistry.haionline.ro", "description": "Clinică" },
-      { "link": "https://ringabell.ro", "title": "ringabell.ro", "description": "Magazin online" }
+      {
+        "link": "https://haionline.ro",
+        "title": "haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://5dent.haionline.ro",
+        "title": "5dent.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://abtdental.haionline.ro",
+        "title": "abtdental.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://agident.haionline.ro",
+        "title": "agident.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://asociatiapensionariloritalieni.haionline.ro",
+        "title": "asociatiapensionariloritalieni.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://artz-dent.haionline.ro",
+        "title": "artz-dent.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://avocatgeaninadragu.haionline.ro",
+        "title": "avocatgeaninadragu.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://beautyskin.haionline.ro",
+        "title": "beautyskin.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://biocaredental.haionline.ro",
+        "title": "biocaredental.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://casaardeleana.haionline.ro",
+        "title": "casaardeleana.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://cascodentar.haionline.ro",
+        "title": "cascodentar.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://casemodularebuzau.haionline.ro",
+        "title": "casemodularebuzau.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://clinicilepink.haionline.ro",
+        "title": "clinicilepink.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://companiamica.haionline.ro",
+        "title": "companiamica.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://constructiidurabile.haionline.ro",
+        "title": "constructiidurabile.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://dadudental.haionline.ro",
+        "title": "dadudental.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://deosdental.haionline.ro",
+        "title": "deosdental.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://dentimar.haionline.ro",
+        "title": "dentimar.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://dentone.haionline.ro",
+        "title": "dentone.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://dianabeauty.haionline.ro",
+        "title": "dianabeauty.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://dianaciobanu.haionline.ro",
+        "title": "dianaciobanu.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://doctordezambete.haionline.ro",
+        "title": "doctordezambete.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://dpdental.haionline.ro",
+        "title": "dpdental.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://drbogdan.haionline.ro",
+        "title": "drbogdan.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://drdameh.haionline.ro",
+        "title": "drdameh.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://drgheorghiade.haionline.ro",
+        "title": "drgheorghiade.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://dristordent.haionline.ro",
+        "title": "dristordent.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://duodent.haionline.ro",
+        "title": "duodent.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://estheticdentalcenter.haionline.ro",
+        "title": "estheticdentalcenter.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://eviakids.haionline.ro",
+        "title": "eviakids.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://factorysalon.haionline.ro",
+        "title": "factorysalon.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://flordent.haionline.ro",
+        "title": "flordent.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://getnic.haionline.ro",
+        "title": "getnic.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://glambody.haionline.ro",
+        "title": "glambody.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://gradinitaoac.haionline.ro",
+        "title": "gradinitaoac.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://gradinitasteaua.haionline.ro",
+        "title": "gradinitasteaua.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://hopsieu.haionline.ro",
+        "title": "hopsieu.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://ifloribucuresti.haionline.ro",
+        "title": "ifloribucuresti.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://iratruck.haionline.ro",
+        "title": "iratruck.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://jigaudentalclinic.haionline.ro",
+        "title": "jigaudentalclinic.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://kidsco.haionline.ro",
+        "title": "kidsco.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://kinetoperfect.haionline.ro",
+        "title": "kinetoperfect.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://mikodental.haionline.ro",
+        "title": "mikodental.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://miradent.haionline.ro",
+        "title": "miradent.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://numeris.haionline.ro",
+        "title": "numeris.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://optica87.haionline.ro",
+        "title": "optica87.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://pinkup.haionline.ro",
+        "title": "pinkup.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://prolife.haionline.ro",
+        "title": "prolife.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://quantica720.haionline.ro",
+        "title": "quantica720.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://rana-art-dent.haionline.ro",
+        "title": "rana-art-dent.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://renartdesign.haionline.ro",
+        "title": "renartdesign.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://restaurantnicoresti.haionline.ro",
+        "title": "restaurantnicoresti.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://saloneliza.haionline.ro",
+        "title": "saloneliza.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://salonmalibu.haionline.ro",
+        "title": "salonmalibu.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://salonnicol.haionline.ro",
+        "title": "salonnicol.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://scoaladebeauty.haionline.ro",
+        "title": "scoaladebeauty.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://sebdental.haionline.ro",
+        "title": "sebdental.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://sunnylandkids.haionline.ro",
+        "title": "sunnylandkids.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://ultraestetic.haionline.ro",
+        "title": "ultraestetic.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://ultimeledorinte.haionline.ro",
+        "title": "ultimeledorinte.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://vanestetic.haionline.ro",
+        "title": "vanestetic.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://vitaldent.haionline.ro",
+        "title": "vitaldent.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://worlddentistry.haionline.ro",
+        "title": "worlddentistry.haionline.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://salonbeautyarena.ro",
+        "title": "salonbeautyarena.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://drdent.ro",
+        "title": "drdent.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://hrfluent.com",
+        "title": "hrfluent.com",
+        "description": "Published website"
+      },
+      {
+        "link": "https://clubulzambetelor.ro",
+        "title": "clubulzambetelor.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://ringabell.ro",
+        "title": "ringabell.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://pilotcenter.net",
+        "title": "pilotcenter.net",
+        "description": "Published website"
+      },
+      {
+        "link": "https://muzicapentruviata.ro",
+        "title": "muzicapentruviata.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://realview3d.ro",
+        "title": "realview3d.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://enumismatica.ro",
+        "title": "enumismatica.ro",
+        "description": "Published website"
+      },
+      {
+        "link": "https://avidobakery.ro",
+        "title": "avidobakery.ro",
+        "description": "Published website"
+      }
     ],
     "outcomes": {
       "eyebrow": "Rezultate",
@@ -552,9 +1022,18 @@
       "secondaryCta": "Vezi echipa",
       "heroBadge": "Mesaj inițial",
       "heroStats": [
-        { "value": "Răspuns în aceeași zi lucrătoare", "label": "Timp de răspuns" },
-        { "value": "Comunicare directă cu echipa", "label": "Interacțiune" },
-        { "value": "Pași clari pentru început", "label": "Direcție" }
+        {
+          "value": "Răspuns în aceeași zi lucrătoare",
+          "label": "Timp de răspuns"
+        },
+        {
+          "value": "Comunicare directă cu echipa",
+          "label": "Interacțiune"
+        },
+        {
+          "value": "Pași clari pentru început",
+          "label": "Direcție"
+        }
       ],
       "heroPoints": [
         "Descrie obiectivul și termenul dorit.",
