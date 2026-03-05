@@ -741,7 +741,7 @@ export default function Page() {
               aria-label="Închide meniul"
               onClick={() => setMobileMenuOpen(false)}
               className={[
-                "absolute inset-0 z-[70] bg-black/72 backdrop-blur-sm transition-opacity duration-300",
+                "absolute inset-0 z-[70] bg-black/50 backdrop-blur-[2px] transition-opacity duration-300",
                 mobileMenuOpen ? "opacity-100" : "opacity-0",
               ].join(" ")}
             />
@@ -749,7 +749,7 @@ export default function Page() {
             <aside
               id="sky-ro-mobile-drawer-home"
               className={[
-                "absolute right-0 top-0 z-[80] flex h-full w-[min(88vw,360px)] flex-col border-l border-white/20 bg-black/95 p-4 ring-1 ring-white/10 shadow-[-16px_0_48px_rgba(0,0,0,0.45)] backdrop-blur-2xl transition-transform duration-300",
+                "absolute right-0 top-0 z-[80] flex h-full w-[min(88vw,360px)] flex-col overflow-hidden border-l border-white/30 bg-white/[0.10] p-4 ring-1 ring-white/20 shadow-[-16px_0_48px_rgba(0,0,0,0.35)] backdrop-blur-[22px] supports-[backdrop-filter]:bg-white/[0.08] transition-transform duration-300",
                 mobileMenuOpen ? "translate-x-0" : "translate-x-full",
               ].join(" ")}
             >
