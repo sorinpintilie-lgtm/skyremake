@@ -749,7 +749,7 @@ export default function Page() {
             <aside
               id="sky-ro-mobile-drawer-home"
               className={[
-                "absolute right-0 top-0 flex h-full w-[min(88vw,360px)] flex-col border-l border-white/12 bg-[#050505]/95 p-4 shadow-[-16px_0_48px_rgba(0,0,0,0.45)] transition-transform duration-300",
+                "absolute right-0 top-0 flex h-full w-[min(88vw,360px)] flex-col border-l border-white/12 bg-[rgba(5,5,5,0.96)] p-4 shadow-[-16px_0_48px_rgba(0,0,0,0.45)] backdrop-blur-2xl transition-transform duration-300",
                 mobileMenuOpen ? "translate-x-0" : "translate-x-full",
               ].join(" ")}
             >
