@@ -61,7 +61,7 @@
       {
         "color": "#000000",
         "title": "Legături între sisteme",
-        "description": "Site-ul comunică bine cu instrumentele folosite în activitatea zilnică.",
+        "description": "Ecosistemul digital comunică bine cu instrumentele folosite zilnic.",
         "label": "Conectare",
         "meta": "Date unite"
       },
@@ -77,11 +77,11 @@
   "home": {
     "hero": {
       "eyebrow": "",
-      "title": "Construim website-uri eficiente, rapide și orientate spre rezultate.",
-      "subhead": "Aliniem strategia, proiectarea și dezvoltarea astfel încât vizitatorii să înțeleagă rapid oferta și să facă următorul pas.",
+      "title": "Construim ecosisteme digitale care aduc rezultate.",
+      "subhead": "Unim strategia, website-ul, social media și campaniile ca oamenii să înțeleagă rapid oferta și să acționeze.",
       "primaryCta": "Vezi portofoliul",
       "secondaryCta": "Începe un proiect",
-      "meta": "Construim magazine online și site-uri de prezentare clare, rapide și ușor de folosit.",
+      "meta": "Website, social media, ads și funnel-uri clare, rapide și scalabile.",
       "note": "Răspundem în mai puțin de 24 de ore",
       "mobilePills": [
         "Structură clară",
@@ -458,7 +458,7 @@
     },
     "serviceColumns": [
       {
-        "title": "Site-uri de prezentare",
+        "title": "Website-uri & landing page-uri",
         "points": [
           "Mesaj clar",
           "Structură ușor de parcurs",
@@ -545,14 +545,14 @@
     "hero": {
       "pageLabel": "Portofoliu",
       "title": "Proiecte publicate, construite pentru rezultate.",
-      "description": "Selecție de site-uri și platforme din domenii diferite, cu rezultate observabile.",
+      "description": "Selecție de proiecte digitale: website-uri, social media, campanii și sisteme de creștere, cu rezultate observabile.",
       "primaryCta": "Vreau ceva similar",
       "secondaryCta": "Vezi serviciile",
       "heroBadge": "Selecție",
       "heroStats": [
         {
           "value": "70+",
-          "label": "Site-uri publicate"
+          "label": "Proiecte digitale lansate"
         },
         {
           "value": "Mai multe",
@@ -579,367 +579,367 @@
       {
         "link": "https://haionline.ro",
         "title": "haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://5dent.haionline.ro",
         "title": "5dent.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://abtdental.haionline.ro",
         "title": "abtdental.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://agident.haionline.ro",
         "title": "agident.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://asociatiapensionariloritalieni.haionline.ro",
         "title": "asociatiapensionariloritalieni.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://artz-dent.haionline.ro",
         "title": "artz-dent.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://avocatgeaninadragu.haionline.ro",
         "title": "avocatgeaninadragu.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://beautyskin.haionline.ro",
         "title": "beautyskin.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://biocaredental.haionline.ro",
         "title": "biocaredental.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://casaardeleana.haionline.ro",
         "title": "casaardeleana.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://cascodentar.haionline.ro",
         "title": "cascodentar.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://casemodularebuzau.haionline.ro",
         "title": "casemodularebuzau.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://clinicilepink.haionline.ro",
         "title": "clinicilepink.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://companiamica.haionline.ro",
         "title": "companiamica.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://constructiidurabile.haionline.ro",
         "title": "constructiidurabile.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://dadudental.haionline.ro",
         "title": "dadudental.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://deosdental.haionline.ro",
         "title": "deosdental.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://dentimar.haionline.ro",
         "title": "dentimar.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://dentone.haionline.ro",
         "title": "dentone.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://dianabeauty.haionline.ro",
         "title": "dianabeauty.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://dianaciobanu.haionline.ro",
         "title": "dianaciobanu.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://doctordezambete.haionline.ro",
         "title": "doctordezambete.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://dpdental.haionline.ro",
         "title": "dpdental.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://drbogdan.haionline.ro",
         "title": "drbogdan.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://drdameh.haionline.ro",
         "title": "drdameh.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://drgheorghiade.haionline.ro",
         "title": "drgheorghiade.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://dristordent.haionline.ro",
         "title": "dristordent.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://duodent.haionline.ro",
         "title": "duodent.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://estheticdentalcenter.haionline.ro",
         "title": "estheticdentalcenter.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://eviakids.haionline.ro",
         "title": "eviakids.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://factorysalon.haionline.ro",
         "title": "factorysalon.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://flordent.haionline.ro",
         "title": "flordent.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://getnic.haionline.ro",
         "title": "getnic.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://glambody.haionline.ro",
         "title": "glambody.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://gradinitaoac.haionline.ro",
         "title": "gradinitaoac.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://gradinitasteaua.haionline.ro",
         "title": "gradinitasteaua.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://hopsieu.haionline.ro",
         "title": "hopsieu.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://ifloribucuresti.haionline.ro",
         "title": "ifloribucuresti.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://iratruck.haionline.ro",
         "title": "iratruck.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://jigaudentalclinic.haionline.ro",
         "title": "jigaudentalclinic.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://kidsco.haionline.ro",
         "title": "kidsco.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://kinetoperfect.haionline.ro",
         "title": "kinetoperfect.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://mikodental.haionline.ro",
         "title": "mikodental.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://miradent.haionline.ro",
         "title": "miradent.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://numeris.haionline.ro",
         "title": "numeris.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://optica87.haionline.ro",
         "title": "optica87.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://pinkup.haionline.ro",
         "title": "pinkup.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://prolife.haionline.ro",
         "title": "prolife.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://quantica720.haionline.ro",
         "title": "quantica720.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://rana-art-dent.haionline.ro",
         "title": "rana-art-dent.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://renartdesign.haionline.ro",
         "title": "renartdesign.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://restaurantnicoresti.haionline.ro",
         "title": "restaurantnicoresti.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://saloneliza.haionline.ro",
         "title": "saloneliza.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://salonmalibu.haionline.ro",
         "title": "salonmalibu.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://salonnicol.haionline.ro",
         "title": "salonnicol.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://scoaladebeauty.haionline.ro",
         "title": "scoaladebeauty.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://sebdental.haionline.ro",
         "title": "sebdental.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://sunnylandkids.haionline.ro",
         "title": "sunnylandkids.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://ultraestetic.haionline.ro",
         "title": "ultraestetic.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://ultimeledorinte.haionline.ro",
         "title": "ultimeledorinte.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://vanestetic.haionline.ro",
         "title": "vanestetic.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://vitaldent.haionline.ro",
         "title": "vitaldent.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://worlddentistry.haionline.ro",
         "title": "worlddentistry.haionline.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://salonbeautyarena.ro",
         "title": "salonbeautyarena.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://drdent.ro",
         "title": "drdent.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://hrfluent.com",
         "title": "hrfluent.com",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://clubulzambetelor.ro",
         "title": "clubulzambetelor.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://ringabell.ro",
         "title": "ringabell.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://pilotcenter.net",
         "title": "pilotcenter.net",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://muzicapentruviata.ro",
         "title": "muzicapentruviata.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://realview3d.ro",
         "title": "realview3d.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://enumismatica.ro",
         "title": "enumismatica.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       },
       {
         "link": "https://avidobakery.ro",
         "title": "avidobakery.ro",
-        "description": "Published website"
+        "description": "Published digital project"
       }
     ],
     "outcomes": {
@@ -967,7 +967,7 @@
         {
           "name": "Enumismatica",
           "vertical": "Produs de nișă",
-          "shipped": "Refacere site de prezentare",
+          "shipped": "Refacere website + funnel",
           "result": "Mesaj mai clar pentru publicul potrivit",
           "href": "https://enumismatica.ro"
         },
@@ -1008,7 +1008,7 @@
       },
       {
         "title": "Stabilitate",
-        "body": "Site-ul rămâne funcțional în utilizare zilnică."
+        "body": "Ecosistemul digital rămâne stabil în utilizare zilnică."
       }
     ],
     "cta": "Începe proiectul"
