@@ -183,14 +183,14 @@ export default function SkyPageShell({
   const tonePanelLabel =
     heroBadge ??
     (heroTone === "identity"
-      ? "Studio profile"
+      ? "Profil echipă"
       : heroTone === "capabilities"
-        ? "Delivery architecture"
+        ? "Arhitectura livrării"
         : heroTone === "showcase"
-          ? "Live curation"
+          ? "Selecție activă"
           : heroTone === "contact"
-            ? "Concierge intake"
-            : "Sky signature");
+            ? "Preluare inițială"
+            : "Semnătura Sky");
 
   const trimmedStats = heroStats.slice(0, 3);
   const trimmedPoints = heroPoints.slice(0, 4);
@@ -398,7 +398,7 @@ export default function SkyPageShell({
                     >
                       <div className="relative aspect-[16/10] overflow-hidden rounded-[20px] sm:aspect-[4/5] sm:rounded-[24px]">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={heroImage} alt="Sky page visual" className="mono-ui-media h-full w-full object-cover" />
+                        <img src={heroImage} alt="Imagine pagină Sky" className="mono-ui-media h-full w-full object-cover" />
                         <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.84),rgba(0,0,0,0.16))]" />
                       </div>
                     </motion.div>
@@ -505,7 +505,7 @@ export default function SkyPageShell({
                       <div className="overflow-hidden rounded-[22px]">
                         <div className="relative aspect-[16/10] overflow-hidden sm:aspect-[3/4]">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={heroImage} alt="Sky page visual" className="mono-ui-media h-full w-full object-cover" />
+                          <img src={heroImage} alt="Imagine pagină Sky" className="mono-ui-media h-full w-full object-cover" />
                           <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.82),rgba(0,0,0,0.18))]" />
                         </div>
                         {heroNote && <p className="px-2 pb-1 pt-3 text-[11px] uppercase tracking-[0.22em] text-white/55">{heroNote}</p>}
@@ -526,7 +526,7 @@ export default function SkyPageShell({
                     className="relative overflow-hidden rounded-[24px] sm:rounded-[34px]"
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={heroImage} alt="Sky page visual" className="mono-ui-media absolute inset-0 h-full w-full object-cover" />
+                    <img src={heroImage} alt="Imagine pagină Sky" className="mono-ui-media absolute inset-0 h-full w-full object-cover" />
                     <div className="absolute inset-0 bg-[radial-gradient(58%_70%_at_75%_20%,rgba(255,255,255,0.12),rgba(255,255,255,0)),linear-gradient(to_top,rgba(0,0,0,0.93),rgba(0,0,0,0.34))]" />
 
                     <div className="relative grid min-h-[62svh] grid-cols-6 items-end gap-3 px-3 pb-4 pt-4 sm:min-h-[72svh] sm:grid-cols-12 sm:gap-8 sm:px-10 sm:pb-10 sm:pt-7">
@@ -621,13 +621,13 @@ export default function SkyPageShell({
                       <div className="flex h-full flex-col overflow-hidden">
                         <div className="relative overflow-hidden rounded-[22px]">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={heroImage} alt="Sky page visual" className="mono-ui-media h-[190px] w-full object-cover sm:h-[230px]" />
+                          <img src={heroImage} alt="Imagine pagină Sky" className="mono-ui-media h-[190px] w-full object-cover sm:h-[230px]" />
                           <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.88),rgba(0,0,0,0.2))]" />
                         </div>
 
                         {trimmedPoints.length > 0 ? (
                           <div className="mt-4 flex-1 rounded-[18px] border border-white/10 bg-black/35 p-4">
-                            <p className="text-[11px] uppercase tracking-[0.24em] text-white/56">{heroNote ?? "First contact flow"}</p>
+                            <p className="text-[11px] uppercase tracking-[0.24em] text-white/56">{heroNote ?? "Flux de prim contact"}</p>
                             <div className="mt-3 space-y-2.5">
                               {trimmedPoints.slice(0, 3).map((point) => (
                                 <div
@@ -690,7 +690,7 @@ export default function SkyPageShell({
                       )}
                       <div className="mt-5 overflow-hidden rounded-[18px]">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={heroImage} alt="Sky page visual" className="mono-ui-media h-28 w-full object-cover opacity-72 sm:h-32" />
+                        <img src={heroImage} alt="Imagine pagină Sky" className="mono-ui-media h-28 w-full object-cover opacity-72 sm:h-32" />
                       </div>
                     </div>
 
@@ -757,7 +757,7 @@ export default function SkyPageShell({
                     <div className="relative overflow-hidden rounded-[20px] sm:rounded-[24px]">
                       <div className="relative aspect-[16/10] overflow-hidden sm:aspect-[4/5]">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={heroImage} alt="Sky page visual" className="mono-ui-media h-full w-full object-cover" />
+                        <img src={heroImage} alt="Imagine pagină Sky" className="mono-ui-media h-full w-full object-cover" />
                         <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.82),rgba(0,0,0,0.08))]" />
                       </div>
                     </div>

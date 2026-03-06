@@ -24,7 +24,7 @@
     ],
     "headerStartLabel": "Începe",
     "footer": {
-      "kicker": "realizat de",
+      "kicker": "crafted in the clouds by",
       "copyright": "© 2026 SKY.RO™"
     }
   },
@@ -78,10 +78,10 @@
     "hero": {
       "eyebrow": "",
       "title": "Construim ecosisteme digitale care aduc rezultate.",
-      "subhead": "Unim strategia, website-ul, social media și campaniile ca oamenii să înțeleagă rapid oferta și să acționeze.",
+      "subhead": "Unim strategia, pagina web, comunicarea în rețele sociale și campaniile, ca oamenii să înțeleagă rapid oferta și să acționeze.",
       "primaryCta": "Vezi portofoliul",
       "secondaryCta": "Începe un proiect",
-      "meta": "Website, social media, ads și funnel-uri clare, rapide și scalabile.",
+      "meta": "Pagini web, comunicare în rețele sociale, reclame și trasee de conversie clare, rapide și scalabile.",
       "note": "Răspundem în mai puțin de 24 de ore",
       "mobilePills": [
         "Structură clară",
@@ -872,7 +872,7 @@
     },
     "serviceColumns": [
       {
-        "title": "Website-uri & landing page-uri",
+        "title": "Pagini web de prezentare și pagini de campanie",
         "points": [
           "Mesaj clar",
           "Structură ușor de parcurs",
@@ -959,7 +959,7 @@
     "hero": {
       "pageLabel": "Portofoliu",
       "title": "Proiecte publicate, construite pentru rezultate.",
-      "description": "Selecție de proiecte digitale: website-uri, social media, campanii și sisteme de creștere, cu rezultate observabile.",
+      "description": "Selecție de proiecte digitale: pagini web, comunicare în rețele sociale, campanii și sisteme de creștere, cu rezultate observabile.",
       "primaryCta": "Vreau ceva similar",
       "secondaryCta": "Vezi serviciile",
       "heroBadge": "Selecție",
@@ -1381,7 +1381,7 @@
         {
           "name": "Enumismatica",
           "vertical": "Produs de nișă",
-          "shipped": "Refacere website + funnel",
+          "shipped": "Refacere site + traseu de conversie",
           "result": "Mesaj mai clar pentru publicul potrivit",
           "href": "https://enumismatica.ro"
         },

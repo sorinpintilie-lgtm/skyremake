@@ -208,7 +208,7 @@ function BentoStory() {
               >
                 <div className="pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full bg-white/10 blur-2xl transition group-hover:bg-white/15" />
                 <div className="relative">
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-white/52">Client</p>
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-white/52">Partener</p>
                   <h4 className="mt-2 text-base font-semibold tracking-tight text-white/92">{client.name}</h4>
                   <div className="mt-3 inline-flex items-center rounded-full border border-white/18 bg-black/30 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/74">
                     {client.mark}
@@ -392,7 +392,7 @@ function StrategyCards() {
                 <h4 className="text-[1.35rem] font-semibold tracking-tight text-white sm:text-[1.55rem]">{card.title}</h4>
                 <p className="mt-3 text-[15px] leading-relaxed text-white/80 sm:text-base">{card.benefit}</p>
                 <p className="mt-4 text-[13px] leading-relaxed text-white/62 sm:text-sm">
-                  <span className="font-medium text-white/76">Indicator:</span> {card.proof}
+                  <span className="font-medium text-white/76">Dovadă:</span> {card.proof}
                 </p>
               </motion.article>
             ))}
@@ -436,28 +436,28 @@ function WhySky() {
 
 function PartnerLogoRail() {
   const logos = [
-    { src: "/logos/artisdenta logo.png", alt: "Client logo 01", href: "#work" },
-    { src: "/logos/eNumismatica.ro_logo.png", alt: "Client logo 02", href: "#work" },
-    { src: "/logos/favicon.png", alt: "Client logo 03", href: "#work" },
-    { src: "/logos/file_0000000004c461fdaddf55c47348a021.png", alt: "Client logo 04", href: "#work" },
-    { src: "/logos/fulllogo_transparent.avif", alt: "Client logo 05", href: "#work" },
-    { src: "/logos/IMG_2868 (2).PNG", alt: "Client logo 06", href: "#work" },
-    { src: "/logos/IMG_9812.png", alt: "Client logo 07", href: "#work" },
-    { src: "/logos/loglogo.png", alt: "Client logo 08", href: "#work" },
-    { src: "/logos/logo (1).png", alt: "Client logo 09", href: "#work" },
-    { src: "/logos/logo (2).png", alt: "Client logo 10", href: "#work" },
-    { src: "/logos/logo (3).png", alt: "Client logo 11", href: "#work" },
-    { src: "/logos/logo (5).png", alt: "Client logo 12", href: "#work" },
-    { src: "/logos/logo_2.png", alt: "Client logo 13", href: "#work" },
-    { src: "/logos/logo_bakery-removebg-preview.png", alt: "Client logo 14", href: "#work" },
-    { src: "/logos/logo_pink.png", alt: "Client logo 15", href: "#work" },
-    { src: "/logos/logo_v1_Școala de Beauty.png", alt: "Client logo 16", href: "#work" },
-    { src: "/logos/logo-color (1).svg", alt: "Client logo 17", href: "#work" },
-    { src: "/logos/logohr (1).png", alt: "Client logo 18", href: "#work" },
-    { src: "/logos/logooac.png", alt: "Client logo 19", href: "#work" },
-    { src: "/logos/profilo_metal_logo.png", alt: "Client logo 20", href: "#work" },
-    { src: "/logos/sba_logo.PNG", alt: "Client logo 21", href: "#work" },
-    { src: "/logos/Sdental.png", alt: "Client logo 22", href: "#work" },
+    { src: "/logos/artisdenta logo.png", alt: "Logo partener 01", href: "#work" },
+    { src: "/logos/eNumismatica.ro_logo.png", alt: "Logo partener 02", href: "#work" },
+    { src: "/logos/favicon.png", alt: "Logo partener 03", href: "#work" },
+    { src: "/logos/file_0000000004c461fdaddf55c47348a021.png", alt: "Logo partener 04", href: "#work" },
+    { src: "/logos/fulllogo_transparent.avif", alt: "Logo partener 05", href: "#work" },
+    { src: "/logos/IMG_2868 (2).PNG", alt: "Logo partener 06", href: "#work" },
+    { src: "/logos/IMG_9812.png", alt: "Logo partener 07", href: "#work" },
+    { src: "/logos/loglogo.png", alt: "Logo partener 08", href: "#work" },
+    { src: "/logos/logo (1).png", alt: "Logo partener 09", href: "#work" },
+    { src: "/logos/logo (2).png", alt: "Logo partener 10", href: "#work" },
+    { src: "/logos/logo (3).png", alt: "Logo partener 11", href: "#work" },
+    { src: "/logos/logo (5).png", alt: "Logo partener 12", href: "#work" },
+    { src: "/logos/logo_2.png", alt: "Logo partener 13", href: "#work" },
+    { src: "/logos/logo_bakery-removebg-preview.png", alt: "Logo partener 14", href: "#work" },
+    { src: "/logos/logo_pink.png", alt: "Logo partener 15", href: "#work" },
+    { src: "/logos/logo_v1_Școala de Beauty.png", alt: "Logo partener 16", href: "#work" },
+    { src: "/logos/logo-color (1).svg", alt: "Logo partener 17", href: "#work" },
+    { src: "/logos/logohr (1).png", alt: "Logo partener 18", href: "#work" },
+    { src: "/logos/logooac.png", alt: "Logo partener 19", href: "#work" },
+    { src: "/logos/profilo_metal_logo.png", alt: "Logo partener 20", href: "#work" },
+    { src: "/logos/sba_logo.PNG", alt: "Logo partener 21", href: "#work" },
+    { src: "/logos/Sdental.png", alt: "Logo partener 22", href: "#work" },
   ];
 
   return (
@@ -472,7 +472,7 @@ function PartnerLogoRail() {
             gap={56}
             hoverSpeed={0}
             className="logo-rail-uniform"
-            ariaLabel="Technology and delivery stack"
+            ariaLabel="Parteneri și tehnologii folosite"
           />
         </div>
       </Container>
