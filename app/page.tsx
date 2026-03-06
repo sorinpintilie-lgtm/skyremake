@@ -110,7 +110,7 @@ function Hero() {
             {hasHeroEyebrow ? <div className="text-xs uppercase tracking-[0.28em] text-white/60">{hero.eyebrow}</div> : null}
             <h1
               className={[
-                "text-balance text-[clamp(2.2rem,10.4vw,4.3rem)] font-semibold leading-[0.98] tracking-[-0.03em] text-white sm:text-7xl lg:text-8xl",
+                "text-balance text-[clamp(1.9rem,8.2vw,3.4rem)] font-semibold leading-[0.98] tracking-[-0.03em] text-white sm:text-5xl lg:text-6xl",
                 hasHeroEyebrow ? "mt-5 sm:mt-6" : "mt-0",
               ].join(" ")}
             >
@@ -317,6 +317,7 @@ function OrbitShowcase() {
     title: work.project,
     description: `${work.type} · ${work.outcome}`,
   }));
+  const listedWork = selectedWork.slice(0, 4);
 
   return (
     <section className="section-divider relative py-14 sm:py-18">
@@ -338,7 +339,7 @@ function OrbitShowcase() {
         </div>
 
         <div className="mobile-snap-row reveal-blur -mx-1 mt-5 flex gap-3 overflow-x-auto px-1 pb-1 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:overflow-visible sm:px-0 sm:pb-0 xl:grid-cols-4">
-          {selectedWork.map((work) => (
+          {listedWork.map((work) => (
             <article key={work.project} className="mobile-snap-card min-w-[82%] shrink-0 rounded-2xl border border-white/12 bg-black/36 p-4 sm:min-w-0">
               <p className="text-[11px] uppercase tracking-[0.16em] text-white/58">{work.type}</p>
               <h4 className="mt-2 text-xl font-semibold tracking-tight text-white">{work.project}</h4>
