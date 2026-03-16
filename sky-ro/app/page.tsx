@@ -169,75 +169,111 @@ function Hero() {
 function BentoStory() {
   const m = useMotion();
   const bento = siteText.home.bentoNarrative;
-  const workedWith = bento.workedWith;
-  const credibilityMetrics = bento.metrics;
+  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [brief, setBrief] = React.useState("");
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!email.trim()) return;
+    const subject = encodeURIComponent(`Proiect nou | ${name.trim() || "Brief"}`);
+    const body = encodeURIComponent(`Nume: ${name.trim() || "—"}\nEmail: ${email.trim()}\n\n${brief.trim() || "—"}`);
+    window.location.href = `mailto:hello@sky.ro?subject=${subject}&body=${body}`;
+  };
 
   return (
-    <section id="work" className="section-divider relative py-14 sm:py-18">
+    <section id="work" className="section-divider relative py-14 sm:py-20">
       <Container>
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-10%" }}
-          transition={m.t(0.03, 0.8)}
-          className="mb-8 text-center reveal-blur"
-        >
-          <div className="text-xs uppercase tracking-[0.28em] text-white/60">{bento.eyebrow}</div>
-          <h2 className="mt-4 text-balance text-4xl font-semibold tracking-[-0.03em] text-white sm:text-6xl">
-            {bento.title}
-          </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-sm text-white/70 sm:text-base">{bento.body}</p>
-        </motion.div>
+        <div className="grid gap-8 sm:grid-cols-12 sm:gap-12 lg:items-center">
 
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-10%" }}
-          transition={m.t(0.07, 0.8)}
-          className="reveal-blur mb-8 rounded-[24px] border border-white/12 bg-white/[0.03] p-4 sm:mb-10 sm:p-6"
-        >
-          <div className="text-[11px] uppercase tracking-[0.2em] text-white/58">{bento.workedWithTitle}</div>
-          <div className="mobile-snap-row -mx-1 mt-3 flex gap-3 overflow-x-auto px-1 pb-1 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-3 sm:overflow-visible sm:px-0 sm:pb-0">
-            {workedWith.map((client, index) => (
-              <article
-                key={client.name}
-                className={[
-                  "mobile-snap-card group relative min-w-[78%] shrink-0 overflow-hidden rounded-[18px] border border-white/12 bg-[linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0.02)_45%,rgba(0,0,0,0.45))] p-4 sm:min-w-0",
-                  index === workedWith.length - 1 ? "sm:col-span-1" : "",
-                ].join(" ")}
-              >
-                <div className="pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full bg-white/10 blur-2xl transition group-hover:bg-white/15" />
-                <div className="relative">
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-white/52">Partener</p>
-                  <h4 className="mt-2 text-base font-semibold tracking-tight text-white/92">{client.name}</h4>
-                  <div className="mt-3 inline-flex items-center rounded-full border border-white/18 bg-black/30 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/74">
-                    {client.mark}
-                  </div>
+          {/* Left: testimonial + metrics */}
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-10%" }}
+            transition={m.t(0.03, 0.8)}
+            className="reveal-blur sm:col-span-5"
+          >
+            <div className="text-xs uppercase tracking-[0.28em] text-white/60">{bento.eyebrow}</div>
+            <h2 className="mt-4 text-balance text-2xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
+              {bento.title}
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-white/70 sm:text-base">{bento.body}</p>
+
+            <div className="mt-8 grid grid-cols-3 gap-4 border-t border-white/10 pt-8">
+              {bento.metrics.map((metric) => (
+                <div key={metric.value}>
+                  <p className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">{metric.value}</p>
+                  <p className="mt-1 text-[11px] leading-relaxed text-white/56">{metric.label}</p>
                 </div>
-              </article>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <div className="mobile-snap-row -mx-1 mt-4 flex gap-3 overflow-x-auto px-1 pb-1 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-3 sm:overflow-visible sm:px-0 sm:pb-0">
-            {credibilityMetrics.map((metric) => (
-              <article
-                key={metric.value}
-                className="mobile-snap-card min-w-[74%] shrink-0 rounded-[18px] border border-white/12 bg-[linear-gradient(160deg,rgba(255,255,255,0.06),rgba(0,0,0,0.4))] p-4 sm:min-w-0"
-              >
-                <p className="text-2xl font-semibold leading-none tracking-tight text-white sm:text-[1.75rem]">{metric.value}</p>
-                <div className="mt-3 h-px w-full bg-white/10" />
-                <p className="mt-2 text-xs leading-relaxed text-white/66 sm:text-[13px]">{metric.label}</p>
-              </article>
-            ))}
-          </div>
+            <blockquote className="mt-8 border-l-2 border-white/20 pl-4">
+              <p className="text-sm italic leading-relaxed text-white/74 sm:text-base">"{bento.quote}"</p>
+              <cite className="mt-2 block text-[11px] uppercase tracking-[0.2em] text-white/50 not-italic">{bento.quoteAuthor}</cite>
+            </blockquote>
+          </motion.div>
 
-          <blockquote className="mt-4 rounded-xl border border-white/10 bg-black/30 p-4 text-sm leading-relaxed text-white/74 sm:text-[15px]">
-            “{bento.quote}”
-            <span className="mt-2 block text-xs uppercase tracking-[0.16em] text-white/52">{bento.quoteAuthor}</span>
-          </blockquote>
-        </motion.div>
+          {/* Right: inline contact form */}
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-10%" }}
+            transition={m.t(0.1, 0.8)}
+            className="reveal-blur sm:col-span-7"
+          >
+            <div className="rounded-[28px] border border-white/12 bg-white/[0.03] p-6 sm:p-8">
+              <div className="text-xs uppercase tracking-[0.28em] text-white/60">Spune-ne ce vrei să construiești</div>
+              <h3 className="mt-3 text-xl font-semibold tracking-tight text-white sm:text-2xl">
+                Trimite un brief scurt. Revenim în aceeași zi.
+              </h3>
+              <p className="mt-2 text-sm text-white/62">
+                Nu trebuie să fie elaborat. Câteva rânduri despre proiect sunt suficiente pentru a începe.
+              </p>
 
-        <div className="reveal-blur">
+              <form onSubmit={handleSubmit} className="mt-6 space-y-3">
+                <input
+                  type="text"
+                  name="name"
+                  autoComplete="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Numele tău"
+                  className="w-full rounded-2xl border border-white/14 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/38 focus:border-white/28 focus:outline-none"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  autoComplete="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Adresa de e-mail *"
+                  className="w-full rounded-2xl border border-white/14 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/38 focus:border-white/28 focus:outline-none"
+                />
+                <textarea
+                  name="brief"
+                  rows={4}
+                  value={brief}
+                  onChange={(e) => setBrief(e.target.value)}
+                  placeholder="Descrie pe scurt ce vrei să construiești — tip site, industrie, obiectiv principal"
+                  className="w-full rounded-2xl border border-white/14 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/38 focus:border-white/28 focus:outline-none resize-none"
+                />
+                <button
+                  type="submit"
+                  className="w-full rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-white/92 active:scale-[0.99]"
+                >
+                  Trimite brieful
+                </button>
+              </form>
+              <p className="mt-3 text-[11px] text-white/42">hello@sky.ro · Răspuns în aceeași zi lucrătoare</p>
+            </div>
+          </motion.div>
+
+        </div>
+
+        <div className="reveal-blur mt-10 sm:mt-14">
           <MagicBento
             textAutoHide={true}
             enableStars
