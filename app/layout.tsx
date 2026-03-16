@@ -4,12 +4,22 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://sky.ro"),
   title: {
-    default: "Sky.ro | Atelier digital",
-    template: "%s | Sky.ro",
+    default: "SKY.RO | Website-uri premium și sisteme de marketing care convertesc",
+    template: "%s | SKY.RO",
   },
   description:
-    "Sky este un atelier digital: strategie, proiectare și dezvoltare web pentru claritate, funcționare bună și rezultate măsurabile.",
-  applicationName: "Sky.ro",
+    "SKY.RO construiește website-uri premium și sisteme digitale bine gândite pentru claritate, încredere și conversie. 70+ proiecte livrate în România.",
+  applicationName: "SKY.RO",
+  keywords: [
+    "creare site web profesional",
+    "website premium Romania",
+    "agentie web Romania",
+    "landing page conversie",
+    "magazin online",
+    "strategie digitala",
+    "design web premium",
+    "site care genereaza cereri",
+  ],
   alternates: {
     canonical: "/",
   },
@@ -28,24 +38,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ro_RO",
     url: "https://sky.ro",
-    siteName: "Sky.ro",
-    title: "Sky.ro | Atelier digital",
+    siteName: "SKY.RO",
+    title: "SKY.RO | Website-uri și sisteme de marketing care transformă traficul în cereri",
     description:
-      "Proiectare și dezvoltare web pentru o prezentare clară, stabilă și ușor de folosit.",
+      "Construim website-uri premium, landing page-uri de conversie și sisteme de marketing. Design care arată bine și funcționează cum trebuie. 70+ proiecte livrate.",
     images: [
       {
         url: "/sky/logo.png",
         width: 1200,
         height: 630,
-        alt: "Sky.ro",
+        alt: "SKY.RO — Website-uri premium și sisteme de marketing",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sky.ro | Atelier digital",
+    title: "SKY.RO | Website-uri și sisteme de marketing care transformă traficul în cereri",
     description:
-      "Strategie, proiectare și dezvoltare web pentru branduri care vor o prezență digitală clară.",
+      "Website-uri premium, landing page-uri de conversie și sisteme de marketing bine gândite. 70+ proiecte livrate în România.",
     images: ["/sky/logo.png"],
   },
 };

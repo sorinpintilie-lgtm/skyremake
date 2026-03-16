@@ -76,30 +76,106 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "",
-      "title": "Construim ecosisteme digitale care aduc rezultate.",
-      "subhead": "Unim strategia, pagina web, comunicarea în rețele sociale și campaniile, ca oamenii să înțeleagă rapid oferta și să acționeze.",
-      "primaryCta": "Vezi portofoliul",
-      "secondaryCta": "Începe un proiect",
-      "meta": "Pagini web, comunicare în rețele sociale, reclame și trasee de conversie clare, rapide și scalabile.",
-      "note": "Răspundem în mai puțin de 24 de ore",
+      "eyebrow": "Website-uri și sisteme de marketing",
+      "title": "Construim experiențe digitale care transformă traficul în cereri și vânzări.",
+      "subhead": "Construim site-uri premium, pagini de conversie și sisteme de marketing bine gândite — pentru business-uri care vor claritate, performanță și mai mulți clienți.",
+      "primaryCta": "Vezi proiectele",
+      "secondaryCta": "Cere un audit",
+      "meta": "Website-uri · Landing pages · E-commerce · Strategie digitală",
+      "note": "Răspundem în aceeași zi lucrătoare",
       "mobilePills": [
-        "Structură clară",
-        "Comportament bun pe mobil"
+        "Design premium",
+        "Conversie reală"
       ],
-      "imageTag": "Interfață",
-      "imageNote": "Textul și imaginea rămân lizibile pe toate dimensiunile de ecran."
+      "imageTag": "Proiect",
+      "imageNote": "Design care arată bine și funcționează cum trebuie."
+    },
+    "trustStrip": {
+      "eyebrow": "",
+      "body": "Nu facem doar website-uri. Construim experiențe digitale gândite să convingă, să clarifice și să transforme interesul în acțiune.",
+      "cta": "Cere un audit gratuit",
+      "stats": [
+        {
+          "value": "70+",
+          "label": "Proiecte livrate"
+        },
+        {
+          "value": "34%",
+          "label": "Creștere medie cereri"
+        },
+        {
+          "value": "2,2s",
+          "label": "Viteză medie"
+        }
+      ]
+    },
+    "problemSolution": {
+      "eyebrow": "De ce ne aleg clienții",
+      "title": "Un partener digital, nu doar un executant.",
+      "body": "Lucrăm cu business-uri care au nevoie de mai mult decât design. Au nevoie de structură, claritate și o direcție digitală coerentă. De aceea, fiecare proiect SKY.RO este construit cu focus pe imagine, performanță și conversie — astfel încât prezența ta online să nu arate doar bine, ci să și funcționeze.",
+      "problems": [
+        {
+          "icon": "↓",
+          "title": "Site-ul nu generează cereri",
+          "body": "Vizitatorii ajung, dar nu iau contact. Mesajul e neclar sau parcursul de conversie lipsește complet."
+        },
+        {
+          "icon": "⊗",
+          "title": "Imaginea online nu reflectă calitatea",
+          "body": "Business-ul e serios, dar site-ul arată improvizat. Prima impresie contează și acum te costă clienți."
+        },
+        {
+          "icon": "≈",
+          "title": "Lipsește structura și claritatea",
+          "body": "Vizitatorii nu înțeleg repede ce oferi și de ce să te aleagă pe tine. Nu știi nici tu ce nu funcționează."
+        },
+        {
+          "icon": "○",
+          "title": "Nu ai un sistem digital coerent",
+          "body": "Site, reclame, social media — toate funcționează separat, fără o direcție comună și fără rezultate clare."
+        }
+      ],
+      "solutionLabel": "Ce construim pentru tine",
+      "solutions": [
+        "Website-uri premium",
+        "Landing pages de conversie",
+        "Magazine online",
+        "Strategie și direcție digitală"
+      ],
+      "cta": "Cere un audit gratuit"
+    },
+    "whySky": {
+      "eyebrow": "De ce SKY.RO",
+      "title": "Claritate înainte de execuție. Design care convinge.",
+      "reasons": [
+        {
+          "title": "Claritate înainte de execuție",
+          "body": "Nu începem cu design la întâmplare. Începem cu structură, obiective și logică clară."
+        },
+        {
+          "title": "Design care susține conversia",
+          "body": "Fiecare pagină e construită să arate bine și să ghideze utilizatorul spre acțiune."
+        },
+        {
+          "title": "Execuție atentă, fără improvizații",
+          "body": "Lucrăm curat, coerent și cu atenție la detalii — de la text și layout până la performanță."
+        },
+        {
+          "title": "Gândire de ansamblu",
+          "body": "Website, mesaj, promovare și experiență digitală — totul trebuie să funcționeze împreună."
+        }
+      ]
     },
     "signatureDirection": {
-      "eyebrow": "Direcție",
-      "title": "Un parcurs clar de la primul ecran până la contact.",
-      "body": "Fiecare secțiune are un rol precis, astfel încât vizitatorii înțeleg rapid oferta și pasul următor."
+      "eyebrow": "Cum gândim",
+      "title": "Claritate înainte de execuție. Structură înainte de design.",
+      "body": "Nu începem cu Figma și nu propunem culori înainte să înțelegem businessul. Fiecare proiect SKY.RO pornește de la obiective reale, mesaj clar și o logică de comunicare solidă. Abia după aceea construim ceva care arată bine."
     },
     "bentoNarrative": {
-      "eyebrow": "Capabilități",
-      "title": "Execuție practică, orientată spre rezultat.",
-      "body": "Planificare, sistem vizual, dezvoltare și verificare într-un proces coerent.",
-      "workedWithTitle": "Am colaborat cu",
+      "eyebrow": "Ce construim",
+      "title": "Prezențe digitale premium, gândite să convertească.",
+      "body": "Design care susține conversia. Execuție atentă, fără improvizații. Gândire de ansamblu — website, mesaj, promovare și experiență — totul coeziv.",
+      "workedWithTitle": "Business-uri cu care am lucrat",
       "workedWith": [
         {
           "name": "5Dent Clinic",
@@ -117,19 +193,19 @@
       "metrics": [
         {
           "value": "34%",
-          "label": "creștere a cererilor, în proiecte recente"
+          "label": "creștere medie a cererilor după lansare"
+        },
+        {
+          "value": "70+",
+          "label": "proiecte digitale livrate"
         },
         {
           "value": "2,2s",
-          "label": "țintă de încărcare pe mobil"
-        },
-        {
-          "value": "20+",
-          "label": "proiecte publicate"
+          "label": "timp mediu de încărcare pe mobil"
         }
       ],
-      "quote": "Procesul a rămas clar și stabil de la prima discuție până la publicare.",
-      "quoteAuthor": "Fondator, magazin online"
+      "quote": "Procesul a fost clar de la prima discuție. Site-ul a generat cereri din prima săptămână după lansare.",
+      "quoteAuthor": "Manager, clinică medicală privată"
     },
     "interactiveShowcase": {
       "eyebrow": "Selecție interactivă",
