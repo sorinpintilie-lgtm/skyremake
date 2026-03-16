@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
+import { createPortal } from "react-dom";
 import { motion, useReducedMotion } from "framer-motion";
 import snapshotManifest from "@/public/snapshots/index.json";
 import { Particles } from "@/components/particles";
@@ -56,7 +57,7 @@ function useMotion() {
 }
 
 const Container = ({ children }: { children: React.ReactNode }) => (
-  <div className="mx-auto w-full max-w-[1240px] px-3 sm:px-6 lg:px-10">{children}</div>
+  <div className="mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-10">{children}</div>
 );
 
 function Button({ href, children, ghost = false }: { href: string; children: React.ReactNode; ghost?: boolean }) {
@@ -64,8 +65,8 @@ function Button({ href, children, ghost = false }: { href: string; children: Rea
     <a
       href={href}
       className={[
-        "inline-flex items-center justify-center rounded-full px-4 py-2.5 text-[13px] font-medium tracking-[-0.01em] transition focus:outline-none focus:ring-2 focus:ring-white/25 active:scale-[0.99]",
-        "px-3.5 py-2 text-[12px] sm:px-5 sm:py-3 sm:text-sm",
+        "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-medium tracking-[-0.01em] transition focus:outline-none focus:ring-2 focus:ring-white/25 active:scale-[0.99]",
+        "px-4 py-2.5 text-[13px] sm:px-5 sm:py-3 sm:text-sm",
         ghost
           ? "border border-white/24 bg-white/[0.025] text-white hover:border-white/32 hover:bg-white/[0.08]"
           : "bg-white text-black shadow-[0_10px_26px_rgba(255,255,255,0.18)] hover:bg-white/92",
@@ -81,7 +82,7 @@ function Hero() {
   const hero = siteText.home.hero;
   const hasHeroEyebrow = Boolean(hero.eyebrow?.trim());
   return (
-    <section id="home" className="relative min-h-[94svh] pt-12 sm:min-h-[100svh] sm:pt-16">
+    <section id="home" className="relative min-h-[100svh] pt-14 sm:pt-16">
       <LightRays
         raysOrigin="top-center"
         raysColor="#ffffff"
@@ -99,46 +100,46 @@ function Hero() {
       />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[78vh] bg-[radial-gradient(72%_62%_at_50%_0%,rgba(255,255,255,0.16),rgba(255,255,255,0.04)_26%,rgba(0,0,0,0)_62%)]" />
       <Container>
-        <div className="relative z-10 grid grid-cols-1 items-end gap-4 pb-8 pt-6 sm:grid-cols-6 sm:gap-8 sm:pb-14 sm:pt-12 lg:grid-cols-12">
+        <div className="relative z-10 grid grid-cols-1 items-end gap-6 pb-10 pt-8 sm:grid-cols-6 sm:gap-8 sm:pb-14 sm:pt-12 lg:grid-cols-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={m.t(0.04, 1)}
-            className="rounded-[20px] border border-white/10 bg-black/34 p-3.5 backdrop-blur sm:col-span-4 sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-none lg:col-span-7"
+            className="rounded-[24px] border border-white/10 bg-black/34 p-4 backdrop-blur sm:col-span-4 sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-none lg:col-span-7"
           >
             {hasHeroEyebrow ? <div className="text-xs uppercase tracking-[0.28em] text-white/60">{hero.eyebrow}</div> : null}
             <h1
               className={[
-                "text-balance text-[clamp(1.65rem,7.2vw,3rem)] font-semibold leading-[0.98] tracking-[-0.03em] text-white sm:text-5xl lg:text-6xl",
-                hasHeroEyebrow ? "mt-4 sm:mt-6" : "mt-0",
+                "text-balance text-[clamp(1.9rem,8.2vw,3.4rem)] font-semibold leading-[0.98] tracking-[-0.03em] text-white sm:text-5xl lg:text-6xl",
+                hasHeroEyebrow ? "mt-5 sm:mt-6" : "mt-0",
               ].join(" ")}
             >
               {hero.title}
             </h1>
-            <p className="mt-2.5 max-w-2xl text-pretty text-[14px] font-medium text-white/88 sm:mt-4 sm:text-xl">
+            <p className="mt-3 max-w-2xl text-pretty text-[15px] font-medium text-white/88 sm:mt-4 sm:text-xl">
               {hero.subhead}
             </p>
 
-            <div className="mt-4 text-[9px] font-medium uppercase tracking-[0.14em] text-white/62 sm:mt-7 sm:text-xs">
+            <div className="mt-5 text-[10px] font-medium uppercase tracking-[0.16em] text-white/62 sm:mt-7 sm:text-xs">
               {hero.meta}
             </div>
 
-            <div className="mt-3.5 grid grid-cols-2 gap-2 text-[10px] sm:hidden">
+            <div className="mt-4 grid grid-cols-2 gap-2.5 text-[11px] sm:hidden">
               {hero.mobilePills.map((pill) => (
-                <div key={pill} className="rounded-lg border border-white/16 bg-black/34 px-2.5 py-2 text-white/76">
+                <div key={pill} className="rounded-xl border border-white/16 bg-black/34 px-3 py-2.5 text-white/76">
                   {pill}
                 </div>
               ))}
             </div>
 
-            <div className="mt-3.5 flex flex-wrap gap-2.5 sm:mt-4 sm:gap-3">
+            <div className="mt-4 flex flex-wrap gap-3">
               <Button href="#work">{hero.primaryCta}</Button>
               <Button href="#contact" ghost>
                 {hero.secondaryCta}
               </Button>
             </div>
 
-            <p className="mt-2.5 text-[13px] text-white/64 sm:text-sm">{hero.note}</p>
+            <p className="mt-3 text-sm text-white/64">{hero.note}</p>
           </motion.div>
 
           <motion.div
@@ -147,14 +148,14 @@ function Hero() {
             transition={m.t(0.12, 1)}
             className="reveal-blur sm:col-span-2 lg:col-span-5"
           >
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[20px] sm:aspect-[4/5] sm:rounded-[24px]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[24px] sm:aspect-[4/5]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/ochi.png" alt="Sky showcase" className="mono-ui-media h-full w-full object-cover" />
               <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.82),rgba(0,0,0,0.06))]" />
-              <div className="absolute left-2.5 top-2.5 rounded-full border border-white/20 bg-black/38 px-2.5 py-1 text-[9px] uppercase tracking-[0.14em] text-white/72 backdrop-blur sm:hidden">
+              <div className="absolute left-3 top-3 rounded-full border border-white/20 bg-black/38 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-white/72 backdrop-blur sm:hidden">
                 {hero.imageTag}
               </div>
-              <div className="absolute bottom-2.5 right-2.5 max-w-[74%] rounded-xl border border-white/16 bg-black/48 px-2.5 py-2 text-[10px] leading-relaxed text-white/75 backdrop-blur sm:hidden">
+              <div className="absolute bottom-3 right-3 max-w-[74%] rounded-2xl border border-white/16 bg-black/48 px-3 py-2.5 text-[11px] leading-relaxed text-white/75 backdrop-blur sm:hidden">
                 {hero.imageNote}
               </div>
             </div>
@@ -169,21 +170,23 @@ function BentoStory() {
   const m = useMotion();
   const bento = siteText.home.bentoNarrative;
   const workedWith = bento.workedWith;
+  const credibilityMetrics = bento.metrics;
 
   return (
-    <section id="work" className="section-divider relative py-10 sm:py-14">
+    <section id="work" className="section-divider relative py-14 sm:py-18">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
           transition={m.t(0.03, 0.8)}
-          className="mb-4 text-center reveal-blur sm:mb-6"
+          className="mb-8 text-center reveal-blur"
         >
           <div className="text-xs uppercase tracking-[0.28em] text-white/60">{bento.eyebrow}</div>
-          <h2 className="mt-2.5 text-balance text-[clamp(1.8rem,7.6vw,2.7rem)] font-semibold tracking-[-0.03em] text-white sm:mt-3 sm:text-5xl">
+          <h2 className="mt-4 text-balance text-4xl font-semibold tracking-[-0.03em] text-white sm:text-6xl">
             {bento.title}
           </h2>
+          <p className="mx-auto mt-4 max-w-3xl text-sm text-white/70 sm:text-base">{bento.body}</p>
         </motion.div>
 
         <motion.div
@@ -191,19 +194,50 @@ function BentoStory() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
           transition={m.t(0.07, 0.8)}
-          className="mobile-snap-row reveal-blur -mx-1 mb-4 flex gap-2.5 overflow-x-auto px-1 pb-1 sm:mb-6 sm:mx-0 sm:flex-wrap sm:justify-center sm:gap-3 sm:overflow-visible sm:px-0 sm:pb-0"
+          className="reveal-blur mb-8 rounded-[24px] border border-white/12 bg-white/[0.03] p-4 sm:mb-10 sm:p-6"
         >
-          {workedWith.map((client) => (
-            <div
-              key={client.name}
-              className="mobile-snap-card shrink-0 rounded-full border border-white/14 bg-white/[0.04] px-3.5 py-1.5 text-[11px] font-medium tracking-[0.01em] text-white/82"
-            >
-              {client.name}
-            </div>
-          ))}
+          <div className="text-[11px] uppercase tracking-[0.2em] text-white/58">{bento.workedWithTitle}</div>
+          <div className="mobile-snap-row -mx-1 mt-3 flex gap-3 overflow-x-auto px-1 pb-1 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-3 sm:overflow-visible sm:px-0 sm:pb-0">
+            {workedWith.map((client, index) => (
+              <article
+                key={client.name}
+                className={[
+                  "mobile-snap-card group relative min-w-[78%] shrink-0 overflow-hidden rounded-[18px] border border-white/12 bg-[linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0.02)_45%,rgba(0,0,0,0.45))] p-4 sm:min-w-0",
+                  index === workedWith.length - 1 ? "sm:col-span-1" : "",
+                ].join(" ")}
+              >
+                <div className="pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full bg-white/10 blur-2xl transition group-hover:bg-white/15" />
+                <div className="relative">
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-white/52">Partener</p>
+                  <h4 className="mt-2 text-base font-semibold tracking-tight text-white/92">{client.name}</h4>
+                  <div className="mt-3 inline-flex items-center rounded-full border border-white/18 bg-black/30 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/74">
+                    {client.mark}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="mobile-snap-row -mx-1 mt-4 flex gap-3 overflow-x-auto px-1 pb-1 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-3 sm:overflow-visible sm:px-0 sm:pb-0">
+            {credibilityMetrics.map((metric) => (
+              <article
+                key={metric.value}
+                className="mobile-snap-card min-w-[74%] shrink-0 rounded-[18px] border border-white/12 bg-[linear-gradient(160deg,rgba(255,255,255,0.06),rgba(0,0,0,0.4))] p-4 sm:min-w-0"
+              >
+                <p className="text-2xl font-semibold leading-none tracking-tight text-white sm:text-[1.75rem]">{metric.value}</p>
+                <div className="mt-3 h-px w-full bg-white/10" />
+                <p className="mt-2 text-xs leading-relaxed text-white/66 sm:text-[13px]">{metric.label}</p>
+              </article>
+            ))}
+          </div>
+
+          <blockquote className="mt-4 rounded-xl border border-white/10 bg-black/30 p-4 text-sm leading-relaxed text-white/74 sm:text-[15px]">
+            “{bento.quote}”
+            <span className="mt-2 block text-xs uppercase tracking-[0.16em] text-white/52">{bento.quoteAuthor}</span>
+          </blockquote>
         </motion.div>
 
-        <div className="reveal-blur mt-2 sm:mt-0">
+        <div className="reveal-blur">
           <MagicBento
             textAutoHide={true}
             enableStars
@@ -228,9 +262,9 @@ function StoryPanels() {
   const panels = siteText.home.fourSteps.steps;
 
   return (
-    <section className="section-divider relative py-8 sm:py-14">
+    <section className="section-divider relative py-10 sm:py-14">
       <Container>
-        <div className="mobile-snap-row -mx-1 flex gap-3 overflow-x-auto px-1 pb-1 sm:mx-0 sm:grid sm:gap-3.5 sm:overflow-visible sm:px-0 sm:pb-0">
+        <div className="mobile-snap-row -mx-1 flex gap-3.5 overflow-x-auto px-1 pb-1 sm:mx-0 sm:grid sm:gap-3.5 sm:overflow-visible sm:px-0 sm:pb-0">
           {panels.map((p, i) => (
             <motion.div
               key={p.title}
@@ -238,23 +272,23 @@ function StoryPanels() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={m.t(i * 0.05, 0.75)}
-              className="sky-surface-soft reveal-blur mobile-snap-card grid min-w-[88%] shrink-0 grid-cols-6 overflow-hidden rounded-[20px] sm:min-w-0 sm:grid-cols-12 sm:rounded-[28px]"
+              className="sky-surface-soft reveal-blur mobile-snap-card grid min-w-[92%] shrink-0 grid-cols-6 overflow-hidden rounded-[24px] sm:min-w-0 sm:grid-cols-12 sm:rounded-[28px]"
             >
-              <div className="relative col-span-3 min-h-[190px] sm:col-span-7 sm:min-h-[260px] lg:min-h-[360px]">
+              <div className="relative col-span-3 min-h-[220px] sm:col-span-7 sm:min-h-[260px] lg:min-h-[360px]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={p.img} alt="" className="mono-ui-media absolute inset-0 h-full w-full object-cover" />
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.15),rgba(0,0,0,0.58))] lg:bg-[linear-gradient(to_top,rgba(0,0,0,0.2),rgba(0,0,0,0.55))]" />
               </div>
-              <div className="col-span-3 flex items-center p-3.5 sm:col-span-5 sm:p-10">
+              <div className="col-span-3 flex items-center p-4 sm:col-span-5 sm:p-10">
                 <div>
                   <div className="text-xs uppercase tracking-[0.24em] text-white/55">0{i + 1}</div>
-                  <h3 className="mt-1.5 text-[1.15rem] font-semibold tracking-tight text-white sm:mt-3 sm:text-4xl">{p.title}</h3>
-                  <p className="mt-1.5 max-w-sm text-[13px] text-white/72 sm:mt-4 sm:text-base">{p.summary}</p>
-                  <div className="mt-2.5 flex flex-wrap gap-1.5 sm:mt-4 sm:gap-2">
+                  <h3 className="mt-2 text-[1.3rem] font-semibold tracking-tight text-white sm:mt-3 sm:text-4xl">{p.title}</h3>
+                  <p className="mt-2 max-w-sm text-sm text-white/72 sm:mt-4 sm:text-base">{p.summary}</p>
+                  <div className="mt-3 flex flex-wrap gap-1.5 sm:mt-4 sm:gap-2">
                     {p.chips.map((step) => (
                       <span
                         key={step}
-                        className="rounded-full border border-white/16 bg-white/[0.04] px-2 py-1 text-[10px] font-medium uppercase tracking-[0.06em] text-white/76 sm:px-2.5 sm:py-1 sm:text-[11px] sm:tracking-[0.08em]"
+                        className="rounded-full border border-white/16 bg-white/[0.04] px-2.5 py-1 text-[11px] font-medium uppercase tracking-[0.08em] text-white/76"
                       >
                         {step}
                       </span>
@@ -283,17 +317,18 @@ function OrbitShowcase() {
     title: work.project,
     description: `${work.type} · ${work.outcome}`,
   }));
-  const listedWork = selectedWork.slice(0, 3);
+  const listedWork = selectedWork.slice(0, 4);
 
   return (
-    <section className="section-divider relative py-10 sm:py-14">
+    <section className="section-divider relative py-14 sm:py-18">
       <Container>
-        <div className="reveal-blur mb-4 text-center sm:mb-6">
+        <div className="reveal-blur mb-6 text-center sm:mb-8">
           <div className="text-xs uppercase tracking-[0.28em] text-white/60">{showcase.eyebrow}</div>
-          <h3 className="mt-2.5 text-[1.7rem] font-semibold tracking-[-0.02em] text-white sm:mt-3 sm:text-4xl">{showcase.title}</h3>
+          <h3 className="mt-3 text-3xl font-semibold tracking-[-0.02em] text-white sm:text-5xl">{showcase.title}</h3>
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-white/70 sm:text-base">{showcase.body}</p>
         </div>
 
-        <div className="reveal-blur relative h-[320px] overflow-hidden rounded-[20px] sm:h-[520px] sm:rounded-[28px]">
+        <div className="reveal-blur relative h-[360px] overflow-hidden rounded-[24px] sm:h-[560px] sm:rounded-[28px]">
           <InfiniteMenu
             items={items.map((item, index) => ({
               ...item,
@@ -303,21 +338,96 @@ function OrbitShowcase() {
           />
         </div>
 
-        <div className="mobile-snap-row reveal-blur -mx-1 mt-4 flex gap-2.5 overflow-x-auto px-1 pb-1 sm:mt-5 sm:grid sm:grid-cols-3 sm:gap-3 sm:overflow-visible sm:px-0 sm:pb-0">
+        <div className="mobile-snap-row reveal-blur -mx-1 mt-5 flex gap-3 overflow-x-auto px-1 pb-1 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:overflow-visible sm:px-0 sm:pb-0 xl:grid-cols-4">
           {listedWork.map((work) => (
-            <article key={work.project} className="mobile-snap-card min-w-[78%] shrink-0 rounded-xl border border-white/12 bg-black/36 p-3.5 sm:min-w-0 sm:rounded-2xl sm:p-4">
+            <article key={work.project} className="mobile-snap-card min-w-[82%] shrink-0 rounded-2xl border border-white/12 bg-black/36 p-4 sm:min-w-0">
               <p className="text-[11px] uppercase tracking-[0.16em] text-white/58">{work.type}</p>
-              <h4 className="mt-1.5 text-lg font-semibold tracking-tight text-white sm:mt-2 sm:text-xl">{work.project}</h4>
+              <h4 className="mt-2 text-xl font-semibold tracking-tight text-white">{work.project}</h4>
+              <p className="mt-2 text-sm leading-relaxed text-white/72">{work.outcome}</p>
               <a
                 href={work.href}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-2.5 inline-flex items-center text-[13px] font-medium text-[#9bc6ff] transition hover:text-[#c2ddff] sm:mt-3 sm:text-sm"
+                className="mt-4 inline-flex items-center text-sm font-medium text-[#9bc6ff] transition hover:text-[#c2ddff]"
               >
                 {showcase.linkLabel}
               </a>
             </article>
           ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+function StrategyCards() {
+  const m = useMotion();
+  const layers = siteText.home.deliveryLayers;
+  const cardMeta = layers.cards;
+
+  const [showAllCapabilities, setShowAllCapabilities] = React.useState(false);
+  const visibleCards = showAllCapabilities ? cardMeta : cardMeta.slice(0, 6);
+  const hasExpandableCards = cardMeta.length > 6;
+
+  return (
+    <section className="section-divider relative py-14 sm:py-18">
+      <Container>
+        <div className="reveal-blur mb-6 text-center sm:mb-8">
+          <div className="text-xs uppercase tracking-[0.28em] text-white/60">{layers.eyebrow}</div>
+          <h3 className="mt-3 text-3xl font-semibold tracking-[-0.02em] text-white sm:text-5xl">{layers.title}</h3>
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-white/70 sm:text-base">{layers.body}</p>
+        </div>
+
+        <div className="reveal-blur mt-10">
+          <div className="mobile-snap-row -mx-1 flex gap-3 overflow-x-auto px-1 pb-1 sm:mx-0 sm:grid sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-2">
+            {visibleCards.map((card, index) => (
+              <motion.article
+                key={card.title}
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-10%" }}
+                transition={m.t(index * 0.04, 0.7)}
+                className="mobile-snap-card min-w-[88%] shrink-0 rounded-2xl border border-white/12 bg-black/42 p-6 backdrop-blur-xl sm:min-w-0 sm:p-7"
+              >
+                <h4 className="text-[1.35rem] font-semibold tracking-tight text-white sm:text-[1.55rem]">{card.title}</h4>
+                <p className="mt-3 text-[15px] leading-relaxed text-white/80 sm:text-base">{card.benefit}</p>
+                <p className="mt-4 text-[13px] leading-relaxed text-white/62 sm:text-sm">
+                  <span className="font-medium text-white/76">Dovadă:</span> {card.proof}
+                </p>
+              </motion.article>
+            ))}
+          </div>
+
+          {hasExpandableCards ? (
+            <div className="mt-6 flex justify-center">
+              <button
+                type="button"
+                onClick={() => setShowAllCapabilities((prev) => !prev)}
+                aria-expanded={showAllCapabilities}
+                className="inline-flex items-center rounded-full border border-white/18 bg-white/[0.04] px-5 py-2.5 text-sm font-medium text-white transition hover:border-white/30 hover:bg-white/[0.1]"
+              >
+                {showAllCapabilities ? layers.toggleLess : layers.toggleMore}
+              </button>
+            </div>
+          ) : null}
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+function WhySky() {
+  const signature = siteText.home.signatureDirection;
+
+  return (
+    <section className="section-divider relative py-14 sm:py-18">
+      <Container>
+        <div className="reveal-blur rounded-[28px] border border-white/12 bg-white/[0.03] p-5 sm:p-8">
+          <div className="text-xs uppercase tracking-[0.28em] text-white/60">{signature.eyebrow}</div>
+          <h3 className="mt-3 max-w-3xl text-balance text-3xl font-semibold tracking-[-0.02em] text-white sm:text-5xl">
+            {signature.title}
+          </h3>
+          <p className="mt-4 max-w-4xl text-sm leading-relaxed text-white/74 sm:text-base">{signature.body}</p>
         </div>
       </Container>
     </section>
@@ -351,19 +461,75 @@ function PartnerLogoRail() {
   ];
 
   return (
-    <section className="section-divider relative py-8 sm:py-14">
+    <section className="section-divider relative py-10 sm:py-14">
       <Container>
-        <div className="reveal-blur overflow-hidden rounded-[18px] border border-white/16 bg-white/[0.06] px-3 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-2xl supports-[backdrop-filter]:bg-white/[0.04] sm:rounded-[22px] sm:px-8 sm:py-6">
+        <div className="reveal-blur overflow-hidden rounded-[22px] border border-white/16 bg-white/[0.06] px-4 py-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-2xl supports-[backdrop-filter]:bg-white/[0.04] sm:px-8">
           <LogoLoop
             logos={logos}
             speed={86}
             direction="left"
-            logoHeight={36}
-            gap={44}
+            logoHeight={42}
+            gap={56}
             hoverSpeed={0}
             className="logo-rail-uniform"
             ariaLabel="Parteneri și tehnologii folosite"
           />
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+function ExplorePages() {
+  const m = useMotion();
+  const explore = siteText.home.exploreSky;
+  const pages = explore.pages;
+
+  return (
+    <section className="section-divider relative py-10 sm:py-14">
+      <Container>
+        <div className="reveal-blur mb-6 text-center sm:mb-8">
+          <div className="text-xs uppercase tracking-[0.28em] text-white/60">{explore.eyebrow}</div>
+          <h3 className="mt-3 text-3xl font-semibold tracking-[-0.02em] text-white sm:text-5xl">
+            {explore.title}
+          </h3>
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-white/70 sm:text-base">{explore.subhead}</p>
+        </div>
+
+        <div className="mobile-snap-row -mx-1 flex gap-4 overflow-x-auto px-1 pb-1 md:mx-0 md:grid md:grid-cols-2 md:overflow-visible md:px-0 md:pb-0">
+          {pages.map((page, i) => (
+            <motion.article
+              key={page.href}
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={m.t(i * 0.05, 0.75)}
+              className="sky-surface-soft reveal-blur mobile-snap-card group min-w-[90%] shrink-0 rounded-[26px] border border-white/12 bg-[radial-gradient(90%_120%_at_10%_0%,rgba(255,255,255,0.12),rgba(255,255,255,0.02)_44%,rgba(0,0,0,0.52))] md:min-w-0"
+            >
+              <div className="p-6 sm:p-8">
+                {page.label.trim().toLowerCase() !== page.title.trim().toLowerCase() ? (
+                  <div className="text-[11px] uppercase tracking-[0.22em] text-white/58">{page.label}</div>
+                ) : null}
+                <h4
+                  className={[
+                    "text-3xl font-semibold tracking-tight text-white",
+                    page.label.trim().toLowerCase() !== page.title.trim().toLowerCase() ? "mt-3" : "mt-0",
+                  ].join(" ")}
+                >
+                  {page.title}
+                </h4>
+                <p className="mt-3 max-w-[45ch] text-sm text-white/72">{page.text}</p>
+                <div className="mt-6">
+                  <Link
+                    href={page.href}
+                    className="inline-flex items-center rounded-full border border-white/18 bg-white/[0.04] px-4 py-2 text-sm text-white transition hover:bg-white/[0.12]"
+                  >
+                    {explore.openLabel}
+                  </Link>
+                </div>
+              </div>
+            </motion.article>
+          ))}
         </div>
       </Container>
     </section>
@@ -380,35 +546,35 @@ function Contact() {
     event.preventDefault();
     if (!quickEmail.trim()) return;
 
-    const subject = encodeURIComponent(`Cerere proiect | ${quickName.trim() || "Brief website"}`);
+    const subject = encodeURIComponent(`Solicitare proiect | ${quickName.trim() || "Brief nou"}`);
     const body = encodeURIComponent(
-      `Nume: ${quickName.trim() || "Necompletat"}\nEmail: ${quickEmail.trim()}\n\nSpune-ne ce construiești și ce înseamnă succes pentru tine.`,
+      `Nume: ${quickName.trim() || "Necompletat"}\nEmail: ${quickEmail.trim()}\n\nDescrie pe scurt ce vrei să construiești și ce rezultat urmărești.`,
     );
 
     window.location.href = `mailto:hello@sky.ro?subject=${subject}&body=${body}`;
   };
 
   return (
-    <section id="contact" className="section-divider relative py-12 sm:py-20">
+    <section id="contact" className="section-divider relative py-14 sm:py-20">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={m.t(0.02, 0.8)}
-          className="sky-surface reveal-blur overflow-hidden rounded-[24px] sm:rounded-[30px]"
+          className="sky-surface reveal-blur overflow-hidden rounded-[30px]"
         >
-          <div className="relative min-h-[340px] p-4 sm:min-h-[380px] sm:p-12">
+          <div className="relative min-h-[380px] p-5 sm:p-12">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={placeholderImages[5]} alt="" className="mono-ui-media absolute inset-0 h-full w-full object-cover" />
             <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.9),rgba(0,0,0,0.35))]" />
             <div className="relative z-10 max-w-2xl">
               <div className="text-xs uppercase tracking-[0.28em] text-white/60">{footerCta.label}</div>
-              <h3 className="mt-3 text-balance text-[1.85rem] font-semibold leading-[1.02] tracking-[-0.02em] text-white sm:mt-4 sm:text-6xl">
+              <h3 className="mt-4 text-balance text-3xl font-semibold leading-[1.02] tracking-[-0.02em] text-white sm:text-6xl">
                 {footerCta.title}
               </h3>
-              <p className="mt-3 max-w-2xl text-[13px] text-white/74 sm:mt-4 sm:text-base">{footerCta.body}</p>
-              <div className="mt-6 flex flex-wrap gap-2.5 sm:mt-8 sm:gap-3">
+              <p className="mt-4 max-w-2xl text-sm text-white/74 sm:text-base">{footerCta.body}</p>
+              <div className="mt-8 flex flex-wrap gap-3">
                 <Button href={footerCta.buttons[0].href}>{footerCta.buttons[0].label}</Button>
                 <Button href={footerCta.buttons[1].href} ghost>
                   {footerCta.buttons[1].label}
@@ -418,7 +584,7 @@ function Contact() {
                 </Button>
               </div>
 
-              <form onSubmit={handleQuickSubmit} className="mt-4 grid grid-cols-2 gap-2 sm:mt-5 sm:flex sm:flex-row">
+              <form onSubmit={handleQuickSubmit} className="mt-5 grid grid-cols-2 gap-2 sm:flex sm:flex-row">
                 <input
                   type="text"
                   name="name"
@@ -426,7 +592,7 @@ function Contact() {
                   value={quickName}
                   onChange={(event) => setQuickName(event.target.value)}
                   placeholder={footerCta.quickForm.namePlaceholder}
-                  className="h-10 min-w-0 rounded-full border border-white/18 bg-black/38 px-3.5 text-sm text-white placeholder:text-white/48 focus:border-white/30 focus:outline-none sm:h-11 sm:flex-1 sm:px-4"
+                  className="h-11 min-w-0 rounded-full border border-white/18 bg-black/38 px-4 text-sm text-white placeholder:text-white/48 focus:border-white/30 focus:outline-none sm:flex-1"
                 />
                 <input
                   type="email"
@@ -436,16 +602,16 @@ function Contact() {
                   onChange={(event) => setQuickEmail(event.target.value)}
                   required
                   placeholder={footerCta.quickForm.emailPlaceholder}
-                  className="h-10 min-w-0 rounded-full border border-white/18 bg-black/38 px-3.5 text-sm text-white placeholder:text-white/48 focus:border-white/30 focus:outline-none sm:h-11 sm:flex-1 sm:px-4"
+                  className="h-11 min-w-0 rounded-full border border-white/18 bg-black/38 px-4 text-sm text-white placeholder:text-white/48 focus:border-white/30 focus:outline-none sm:flex-1"
                 />
                 <button
                   type="submit"
-                  className="col-span-2 inline-flex h-10 items-center justify-center rounded-full border border-white/18 bg-white/[0.08] px-4 text-[13px] font-medium text-white transition hover:border-white/28 hover:bg-white/[0.15] sm:col-span-1 sm:h-11 sm:px-5 sm:text-sm"
+                  className="col-span-2 inline-flex h-11 items-center justify-center rounded-full border border-white/18 bg-white/[0.08] px-5 text-sm font-medium text-white transition hover:border-white/28 hover:bg-white/[0.15] sm:col-span-1"
                 >
                   {footerCta.quickForm.submitLabel}
                 </button>
               </form>
-              <p className="mt-2.5 text-[11px] text-white/62 sm:mt-3 sm:text-xs">{footerCta.quickForm.note}</p>
+              <p className="mt-3 text-xs text-white/62">{footerCta.quickForm.note}</p>
             </div>
           </div>
         </motion.div>
@@ -457,6 +623,33 @@ function Contact() {
 export default function Page() {
   const pathname = usePathname();
   const shared = siteText.shared;
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const [hasMounted, setHasMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
+
+  React.useEffect(() => {
+    if (!mobileMenuOpen || typeof window === "undefined") return;
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMobileMenuOpen(false);
+    };
+
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, [mobileMenuOpen]);
+
+  React.useEffect(() => {
+    if (typeof document === "undefined") return;
+    const { body } = document;
+    const previousOverflow = body.style.overflow;
+    if (mobileMenuOpen) body.style.overflow = "hidden";
+    return () => {
+      body.style.overflow = previousOverflow;
+    };
+  }, [mobileMenuOpen]);
 
   React.useEffect(() => {
     if (typeof window === "undefined") return;
@@ -466,16 +659,20 @@ export default function Page() {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, []);
 
+  React.useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-[#010101] text-white selection:bg-white selection:text-black">
       <Particles quantity={120} staticity={52} ease={74} size={0.62} color="#ffffff" className="z-0 opacity-[0.62] blur-[0.6px]" />
 
       <div className="relative z-10">
-        <header className="sticky top-0 z-40 border-b border-white/10 bg-black/36 backdrop-blur-xl supports-[backdrop-filter]:bg-black/28">
+        <header className="sticky top-0 z-[60] border-b border-white/10 bg-black/36 backdrop-blur-xl supports-[backdrop-filter]:bg-black/28">
           <Container>
-            <div className="flex h-12 items-center justify-between sm:h-14">
-              <Link href="/" className="relative h-7 w-[118px] opacity-95 sm:h-8 sm:w-[142px]">
-                <Image src="/sky/logo.png" alt="Sky" fill className="object-contain" sizes="(max-width: 640px) 118px, 142px" />
+            <div className="flex h-14 items-center justify-between sm:h-16">
+              <Link href="/" className="relative h-8 w-[132px] opacity-95 sm:h-9 sm:w-[152px]">
+                <Image src="/sky/logo.png" alt="Sky" fill className="object-contain" sizes="(max-width: 640px) 132px, 152px" />
               </Link>
 
               <nav className="hidden items-center gap-7 text-sm font-medium md:flex">
@@ -502,45 +699,141 @@ export default function Page() {
                 })}
               </nav>
 
-              <Button href="#contact" ghost>
-                {shared.headerStartLabel}
-              </Button>
-            </div>
+              <div className="hidden md:block">
+                <Button href="#contact" ghost>
+                  {shared.headerStartLabel}
+                </Button>
+              </div>
 
-            <div className="mobile-snap-row -mx-0.5 flex gap-1.5 overflow-x-auto pb-1.5 pl-0.5 pr-0.5 md:hidden">
-              {navLinks.map((link) => {
-                const isActive = pathname === link.href;
-                return (
-                  <Link
-                    key={`mobile-${link.href}`}
-                    href={link.href}
+              <button
+                type="button"
+                aria-label={mobileMenuOpen ? "Închide meniul" : "Deschide meniul"}
+                aria-expanded={mobileMenuOpen}
+                aria-controls="sky-ro-mobile-drawer-home"
+                onClick={() => setMobileMenuOpen((prev) => !prev)}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/16 bg-white/[0.04] text-white transition hover:border-white/26 hover:bg-white/[0.1] md:hidden"
+              >
+                <span className="relative block h-4 w-4">
+                  <span
                     className={[
-                      "mobile-snap-card shrink-0 rounded-full border px-3 py-1 text-[11px] font-medium tracking-[0.01em]",
-                      isActive
-                        ? "border-white/34 bg-white/[0.12] text-white"
-                        : "border-white/16 bg-white/[0.04] text-white/78",
+                      "absolute left-0 top-0.5 h-[1.5px] w-4 bg-white transition-transform duration-300",
+                      mobileMenuOpen ? "translate-y-[5px] rotate-45" : "",
                     ].join(" ")}
-                  >
-                    {link.label}
-                  </Link>
-                );
-              })}
+                  />
+                  <span
+                    className={[
+                      "absolute left-0 top-[7px] h-[1.5px] w-4 bg-white transition-opacity duration-200",
+                      mobileMenuOpen ? "opacity-0" : "opacity-100",
+                    ].join(" ")}
+                  />
+                  <span
+                    className={[
+                      "absolute left-0 top-[13px] h-[1.5px] w-4 bg-white transition-transform duration-300",
+                      mobileMenuOpen ? "-translate-y-[7px] -rotate-45" : "",
+                    ].join(" ")}
+                  />
+                </span>
+              </button>
             </div>
           </Container>
         </header>
+
+        {hasMounted
+          ? createPortal(
+              <div
+                className={[
+                  "fixed inset-0 z-[120] md:hidden",
+                  mobileMenuOpen ? "pointer-events-auto" : "pointer-events-none",
+                ].join(" ")}
+              >
+                <button
+                  type="button"
+                  aria-label="Închide meniul"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={[
+                    "absolute inset-0 z-[120] bg-black/50 backdrop-blur-[2px] transition-opacity duration-300",
+                    mobileMenuOpen ? "opacity-100" : "opacity-0",
+                  ].join(" ")}
+                />
+
+                <aside
+                  id="sky-ro-mobile-drawer-home"
+                  className={[
+                    "absolute right-0 top-0 z-[130] flex h-full w-[min(88vw,360px)] flex-col overflow-hidden border-l border-white/30 bg-white/[0.10] p-4 ring-1 ring-white/20 shadow-[-16px_0_48px_rgba(0,0,0,0.35)] backdrop-blur-[22px] supports-[backdrop-filter]:bg-white/[0.08] transition-transform duration-300",
+                    mobileMenuOpen ? "translate-x-0" : "translate-x-full",
+                  ].join(" ")}
+                >
+                  <div className="flex items-center justify-between">
+                    <p className="text-[11px] uppercase tracking-[0.2em] text-white/58">Navigație</p>
+                    <button
+                      type="button"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/16 bg-white/[0.04] text-lg leading-none text-white/86 transition hover:border-white/28 hover:bg-white/[0.1]"
+                      aria-label="Închide"
+                    >
+                      ×
+                    </button>
+                  </div>
+
+                  <nav className="mt-4 grid gap-2.5">
+                    {navLinks.map((link, index) => {
+                      const isActive = pathname === link.href;
+                      return (
+                        <Link
+                          key={`drawer-${link.href}`}
+                          href={link.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className={[
+                            "rounded-2xl border px-4 py-3 transition",
+                            isActive
+                              ? "border-white/34 bg-white/[0.12]"
+                              : "border-white/12 bg-white/[0.03] hover:border-white/26 hover:bg-white/[0.08]",
+                          ].join(" ")}
+                        >
+                          <p className="text-[10px] uppercase tracking-[0.18em] text-white/46">0{index + 1}</p>
+                          <p className="mt-1 text-sm font-medium text-white/90">{link.label}</p>
+                        </Link>
+                      );
+                    })}
+                  </nav>
+
+                  <div className="mt-auto grid gap-2.5 pt-5">
+                    <a
+                      href="#contact"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="inline-flex h-11 items-center justify-center rounded-full bg-white px-5 text-sm font-medium text-black transition hover:bg-white/90"
+                    >
+                      {shared.headerStartLabel}
+                    </a>
+                    <a
+                      href="#work"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="inline-flex h-11 items-center justify-center rounded-full border border-white/20 bg-white/[0.04] px-5 text-sm font-medium text-white transition hover:border-white/32 hover:bg-white/[0.1]"
+                    >
+                      {siteText.home.hero.primaryCta}
+                    </a>
+                  </div>
+                </aside>
+              </div>,
+              document.body,
+            )
+          : null}
 
         <main>
           <Hero />
           <BentoStory />
           <OrbitShowcase />
+          <StrategyCards />
+          <WhySky />
           <PartnerLogoRail />
+          <ExplorePages />
           <StoryPanels />
           <Contact />
         </main>
 
-        <footer className="relative mt-8 sm:mt-10">
+        <footer className="relative mt-10">
           <Container>
-            <div className="relative flex flex-col items-center justify-center gap-3 border-t border-white/10 py-10 text-center sm:gap-4 sm:py-14">
+            <div className="relative flex flex-col items-center justify-center gap-4 border-t border-white/10 py-14 text-center">
               <p className="text-sm uppercase tracking-[0.28em] text-white/65">{shared.footer.kicker}</p>
               <Link href="#home" className="relative h-12 w-[180px] opacity-95 transition hover:opacity-100 sm:h-14 sm:w-[220px]">
                 <Image src="/sky/logo.png" alt="sky.ro" fill className="object-contain" sizes="(max-width: 640px) 180px, 220px" />
