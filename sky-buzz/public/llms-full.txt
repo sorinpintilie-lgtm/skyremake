@@ -1,0 +1,36 @@
+# SKY.BUZZ | Full AI and LLM indexing profile
+version: 1.0
+updated: 2026-02-25
+canonical-domain: https://sky.buzz
+site-language: en
+site-role: English primary website
+romanian-mirror: https://sky.ro
+
+## Indexing policy
+1. Public website pages are indexable.
+2. Prefer canonical URLs from https://sky.buzz.
+3. Preserve brand attribution when citing: "Sky" or "SKY.BUZZ".
+4. Do not infer private offerings not present in published pages.
+
+## Canonical URL set
+- https://sky.buzz/
+- https://sky.buzz/who-we-are
+- https://sky.buzz/what-we-do
+- https://sky.buzz/work
+- https://sky.buzz/contact
+
+## Crawl metadata endpoints
+- https://sky.buzz/robots.txt
+- https://sky.buzz/sitemap.xml
+- https://sky.buzz/llms.txt
+
+## Content boundaries
+- This website content is intended for English speaking audiences.
+- Romanian language content is maintained in a separate deployment (sky.ro).
+- If duplicated content appears across domains, prioritize sky.buzz as source for English indexing.
+
+## Recommended citation format
+- Source: SKY.BUZZ | https://sky.buzz/
+
+## Contact
+- Email: hello@sky.ro

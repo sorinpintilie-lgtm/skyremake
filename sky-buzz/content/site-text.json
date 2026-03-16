@@ -1,0 +1,1501 @@
+{
+  "shared": {
+    "navLinks": [
+      {
+        "href": "/",
+        "label": "Home"
+      },
+      {
+        "href": "/who-we-are",
+        "label": "Who we are"
+      },
+      {
+        "href": "/what-we-do",
+        "label": "What we do"
+      },
+      {
+        "href": "/work",
+        "label": "Work"
+      },
+      {
+        "href": "/contact",
+        "label": "Contact"
+      }
+    ],
+    "headerStartLabel": "Start",
+    "footer": {
+      "kicker": "made by",
+      "copyright": "© 2026 SKY.BUZZ™"
+    }
+  },
+  "magicBento": {
+    "cards": [
+      {
+        "color": "#000000",
+        "title": "Behavior insights",
+        "description": "We track how visitors move through the site and where they decide to contact you.",
+        "label": "Data",
+        "meta": "Live"
+      },
+      {
+        "color": "#000000",
+        "title": "Work board",
+        "description": "Content updates, checks, and publishing steps in one place.",
+        "label": "Control",
+        "meta": "Overview"
+      },
+      {
+        "color": "#000000",
+        "title": "Team collaboration",
+        "description": "Feedback stays clear and each revision is easy to follow.",
+        "label": "Collaboration",
+        "meta": "Shared flow"
+      },
+      {
+        "color": "#000000",
+        "title": "Automation",
+        "description": "Forms, notifications, and updates are connected in a clean sequence.",
+        "label": "Efficiency",
+        "meta": "Fewer repeated steps"
+      },
+      {
+        "color": "#000000",
+        "title": "System connections",
+        "description": "Your full marketing stack works smoothly with your day-to-day tools.",
+        "label": "Connection",
+        "meta": "Aligned data"
+      },
+      {
+        "color": "#000000",
+        "title": "Security",
+        "description": "Access rules, protected routes, and ongoing monitoring.",
+        "label": "Protection",
+        "meta": "Clear safeguards"
+      }
+    ]
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "",
+      "title": "We build digital growth systems that drive results.",
+      "subhead": "We align strategy, your site, social channels, and paid campaigns so people understand your offer fast and take action.",
+      "primaryCta": "View work",
+      "secondaryCta": "Start a project",
+      "meta": "Sites, social channels, paid flows, and conversion paths that stay clear, fast, and scalable.",
+      "note": "We reply in under 24 hours",
+      "mobilePills": [
+        "Clear structure",
+        "Reliable mobile behavior"
+      ],
+      "imageTag": "Interface",
+      "imageNote": "Text and imagery stay readable on all screen sizes."
+    },
+    "signatureDirection": {
+      "eyebrow": "Direction",
+      "title": "A clear path from first view to contact.",
+      "body": "Each section has a clear role, so visitors can understand what you do and what to do next."
+    },
+    "bentoNarrative": {
+      "eyebrow": "Capabilities",
+      "title": "Practical execution focused on outcomes.",
+      "body": "Planning, visual system, development, and review in one consistent process.",
+      "workedWithTitle": "Worked with",
+      "workedWith": [
+        {
+          "name": "5Dent Clinic",
+          "mark": "5D"
+        },
+        {
+          "name": "HR Fluent",
+          "mark": "HF"
+        },
+        {
+          "name": "Dacus.ro",
+          "mark": "DC"
+        }
+      ],
+      "metrics": [
+        {
+          "value": "34%",
+          "label": "more inquiries on recent projects"
+        },
+        {
+          "value": "2.2s",
+          "label": "mobile loading target"
+        },
+        {
+          "value": "20+",
+          "label": "projects published"
+        }
+      ],
+      "quote": "The process stayed clear and stable from kickoff to launch.",
+      "quoteAuthor": "Founder, online store"
+    },
+    "interactiveShowcase": {
+      "eyebrow": "Interactive selection",
+      "title": "Explore published projects.",
+      "body": "The selection highlights clarity, stability, and measurable outcomes.",
+      "linkLabel": "View details",
+      "items": [
+        {
+          "project": "haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://haionline.ro"
+        },
+        {
+          "project": "5dent.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://5dent.haionline.ro"
+        },
+        {
+          "project": "abtdental.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://abtdental.haionline.ro"
+        },
+        {
+          "project": "agident.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://agident.haionline.ro"
+        },
+        {
+          "project": "asociatiapensionariloritalieni.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://asociatiapensionariloritalieni.haionline.ro"
+        },
+        {
+          "project": "artz-dent.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://artz-dent.haionline.ro"
+        },
+        {
+          "project": "avocatgeaninadragu.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://avocatgeaninadragu.haionline.ro"
+        },
+        {
+          "project": "beautyskin.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://beautyskin.haionline.ro"
+        },
+        {
+          "project": "biocaredental.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://biocaredental.haionline.ro"
+        },
+        {
+          "project": "casaardeleana.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://casaardeleana.haionline.ro"
+        },
+        {
+          "project": "cascodentar.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://cascodentar.haionline.ro"
+        },
+        {
+          "project": "casemodularebuzau.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://casemodularebuzau.haionline.ro"
+        },
+        {
+          "project": "clinicilepink.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://clinicilepink.haionline.ro"
+        },
+        {
+          "project": "companiamica.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://companiamica.haionline.ro"
+        },
+        {
+          "project": "constructiidurabile.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://constructiidurabile.haionline.ro"
+        },
+        {
+          "project": "dadudental.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://dadudental.haionline.ro"
+        },
+        {
+          "project": "deosdental.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://deosdental.haionline.ro"
+        },
+        {
+          "project": "dentimar.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://dentimar.haionline.ro"
+        },
+        {
+          "project": "dentone.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://dentone.haionline.ro"
+        },
+        {
+          "project": "dianabeauty.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://dianabeauty.haionline.ro"
+        },
+        {
+          "project": "dianaciobanu.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://dianaciobanu.haionline.ro"
+        },
+        {
+          "project": "doctordezambete.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://doctordezambete.haionline.ro"
+        },
+        {
+          "project": "dpdental.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://dpdental.haionline.ro"
+        },
+        {
+          "project": "drbogdan.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://drbogdan.haionline.ro"
+        },
+        {
+          "project": "drdameh.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://drdameh.haionline.ro"
+        },
+        {
+          "project": "drgheorghiade.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://drgheorghiade.haionline.ro"
+        },
+        {
+          "project": "dristordent.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://dristordent.haionline.ro"
+        },
+        {
+          "project": "duodent.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://duodent.haionline.ro"
+        },
+        {
+          "project": "estheticdentalcenter.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://estheticdentalcenter.haionline.ro"
+        },
+        {
+          "project": "eviakids.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://eviakids.haionline.ro"
+        },
+        {
+          "project": "factorysalon.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://factorysalon.haionline.ro"
+        },
+        {
+          "project": "flordent.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://flordent.haionline.ro"
+        },
+        {
+          "project": "getnic.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://getnic.haionline.ro"
+        },
+        {
+          "project": "glambody.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://glambody.haionline.ro"
+        },
+        {
+          "project": "gradinitaoac.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://gradinitaoac.haionline.ro"
+        },
+        {
+          "project": "gradinitasteaua.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://gradinitasteaua.haionline.ro"
+        },
+        {
+          "project": "hopsieu.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://hopsieu.haionline.ro"
+        },
+        {
+          "project": "ifloribucuresti.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://ifloribucuresti.haionline.ro"
+        },
+        {
+          "project": "iratruck.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://iratruck.haionline.ro"
+        },
+        {
+          "project": "jigaudentalclinic.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://jigaudentalclinic.haionline.ro"
+        },
+        {
+          "project": "kidsco.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://kidsco.haionline.ro"
+        },
+        {
+          "project": "kinetoperfect.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://kinetoperfect.haionline.ro"
+        },
+        {
+          "project": "mikodental.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://mikodental.haionline.ro"
+        },
+        {
+          "project": "miradent.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://miradent.haionline.ro"
+        },
+        {
+          "project": "numeris.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://numeris.haionline.ro"
+        },
+        {
+          "project": "optica87.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://optica87.haionline.ro"
+        },
+        {
+          "project": "pinkup.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://pinkup.haionline.ro"
+        },
+        {
+          "project": "prolife.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://prolife.haionline.ro"
+        },
+        {
+          "project": "quantica720.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://quantica720.haionline.ro"
+        },
+        {
+          "project": "rana-art-dent.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://rana-art-dent.haionline.ro"
+        },
+        {
+          "project": "renartdesign.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://renartdesign.haionline.ro"
+        },
+        {
+          "project": "restaurantnicoresti.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://restaurantnicoresti.haionline.ro"
+        },
+        {
+          "project": "saloneliza.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://saloneliza.haionline.ro"
+        },
+        {
+          "project": "salonmalibu.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://salonmalibu.haionline.ro"
+        },
+        {
+          "project": "salonnicol.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://salonnicol.haionline.ro"
+        },
+        {
+          "project": "scoaladebeauty.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://scoaladebeauty.haionline.ro"
+        },
+        {
+          "project": "sebdental.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://sebdental.haionline.ro"
+        },
+        {
+          "project": "sunnylandkids.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://sunnylandkids.haionline.ro"
+        },
+        {
+          "project": "ultraestetic.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://ultraestetic.haionline.ro"
+        },
+        {
+          "project": "ultimeledorinte.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://ultimeledorinte.haionline.ro"
+        },
+        {
+          "project": "vanestetic.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://vanestetic.haionline.ro"
+        },
+        {
+          "project": "vitaldent.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://vitaldent.haionline.ro"
+        },
+        {
+          "project": "worlddentistry.haionline.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://worlddentistry.haionline.ro"
+        },
+        {
+          "project": "salonbeautyarena.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://salonbeautyarena.ro"
+        },
+        {
+          "project": "drdent.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://drdent.ro"
+        },
+        {
+          "project": "hrfluent.com",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://hrfluent.com"
+        },
+        {
+          "project": "clubulzambetelor.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://clubulzambetelor.ro"
+        },
+        {
+          "project": "ringabell.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://ringabell.ro"
+        },
+        {
+          "project": "pilotcenter.net",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://pilotcenter.net"
+        },
+        {
+          "project": "muzicapentruviata.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://muzicapentruviata.ro"
+        },
+        {
+          "project": "realview3d.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://realview3d.ro"
+        },
+        {
+          "project": "enumismatica.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://enumismatica.ro"
+        },
+        {
+          "project": "avidobakery.ro",
+          "type": "Published project",
+          "outcome": "Published digital project",
+          "href": "https://avidobakery.ro"
+        }
+      ]
+    },
+    "deliveryLayers": {
+      "eyebrow": "Work stages",
+      "title": "How we deliver projects end to end.",
+      "body": "We keep decisions ordered so launch stays predictable.",
+      "cards": [
+        {
+          "title": "Understand the context",
+          "benefit": "We define objective, audience, and core message before visual work starts.",
+          "proof": "Analysis"
+        },
+        {
+          "title": "Consistent visual system",
+          "benefit": "Typography, spacing, and components follow one clear logic.",
+          "proof": "Design"
+        },
+        {
+          "title": "Clean development",
+          "benefit": "Pages stay stable and fast, including on slower devices.",
+          "proof": "Implementation"
+        },
+        {
+          "title": "Structured content",
+          "benefit": "The copy supports user decisions at each step.",
+          "proof": "Messaging"
+        },
+        {
+          "title": "Review on real devices",
+          "benefit": "We check readability, spacing, and interaction before publishing.",
+          "proof": "Review"
+        },
+        {
+          "title": "Continuous improvement",
+          "benefit": "We use usage data to refine what matters most.",
+          "proof": "Optimization"
+        },
+        {
+          "title": "Publish and monitor",
+          "benefit": "We launch with clear steps and track behavior after release.",
+          "proof": "Release"
+        }
+      ],
+      "toggleMore": "Show more",
+      "toggleLess": "Show less"
+    },
+    "exploreSky": {
+      "eyebrow": "Pages",
+      "title": "See each part of the growth system.",
+      "subhead": "Team, services, work, and contact are organized into dedicated pages.",
+      "openLabel": "Open",
+      "pages": [
+        {
+          "href": "/who-we-are",
+          "label": "Who we are",
+          "title": "Who we are",
+          "text": "How we work, who does what, and what we value.",
+          "image": "/sky/panel-1.jpg"
+        },
+        {
+          "href": "/what-we-do",
+          "label": "What we do",
+          "title": "What we do",
+          "text": "The work stages from analysis to publishing.",
+          "image": "/sky/panel-2.jpg"
+        },
+        {
+          "href": "/work",
+          "label": "Work",
+          "title": "Work",
+          "text": "Selected projects from different industries.",
+          "image": "/sky/panel-3.jpg"
+        },
+        {
+          "href": "/contact",
+          "label": "Contact",
+          "title": "Contact",
+          "text": "Send a short message and get the next steps.",
+          "image": "/sky/contact.jpg"
+        }
+      ]
+    },
+    "fourSteps": {
+      "steps": [
+        {
+          "img": "/discover.png",
+          "title": "Understand",
+          "summary": "We start with goals, audience, and context.",
+          "chips": [
+            "Discussion",
+            "Analysis",
+            "Positioning"
+          ]
+        },
+        {
+          "img": "/Shape.png",
+          "title": "Shape",
+          "summary": "We define page structure and presentation rules.",
+          "chips": [
+            "Structure",
+            "Wireframes",
+            "Visual system"
+          ]
+        },
+        {
+          "img": "/bulid.png",
+          "title": "Build",
+          "summary": "We develop, review, and prepare for publishing.",
+          "chips": [
+            "Development",
+            "Review",
+            "Measurement",
+            "Search"
+          ]
+        },
+        {
+          "img": "/lunch.png",
+          "title": "Publish",
+          "summary": "We launch and track real usage.",
+          "chips": [
+            "Publishing",
+            "Training",
+            "Adjustments"
+          ]
+        }
+      ]
+    },
+    "footerCta": {
+      "label": "Contact",
+      "title": "Tell us what you want to build.",
+      "body": "Send the context and objective, and we reply with a clear direction and concrete next steps.",
+      "buttons": [
+        {
+          "href": "mailto:hello@sky.ro",
+          "label": "Email"
+        },
+        {
+          "href": "https://wa.me/40700000000?text=Hi%20Sky%2C%20I%20want%20to%20start%20a%20project.",
+          "label": "Message"
+        },
+        {
+          "href": "https://cal.com/sky/fit-call",
+          "label": "Schedule"
+        }
+      ],
+      "quickForm": {
+        "namePlaceholder": "Name",
+        "emailPlaceholder": "Email address",
+        "submitLabel": "Send",
+        "note": "hello@sky.ro"
+      }
+    }
+  },
+  "whoWeAre": {
+    "hero": {
+      "pageLabel": "Who we are",
+      "title": "A specialized team focused on measurable results.",
+      "description": "We are a team that directly handles strategy, design, and development, with full ownership across the project.",
+      "primaryCta": "Start a project",
+      "secondaryCta": "See services",
+      "heroBadge": "Team",
+      "heroStats": [
+        {
+          "value": "Applied experience",
+          "label": "Specialized team"
+        },
+        {
+          "value": "70+",
+          "label": "Projects delivered"
+        },
+        {
+          "value": "Full ownership",
+          "label": "From strategy to launch"
+        }
+      ],
+      "heroPoints": [
+        "You communicate directly with the team handling the project.",
+        "You get clear decisions and concrete next steps, without delays.",
+        "We keep focus on clarity, speed, and stability."
+      ],
+      "heroNote": "Working model"
+    },
+    "identity": {
+      "eyebrow": "Identity",
+      "title": "One professional standard.",
+      "description": "Stages are clearly defined, and ownership is maintained from analysis to launch."
+    },
+    "principles": [
+      {
+        "title": "Clarity",
+        "body": "The interface should be easy to read and easy to follow.",
+        "stat": "Clear decisions"
+      },
+      {
+        "title": "Consistency",
+        "body": "Pages should keep the same visual logic and tone.",
+        "stat": "Single direction"
+      },
+      {
+        "title": "Control",
+        "body": "We review before publishing, then monitor after launch.",
+        "stat": "Stable steps"
+      }
+    ],
+    "operations": {
+      "teamShapeTitle": "What we deliver as a team",
+      "teamShape": [
+        {
+          "role": "Strategy",
+          "focus": "We define objectives and the order of information."
+        },
+        {
+          "role": "Design",
+          "focus": "We define visual consistency across all pages."
+        },
+        {
+          "role": "Development",
+          "focus": "We ensure stable behavior across devices."
+        }
+      ],
+      "howWeWorkLabel": "How we work",
+      "howWeWorkTitle": "Short stages, fast response.",
+      "howWeWorkBody": "Understanding, direction, implementation, review, and adjustment.",
+      "flow": [
+        {
+          "label": "Understanding",
+          "copy": "Objective, audience, context"
+        },
+        {
+          "label": "Direction",
+          "copy": "Structure, message, priorities"
+        },
+        {
+          "label": "Implementation",
+          "copy": "Design and development"
+        },
+        {
+          "label": "Adjustment",
+          "copy": "Measurement and improvements"
+        }
+      ],
+      "cta": "View work"
+    },
+    "proof": {
+      "eyebrow": "Results",
+      "title": "A well-managed process with visible results.",
+      "description": "We work with clear goals, owned steps, and constant checks.",
+      "quote": "We had clarity in every stage, and the launch happened without blockers.",
+      "author": "Operations manager, dental clinic",
+      "stats": [
+        "70+ projects delivered",
+        "Specialized team",
+        "Projects in Romania and the European Union"
+      ]
+    },
+    "culture": {
+      "eyebrow": "Culture",
+      "title": "We improve with each project.",
+      "description": "We keep what works, simplify where needed, and refine continuously."
+    }
+  },
+  "whatWeDo": {
+    "hero": {
+      "pageLabel": "What we do",
+      "title": "From analysis to launch, in a clear sequence.",
+      "description": "We plan, design, build, and track performance after launch.",
+      "primaryCta": "Share your context",
+      "secondaryCta": "See examples",
+      "heroBadge": "Stages",
+      "heroStats": [
+        {
+          "value": "4",
+          "label": "Main stages"
+        },
+        {
+          "value": "1",
+          "label": "Unified flow"
+        },
+        {
+          "value": "0",
+          "label": "Random decisions"
+        }
+      ],
+      "heroPoints": [
+        "We define messaging before visual production.",
+        "We build a visual system that is easy to maintain.",
+        "We review and improve after publishing."
+      ],
+      "heroNote": "Delivery model"
+    },
+    "capabilities": {
+      "eyebrow": "Services",
+      "title": "Services built on real needs.",
+      "description": "Each stage supports the next so the final result remains coherent and easy to operate."
+    },
+    "serviceColumns": [
+      {
+        "title": "Websites and campaign pages",
+        "points": [
+          "Clear message",
+          "Easy to follow structure",
+          "Visible contact actions"
+        ]
+      },
+      {
+        "title": "Content platforms",
+        "points": [
+          "Organized sections",
+          "More complex flows",
+          "Clear administration"
+        ]
+      },
+      {
+        "title": "Continuous improvement",
+        "points": [
+          "Loading speed",
+          "Search visibility",
+          "Data based decisions"
+        ]
+      }
+    ],
+    "statsCards": [
+      {
+        "label": "Technology",
+        "text": "We use modern tools selected for each project need."
+      },
+      {
+        "label": "Work rhythm",
+        "text": "We set the timeline according to goals, priorities, and project complexity."
+      },
+      {
+        "label": "What you get",
+        "text": "Structure, design, development, review, and launch support."
+      }
+    ],
+    "deliveryArchitecture": {
+      "eyebrow": "Work architecture",
+      "title": "Stages connected in a stable flow.",
+      "body": "Each stage has a role, and together they form a stable process.",
+      "layerLabel": "Stage",
+      "layers": [
+        {
+          "id": "01",
+          "title": "Analysis and messaging",
+          "body": "Goals, audience, priorities, and content order."
+        },
+        {
+          "id": "02",
+          "title": "Design",
+          "body": "Clear visual rules and coherent pages."
+        },
+        {
+          "id": "03",
+          "title": "Development",
+          "body": "Clean implementation tested on real devices."
+        },
+        {
+          "id": "04",
+          "title": "Publish and monitor",
+          "body": "Controlled release and data based adjustments."
+        }
+      ]
+    },
+    "engagement": {
+      "eyebrow": "Collaboration",
+      "title": "Together, we define the collaboration model that fits.",
+      "description": "You can choose a project with clear goals or continuous collaboration, under the same work standard.",
+      "projectMode": {
+        "label": "Project",
+        "title": "Clear goals, accountable execution.",
+        "body": "Suitable for new launches or full rebuilds."
+      },
+      "partnershipMode": {
+        "label": "Continuous support",
+        "title": "Regular improvements.",
+        "body": "Suitable for teams that want constant optimization."
+      },
+      "cta": "Schedule a call"
+    }
+  },
+  "work": {
+    "hero": {
+      "pageLabel": "Work",
+      "title": "Published projects built for results.",
+      "description": "Selection of digital projects, sites, campaigns, and growth systems across sectors, with observable results.",
+      "primaryCta": "I want something similar",
+      "secondaryCta": "See services",
+      "heroBadge": "Selection",
+      "heroStats": [
+        {
+          "value": "70+",
+          "label": "Published digital projects"
+        },
+        {
+          "value": "Multiple",
+          "label": "Sectors"
+        },
+        {
+          "value": "Relevant",
+          "label": "Reference projects"
+        }
+      ],
+      "heroPoints": [
+        "Each project focuses on clarity and a logical user path.",
+        "The selection includes standalone projects and larger ecosystems.",
+        "Readability, speed, and stability are the key criteria."
+      ],
+      "heroNote": "Context"
+    },
+    "showcase": {
+      "eyebrow": "Interactive selection",
+      "title": "Explore published projects.",
+      "description": "Each item links to a live project or a relevant output."
+    },
+    "featuredWork": [
+      {
+        "link": "https://haionline.ro",
+        "title": "haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://5dent.haionline.ro",
+        "title": "5dent.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://abtdental.haionline.ro",
+        "title": "abtdental.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://agident.haionline.ro",
+        "title": "agident.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://asociatiapensionariloritalieni.haionline.ro",
+        "title": "asociatiapensionariloritalieni.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://artz-dent.haionline.ro",
+        "title": "artz-dent.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://avocatgeaninadragu.haionline.ro",
+        "title": "avocatgeaninadragu.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://beautyskin.haionline.ro",
+        "title": "beautyskin.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://biocaredental.haionline.ro",
+        "title": "biocaredental.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://casaardeleana.haionline.ro",
+        "title": "casaardeleana.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://cascodentar.haionline.ro",
+        "title": "cascodentar.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://casemodularebuzau.haionline.ro",
+        "title": "casemodularebuzau.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://clinicilepink.haionline.ro",
+        "title": "clinicilepink.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://companiamica.haionline.ro",
+        "title": "companiamica.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://constructiidurabile.haionline.ro",
+        "title": "constructiidurabile.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://dadudental.haionline.ro",
+        "title": "dadudental.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://deosdental.haionline.ro",
+        "title": "deosdental.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://dentimar.haionline.ro",
+        "title": "dentimar.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://dentone.haionline.ro",
+        "title": "dentone.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://dianabeauty.haionline.ro",
+        "title": "dianabeauty.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://dianaciobanu.haionline.ro",
+        "title": "dianaciobanu.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://doctordezambete.haionline.ro",
+        "title": "doctordezambete.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://dpdental.haionline.ro",
+        "title": "dpdental.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://drbogdan.haionline.ro",
+        "title": "drbogdan.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://drdameh.haionline.ro",
+        "title": "drdameh.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://drgheorghiade.haionline.ro",
+        "title": "drgheorghiade.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://dristordent.haionline.ro",
+        "title": "dristordent.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://duodent.haionline.ro",
+        "title": "duodent.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://estheticdentalcenter.haionline.ro",
+        "title": "estheticdentalcenter.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://eviakids.haionline.ro",
+        "title": "eviakids.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://factorysalon.haionline.ro",
+        "title": "factorysalon.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://flordent.haionline.ro",
+        "title": "flordent.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://getnic.haionline.ro",
+        "title": "getnic.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://glambody.haionline.ro",
+        "title": "glambody.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://gradinitaoac.haionline.ro",
+        "title": "gradinitaoac.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://gradinitasteaua.haionline.ro",
+        "title": "gradinitasteaua.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://hopsieu.haionline.ro",
+        "title": "hopsieu.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://ifloribucuresti.haionline.ro",
+        "title": "ifloribucuresti.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://iratruck.haionline.ro",
+        "title": "iratruck.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://jigaudentalclinic.haionline.ro",
+        "title": "jigaudentalclinic.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://kidsco.haionline.ro",
+        "title": "kidsco.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://kinetoperfect.haionline.ro",
+        "title": "kinetoperfect.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://mikodental.haionline.ro",
+        "title": "mikodental.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://miradent.haionline.ro",
+        "title": "miradent.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://numeris.haionline.ro",
+        "title": "numeris.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://optica87.haionline.ro",
+        "title": "optica87.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://pinkup.haionline.ro",
+        "title": "pinkup.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://prolife.haionline.ro",
+        "title": "prolife.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://quantica720.haionline.ro",
+        "title": "quantica720.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://rana-art-dent.haionline.ro",
+        "title": "rana-art-dent.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://renartdesign.haionline.ro",
+        "title": "renartdesign.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://restaurantnicoresti.haionline.ro",
+        "title": "restaurantnicoresti.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://saloneliza.haionline.ro",
+        "title": "saloneliza.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://salonmalibu.haionline.ro",
+        "title": "salonmalibu.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://salonnicol.haionline.ro",
+        "title": "salonnicol.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://scoaladebeauty.haionline.ro",
+        "title": "scoaladebeauty.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://sebdental.haionline.ro",
+        "title": "sebdental.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://sunnylandkids.haionline.ro",
+        "title": "sunnylandkids.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://ultraestetic.haionline.ro",
+        "title": "ultraestetic.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://ultimeledorinte.haionline.ro",
+        "title": "ultimeledorinte.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://vanestetic.haionline.ro",
+        "title": "vanestetic.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://vitaldent.haionline.ro",
+        "title": "vitaldent.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://worlddentistry.haionline.ro",
+        "title": "worlddentistry.haionline.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://salonbeautyarena.ro",
+        "title": "salonbeautyarena.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://drdent.ro",
+        "title": "drdent.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://hrfluent.com",
+        "title": "hrfluent.com",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://clubulzambetelor.ro",
+        "title": "clubulzambetelor.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://ringabell.ro",
+        "title": "ringabell.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://pilotcenter.net",
+        "title": "pilotcenter.net",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://muzicapentruviata.ro",
+        "title": "muzicapentruviata.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://realview3d.ro",
+        "title": "realview3d.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://enumismatica.ro",
+        "title": "enumismatica.ro",
+        "description": "Published digital project"
+      },
+      {
+        "link": "https://avidobakery.ro",
+        "title": "avidobakery.ro",
+        "description": "Published digital project"
+      }
+    ],
+    "outcomes": {
+      "eyebrow": "Results",
+          "title": "Projects with concrete impact on partner activity.",
+      "description": "We present briefly what we delivered and what improved after launch.",
+      "shippedLabel": "Shipped",
+      "resultLabel": "Result",
+      "linkLabel": "View project",
+      "cases": [
+        {
+          "name": "Dacus.ro",
+          "vertical": "Ecommerce",
+          "shipped": "Online store build",
+          "result": "Clear flow from product to order",
+          "href": "https://dacus.ro"
+        },
+        {
+          "name": "Pilot Center",
+          "vertical": "Training",
+          "shipped": "Platform update for inquiries",
+          "result": "Clearer path to contact",
+          "href": "https://pilotcenter.net"
+        },
+        {
+          "name": "Enumismatica",
+          "vertical": "Niche product",
+          "shipped": "Site and conversion path rebuild",
+          "result": "Clearer message for the right audience",
+          "href": "https://enumismatica.ro"
+        },
+        {
+          "name": "DrDent",
+          "vertical": "Dental clinic",
+          "shipped": "Reorganized services and pages",
+          "result": "More started appointments",
+          "href": "https://drdent.ro"
+        },
+        {
+          "name": "HR Fluent",
+          "vertical": "Business services",
+          "shipped": "Presentation pages with clear structure",
+          "result": "Faster loading",
+          "href": "https://hrfluent.com"
+        },
+        {
+          "name": "haionline.ro",
+          "vertical": "Service platform",
+          "shipped": "Extended content organization",
+          "result": "Clearer navigation between services",
+          "href": "https://haionline.ro"
+        }
+      ]
+    },
+    "positioning": {
+      "body": "The selection shows stable, clear projects that are easy to use."
+    },
+    "threeBlocks": [
+      {
+        "title": "Clearer message",
+        "body": "Visitors understand the offer faster."
+      },
+      {
+        "title": "Better engagement",
+        "body": "Reading flow stays coherent across pages."
+      },
+      {
+        "title": "Stability",
+        "body": "The full digital ecosystem stays reliable in daily execution."
+      }
+    ],
+    "cta": "Start the project"
+  },
+  "contact": {
+    "hero": {
+      "pageLabel": "Contact",
+      "title": "Tell us briefly what you need.",
+      "description": "Send context, objective, and preferred timeline. We reply with concrete next steps.",
+      "primaryCta": "Email us",
+      "secondaryCta": "See the team",
+      "heroBadge": "Initial brief",
+      "heroStats": [
+        {
+          "value": "Reply on the same business day",
+          "label": "Response time"
+        },
+        {
+          "value": "Direct communication with the team",
+          "label": "Interaction"
+        },
+        {
+          "value": "Clear next steps to start",
+          "label": "Direction"
+        }
+      ],
+      "heroPoints": [
+        "Describe the objective and preferred timeline.",
+        "You receive a recommendation and work sequence.",
+        "We set the next steps together."
+      ],
+      "heroNote": "Initial discussion"
+    },
+    "directChannels": {
+      "eyebrow": "Direct channels",
+      "title": "Direct, clear communication focused on solutions.",
+      "description": "You speak directly with the team that works on the project."
+    },
+    "contactChannels": [
+      {
+        "title": "Email",
+        "value": "hello@sky.ro",
+        "href": "mailto:hello@sky.ro",
+        "detail": "For details, estimates, and schedule."
+      },
+      {
+        "title": "Phone",
+        "value": "+40 744 000 111",
+        "href": "tel:+40744000111",
+        "detail": "For a short orientation call."
+      }
+    ],
+    "brief": {
+      "title": "Useful details for the first reply.",
+      "body": "Send the objective, context, and preferred timeline, and we return with a clear direction.",
+      "steps": [
+        "Send objective and context",
+        "Receive our recommendation",
+        "Set work stages"
+      ]
+    },
+    "response": {
+      "label": "Typical response window",
+      "value": "On the same business day",
+      "body": "In most cases, we reply within the same business day.",
+      "directEmail": "hello@sky.ro"
+    },
+    "form": {
+      "namePlaceholder": "Name",
+      "emailPlaceholder": "Email address",
+      "briefPlaceholder": "Short message",
+      "submitLabel": "Send"
+    },
+    "cta": "See services"
+  }
+}

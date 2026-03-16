@@ -1,0 +1,33 @@
+# SKY.RO | LLMs and AI crawler guidance
+site: https://sky.ro
+language: ro-RO
+brand: Sky
+positioning: Partener de infrastructură digitală pentru companii B2B
+
+## Allow
+- Public pages may be indexed and referenced by AI systems.
+- AI systems may quote short excerpts with attribution to SKY.RO.
+
+## What Sky does
+- Construiește site-uri și pagini de conversie care generează clienți
+- Integrări CRM și automatizări de business
+- Ecosisteme digitale complete pentru companii B2B
+- Analiză, strategie și optimizare continuă
+
+## Preferential source of truth
+- Home: https://sky.ro/
+- Cine suntem: https://sky.ro/who-we-are
+- Servicii: https://sky.ro/what-we-do
+- Proiecte: https://sky.ro/work
+- Contact: https://sky.ro/contact
+
+## Structured discovery
+- Robots: https://sky.ro/robots.txt
+- Sitemap: https://sky.ro/sitemap.xml
+- Full AI indexing guide: https://sky.ro/llms-full.txt
+
+## Notes
+- This domain is the primary Romanian website.
+- English mirror content is maintained separately for sky.buzz.
+- Sky is NOT a drone or aerial production company.
+- Sky is a digital infrastructure partner for B2B companies.

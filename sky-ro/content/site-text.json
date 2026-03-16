@@ -1,0 +1,1569 @@
+{
+  "shared": {
+    "navLinks": [
+      {
+        "href": "/",
+        "label": "Acasă"
+      },
+      {
+        "href": "/who-we-are",
+        "label": "Cine suntem"
+      },
+      {
+        "href": "/what-we-do",
+        "label": "Servicii"
+      },
+      {
+        "href": "/work",
+        "label": "Proiecte"
+      },
+      {
+        "href": "/contact",
+        "label": "Contact"
+      }
+    ],
+    "headerStartLabel": "Începe un proiect",
+    "footer": {
+      "kicker": "construit cu grijă de",
+      "copyright": "© 2026 SKY.RO™"
+    }
+  },
+  "magicBento": {
+    "cards": [
+      {
+        "color": "#000000",
+        "title": "Website-uri premium",
+        "description": "Site-uri rapide, clare și bine construite, care inspiră încredere și transformă vizitatorii în cereri.",
+        "label": "Website",
+        "meta": "Design + performanță"
+      },
+      {
+        "color": "#000000",
+        "title": "Landing page-uri de conversie",
+        "description": "Pagini create pentru campanii și oferte. Structură orientată spre acțiune, fără distrageri.",
+        "label": "Conversie",
+        "meta": "Structură clară"
+      },
+      {
+        "color": "#000000",
+        "title": "Magazine online",
+        "description": "Experiențe e-commerce organizate, ușor de folosit și optimizate pentru vânzare directă.",
+        "label": "E-commerce",
+        "meta": "Vânzări mai simple"
+      },
+      {
+        "color": "#000000",
+        "title": "Strategie digitală",
+        "description": "Clarificăm direcția online a brandului tău: mesaj, structură și priorități înainte de execuție.",
+        "label": "Strategie",
+        "meta": "Claritate înainte"
+      },
+      {
+        "color": "#000000",
+        "title": "Campanii și promovare",
+        "description": "Conectăm imaginea cu performanța prin campanii, conținut și execuție coerentă.",
+        "label": "Campanii",
+        "meta": "Imagine + rezultate"
+      },
+      {
+        "color": "#000000",
+        "title": "Identitate vizuală digitală",
+        "description": "Un look coerent, premium și recognoscibil în toate punctele de contact digital.",
+        "label": "Identitate",
+        "meta": "Consistență totală"
+      }
+    ]
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Website-uri și sisteme de marketing",
+      "title": "Construim experiențe digitale care transformă traficul în cereri și vânzări.",
+      "subhead": "Construim site-uri premium, pagini de conversie și sisteme de marketing bine gândite — pentru business-uri care vor claritate, performanță și mai mulți clienți.",
+      "primaryCta": "Vezi proiectele",
+      "secondaryCta": "Cere un audit",
+      "meta": "Website-uri · Landing pages · E-commerce · Strategie digitală",
+      "note": "Răspundem în aceeași zi lucrătoare",
+      "mobilePills": [
+        "Design premium",
+        "Conversie reală"
+      ],
+      "imageTag": "Proiect",
+      "imageNote": "Design care arată bine și funcționează cum trebuie."
+    },
+    "trustStrip": {
+      "eyebrow": "",
+      "body": "Nu facem doar website-uri. Construim experiențe digitale gândite să convingă, să clarifice și să transforme interesul în acțiune.",
+      "cta": "Cere un audit gratuit",
+      "stats": [
+        {
+          "value": "70+",
+          "label": "Proiecte livrate"
+        },
+        {
+          "value": "34%",
+          "label": "Creștere medie cereri"
+        },
+        {
+          "value": "2,2s",
+          "label": "Viteză medie"
+        }
+      ]
+    },
+    "problemSolution": {
+      "eyebrow": "De ce ne aleg clienții",
+      "title": "Un partener digital, nu doar un executant.",
+      "body": "Lucrăm cu business-uri care au nevoie de mai mult decât design. Au nevoie de structură, claritate și o direcție digitală coerentă. De aceea, fiecare proiect SKY.RO este construit cu focus pe imagine, performanță și conversie — astfel încât prezența ta online să nu arate doar bine, ci să și funcționeze.",
+      "problems": [
+        {
+          "icon": "↓",
+          "title": "Site-ul nu generează cereri",
+          "body": "Vizitatorii ajung, dar nu iau contact. Mesajul e neclar sau parcursul de conversie lipsește complet."
+        },
+        {
+          "icon": "⊗",
+          "title": "Imaginea online nu reflectă calitatea",
+          "body": "Business-ul e serios, dar site-ul arată improvizat. Prima impresie contează și acum te costă clienți."
+        },
+        {
+          "icon": "≈",
+          "title": "Lipsește structura și claritatea",
+          "body": "Vizitatorii nu înțeleg repede ce oferi și de ce să te aleagă pe tine. Nu știi nici tu ce nu funcționează."
+        },
+        {
+          "icon": "○",
+          "title": "Nu ai un sistem digital coerent",
+          "body": "Site, reclame, social media — toate funcționează separat, fără o direcție comună și fără rezultate clare."
+        }
+      ],
+      "solutionLabel": "Ce construim pentru tine",
+      "solutions": [
+        "Website-uri premium",
+        "Landing pages de conversie",
+        "Magazine online",
+        "Strategie și direcție digitală"
+      ],
+      "cta": "Cere un audit gratuit"
+    },
+    "whySky": {
+      "eyebrow": "De ce SKY.RO",
+      "title": "Claritate înainte de execuție. Design care convinge.",
+      "reasons": [
+        {
+          "title": "Claritate înainte de execuție",
+          "body": "Nu începem cu design la întâmplare. Începem cu structură, obiective și logică clară."
+        },
+        {
+          "title": "Design care susține conversia",
+          "body": "Fiecare pagină e construită să arate bine și să ghideze utilizatorul spre acțiune."
+        },
+        {
+          "title": "Execuție atentă, fără improvizații",
+          "body": "Lucrăm curat, coerent și cu atenție la detalii — de la text și layout până la performanță."
+        },
+        {
+          "title": "Gândire de ansamblu",
+          "body": "Website, mesaj, promovare și experiență digitală — totul trebuie să funcționeze împreună."
+        }
+      ]
+    },
+    "signatureDirection": {
+      "eyebrow": "Cum gândim",
+      "title": "Claritate înainte de execuție. Structură înainte de design.",
+      "body": "Nu începem cu Figma și nu propunem culori înainte să înțelegem businessul. Fiecare proiect SKY.RO pornește de la obiective reale, mesaj clar și o logică de comunicare solidă. Abia după aceea construim ceva care arată bine."
+    },
+    "bentoNarrative": {
+      "eyebrow": "Ce construim",
+      "title": "Prezențe digitale premium, gândite să convertească.",
+      "body": "Design care susține conversia. Execuție atentă, fără improvizații. Gândire de ansamblu — website, mesaj, promovare și experiență — totul coeziv.",
+      "workedWithTitle": "Business-uri cu care am lucrat",
+      "workedWith": [
+        {
+          "name": "5Dent Clinic",
+          "mark": "5D"
+        },
+        {
+          "name": "HR Fluent",
+          "mark": "HF"
+        },
+        {
+          "name": "Dacus.ro",
+          "mark": "DC"
+        }
+      ],
+      "metrics": [
+        {
+          "value": "34%",
+          "label": "creștere medie a cererilor după lansare"
+        },
+        {
+          "value": "70+",
+          "label": "proiecte digitale livrate"
+        },
+        {
+          "value": "2,2s",
+          "label": "timp mediu de încărcare pe mobil"
+        }
+      ],
+      "quote": "Procesul a fost clar de la prima discuție. Site-ul a generat cereri din prima săptămână după lansare.",
+      "quoteAuthor": "Manager, clinică medicală privată"
+    },
+    "interactiveShowcase": {
+      "eyebrow": "Proiecte reprezentative",
+      "title": "70+ companii care au construit cu Sky.",
+      "body": "Fiecare proiect a rezolvat o problemă reală de business — mai multe cereri, sisteme mai clare, creștere măsurabilă.",
+      "linkLabel": "Vizitează site-ul",
+      "items": [
+        {
+          "project": "haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://haionline.ro"
+        },
+        {
+          "project": "5dent.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://5dent.haionline.ro"
+        },
+        {
+          "project": "abtdental.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://abtdental.haionline.ro"
+        },
+        {
+          "project": "agident.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://agident.haionline.ro"
+        },
+        {
+          "project": "asociatiapensionariloritalieni.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://asociatiapensionariloritalieni.haionline.ro"
+        },
+        {
+          "project": "artz-dent.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://artz-dent.haionline.ro"
+        },
+        {
+          "project": "avocatgeaninadragu.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://avocatgeaninadragu.haionline.ro"
+        },
+        {
+          "project": "beautyskin.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://beautyskin.haionline.ro"
+        },
+        {
+          "project": "biocaredental.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://biocaredental.haionline.ro"
+        },
+        {
+          "project": "casaardeleana.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://casaardeleana.haionline.ro"
+        },
+        {
+          "project": "cascodentar.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://cascodentar.haionline.ro"
+        },
+        {
+          "project": "casemodularebuzau.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://casemodularebuzau.haionline.ro"
+        },
+        {
+          "project": "clinicilepink.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://clinicilepink.haionline.ro"
+        },
+        {
+          "project": "companiamica.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://companiamica.haionline.ro"
+        },
+        {
+          "project": "constructiidurabile.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://constructiidurabile.haionline.ro"
+        },
+        {
+          "project": "dadudental.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://dadudental.haionline.ro"
+        },
+        {
+          "project": "deosdental.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://deosdental.haionline.ro"
+        },
+        {
+          "project": "dentimar.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://dentimar.haionline.ro"
+        },
+        {
+          "project": "dentone.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://dentone.haionline.ro"
+        },
+        {
+          "project": "dianabeauty.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://dianabeauty.haionline.ro"
+        },
+        {
+          "project": "dianaciobanu.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://dianaciobanu.haionline.ro"
+        },
+        {
+          "project": "doctordezambete.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://doctordezambete.haionline.ro"
+        },
+        {
+          "project": "dpdental.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://dpdental.haionline.ro"
+        },
+        {
+          "project": "drbogdan.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://drbogdan.haionline.ro"
+        },
+        {
+          "project": "drdameh.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://drdameh.haionline.ro"
+        },
+        {
+          "project": "drgheorghiade.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://drgheorghiade.haionline.ro"
+        },
+        {
+          "project": "dristordent.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://dristordent.haionline.ro"
+        },
+        {
+          "project": "duodent.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://duodent.haionline.ro"
+        },
+        {
+          "project": "estheticdentalcenter.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://estheticdentalcenter.haionline.ro"
+        },
+        {
+          "project": "eviakids.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://eviakids.haionline.ro"
+        },
+        {
+          "project": "factorysalon.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://factorysalon.haionline.ro"
+        },
+        {
+          "project": "flordent.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://flordent.haionline.ro"
+        },
+        {
+          "project": "getnic.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://getnic.haionline.ro"
+        },
+        {
+          "project": "glambody.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://glambody.haionline.ro"
+        },
+        {
+          "project": "gradinitaoac.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://gradinitaoac.haionline.ro"
+        },
+        {
+          "project": "gradinitasteaua.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://gradinitasteaua.haionline.ro"
+        },
+        {
+          "project": "hopsieu.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://hopsieu.haionline.ro"
+        },
+        {
+          "project": "ifloribucuresti.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://ifloribucuresti.haionline.ro"
+        },
+        {
+          "project": "iratruck.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://iratruck.haionline.ro"
+        },
+        {
+          "project": "jigaudentalclinic.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://jigaudentalclinic.haionline.ro"
+        },
+        {
+          "project": "kidsco.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://kidsco.haionline.ro"
+        },
+        {
+          "project": "kinetoperfect.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://kinetoperfect.haionline.ro"
+        },
+        {
+          "project": "mikodental.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://mikodental.haionline.ro"
+        },
+        {
+          "project": "miradent.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://miradent.haionline.ro"
+        },
+        {
+          "project": "numeris.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://numeris.haionline.ro"
+        },
+        {
+          "project": "optica87.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://optica87.haionline.ro"
+        },
+        {
+          "project": "pinkup.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://pinkup.haionline.ro"
+        },
+        {
+          "project": "prolife.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://prolife.haionline.ro"
+        },
+        {
+          "project": "quantica720.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://quantica720.haionline.ro"
+        },
+        {
+          "project": "rana-art-dent.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://rana-art-dent.haionline.ro"
+        },
+        {
+          "project": "renartdesign.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://renartdesign.haionline.ro"
+        },
+        {
+          "project": "restaurantnicoresti.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://restaurantnicoresti.haionline.ro"
+        },
+        {
+          "project": "saloneliza.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://saloneliza.haionline.ro"
+        },
+        {
+          "project": "salonmalibu.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://salonmalibu.haionline.ro"
+        },
+        {
+          "project": "salonnicol.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://salonnicol.haionline.ro"
+        },
+        {
+          "project": "scoaladebeauty.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://scoaladebeauty.haionline.ro"
+        },
+        {
+          "project": "sebdental.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://sebdental.haionline.ro"
+        },
+        {
+          "project": "sunnylandkids.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://sunnylandkids.haionline.ro"
+        },
+        {
+          "project": "ultraestetic.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://ultraestetic.haionline.ro"
+        },
+        {
+          "project": "ultimeledorinte.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://ultimeledorinte.haionline.ro"
+        },
+        {
+          "project": "vanestetic.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://vanestetic.haionline.ro"
+        },
+        {
+          "project": "vitaldent.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://vitaldent.haionline.ro"
+        },
+        {
+          "project": "worlddentistry.haionline.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://worlddentistry.haionline.ro"
+        },
+        {
+          "project": "salonbeautyarena.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://salonbeautyarena.ro"
+        },
+        {
+          "project": "drdent.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://drdent.ro"
+        },
+        {
+          "project": "hrfluent.com",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://hrfluent.com"
+        },
+        {
+          "project": "clubulzambetelor.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://clubulzambetelor.ro"
+        },
+        {
+          "project": "ringabell.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://ringabell.ro"
+        },
+        {
+          "project": "pilotcenter.net",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://pilotcenter.net"
+        },
+        {
+          "project": "muzicapentruviata.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://muzicapentruviata.ro"
+        },
+        {
+          "project": "realview3d.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://realview3d.ro"
+        },
+        {
+          "project": "enumismatica.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://enumismatica.ro"
+        },
+        {
+          "project": "avidobakery.ro",
+          "type": "Proiect publicat",
+          "outcome": "Proiect digital lansat",
+          "href": "https://avidobakery.ro"
+        }
+      ]
+    },
+    "deliveryLayers": {
+      "eyebrow": "Cum lucrăm",
+      "title": "Patru pași. Un rezultat clar.",
+      "body": "Nu inventăm procese sofisticate. Avem o metodă simplă, bine exersată, care funcționează.",
+      "cards": [
+        {
+          "title": "Înțelegem",
+          "benefit": "Analizăm businessul, contextul și obiectivul real. Nu pornim din presupuneri.",
+          "proof": "Analiză"
+        },
+        {
+          "title": "Clarificăm",
+          "benefit": "Stabilim direcția, structura și mesajul înainte să intrăm în execuție. Design cu cap, nu la întâmplare.",
+          "proof": "Strategie"
+        },
+        {
+          "title": "Construim",
+          "benefit": "Design, development, conținut și sistem digital — atent, coerent și orientat spre rezultat.",
+          "proof": "Execuție"
+        },
+        {
+          "title": "Lansăm și optimizăm",
+          "benefit": "Publicăm, testăm și rafinăm acolo unde este nevoie. Nu dispărem după lansare.",
+          "proof": "Rezultate"
+        }
+      ],
+      "toggleMore": "Arată mai multe",
+      "toggleLess": "Arată mai puține"
+    },
+    "exploreSky": {
+      "eyebrow": "Explorează",
+      "title": "Tot ce trebuie să știi despre SKY.RO.",
+      "subhead": "Cine suntem, ce construim, proiecte cu rezultate vizibile și cum poți începe.",
+      "openLabel": "Descoperă",
+      "pages": [
+        {
+          "href": "/who-we-are",
+          "label": "Cine suntem",
+          "title": "Un partener digital serios.",
+          "text": "Cum gândim, cum lucrăm și de ce clienții ne aleg pentru proiectele lor digitale.",
+          "image": "/sky/panel-1.jpg"
+        },
+        {
+          "href": "/what-we-do",
+          "label": "Servicii",
+          "title": "Ce construim pentru tine",
+          "text": "Website-uri, landing page-uri, magazine online, strategie, campanii și identitate vizuală.",
+          "image": "/sky/panel-2.jpg"
+        },
+        {
+          "href": "/work",
+          "label": "Proiecte",
+          "title": "Proiecte cu cap, nu doar cu gust.",
+          "text": "Portofoliu real de proiecte cu obiective clare, execuție atentă și rezultate vizibile.",
+          "image": "/sky/panel-3.jpg"
+        },
+        {
+          "href": "/contact",
+          "label": "Începe",
+          "title": "Hai să vorbim.",
+          "text": "Spune-ne pe scurt ce ai nevoie. Revenim cu o direcție clară și o estimare realistă.",
+          "image": "/sky/contact.jpg"
+        }
+      ]
+    },
+    "fourSteps": {
+      "steps": [
+        {
+          "img": "/discover.png",
+          "title": "01. Înțelegem",
+          "summary": "Analizăm businessul, contextul și obiectivul real al proiectului. Nu pornim din presupuneri.",
+          "chips": [
+            "Analiză",
+            "Obiective",
+            "Context",
+            "Poziționare"
+          ]
+        },
+        {
+          "img": "/Shape.png",
+          "title": "02. Clarificăm",
+          "summary": "Stabilim direcția, structura și mesajul înainte să intrăm în execuție. Design cu cap.",
+          "chips": [
+            "Structură",
+            "Mesaj",
+            "Strategie",
+            "Prioritizare"
+          ]
+        },
+        {
+          "img": "/bulid.png",
+          "title": "03. Construim",
+          "summary": "Design, development și conținut — atent, coerent și orientat spre claritate și conversie.",
+          "chips": [
+            "Design",
+            "Dezvoltare",
+            "Conținut",
+            "Performanță"
+          ]
+        },
+        {
+          "img": "/lunch.png",
+          "title": "04. Lansăm",
+          "summary": "Publicăm, testăm și rafinăm acolo unde este nevoie. Rămânem alturi după lansare.",
+          "chips": [
+            "Lansare",
+            "Testare",
+            "Optimizare",
+            "Suport"
+          ]
+        }
+      ]
+    },
+    "footerCta": {
+      "label": "Ai nevoie de un site care să arate bine și să funcționeze cum trebuie?",
+      "title": "Dacă simți că imaginea ta online nu reflectă nivelul businessului tău, putem construi împreună ceva mai bun.",
+      "body": "Trimite-ne câteva detalii despre proiect sau despre situația actuală. Revenim cu o direcție clară și o estimare realistă.",
+      "buttons": [
+        {
+          "href": "mailto:hello@sky.ro",
+          "label": "Începe un proiect"
+        },
+        {
+          "href": "https://wa.me/40720088880?text=Salut%20SKY.RO%2C%20vreau%20sa%20discutam%20despre%20un%20proiect%20digital.",
+          "label": "WhatsApp"
+        },
+        {
+          "href": "https://cal.com/sky/fit-call",
+          "label": "Programează o discuție"
+        }
+      ],
+      "quickForm": {
+        "namePlaceholder": "Numele tău",
+        "emailPlaceholder": "Adresa de e-mail",
+        "submitLabel": "Trimite",
+        "note": "hello@sky.ro · Răspuns în aceeași zi lucrătoare"
+      }
+    }
+  },
+  "whoWeAre": {
+    "hero": {
+      "pageLabel": "Cine suntem",
+      "title": "Un partener digital, nu doar un executant.",
+      "description": "Lucrăm cu business-uri care au nevoie de mai mult decât design. Au nevoie de structură, claritate și o direcție digitală coerentă. Fiecare proiect SKY.RO este construit cu focus pe imagine, performanță și conversie.",
+      "primaryCta": "Începe un proiect",
+      "secondaryCta": "Vezi serviciile",
+      "heroBadge": "SKY.RO",
+      "heroStats": [
+        {
+          "value": "70+",
+          "label": "Proiecte livrate"
+        },
+        {
+          "value": "34%",
+          "label": "Creștere medie cereri"
+        },
+        {
+          "value": "Premium",
+          "label": "Standard de execuție"
+        }
+      ],
+      "heroPoints": [
+        "Claritate înainte de execuție — nu începem cu design înainte să înțelegem obiectivul.",
+        "Design care susține conversia — fiecare pagină ghidează utilizatorul spre acțiune.",
+        "Execuție atentă, fără improvizații — de la text și layout până la performanță."
+      ],
+      "heroNote": "Mod de lucru"
+    },
+    "identity": {
+      "eyebrow": "Cum gândim",
+      "title": "Website-ul tău trebuie să arate bine și să și funcționeze.",
+      "description": "Un proiect reușit nu înseamnă doar un site nou. Înseamnă mai multă claritate pentru client, mai multă încredere în brand și un parcurs digital care generează cereri și vânzări reale."
+    },
+    "principles": [
+      {
+        "title": "Claritate înainte de execuție",
+        "body": "Nu propunem culori și fonturi înainte să înțelegem businessul. Structura și mesajul vin primul, designul urmează.",
+        "stat": "Strategie solidă"
+      },
+      {
+        "title": "Design care convinge",
+        "body": "Fiecare pagină este gândită să arate bine și să ghideze utilizatorul spre acțiune. Frumusețea fără claritate nu funcționează.",
+        "stat": "Conversie reală"
+      },
+      {
+        "title": "Execuție fără improvizații",
+        "body": "Lucrăm curat, coerent și cu atenție la detalii. Preferăm calitatea pe termen lung față de viteza superficială.",
+        "stat": "Premium consistent"
+      }
+    ],
+    "operations": {
+      "teamShapeTitle": "Ce construim",
+      "teamShape": [
+        {
+          "role": "Website-uri de prezentare",
+          "focus": "Site-uri premium, rapide și clare, gândite să inspire încredere și să transforme vizitatorii în cereri."
+        },
+        {
+          "role": "Landing page-uri și campanii",
+          "focus": "Pagini orientate spre acțiune, create pentru a converti mai bine traficul din reclame și campanii."
+        },
+        {
+          "role": "Magazine online și platforme",
+          "focus": "Experiențe e-commerce și platforme bine organizate, ușor de folosit și optimizate pentru vânzare."
+        }
+      ],
+      "howWeWorkLabel": "Procesul nostru",
+      "howWeWorkTitle": "Simplu, clar și eficient.",
+      "howWeWorkBody": "Înțelegem → Clarificăm → Construim → Lansăm. Patru pași cu responsabilitate și livrabile clare la fiecare etapă.",
+      "flow": [
+        {
+          "label": "Înțelegem",
+          "copy": "Businessul, contextul și obiectivul real"
+        },
+        {
+          "label": "Clarificăm",
+          "copy": "Direcție, structură și mesaj"
+        },
+        {
+          "label": "Construim",
+          "copy": "Design, development și conținut"
+        },
+        {
+          "label": "Lansăm",
+          "copy": "Publicare, testare și optimizare"
+        }
+      ],
+      "cta": "Vezi proiectele"
+    },
+    "proof": {
+      "eyebrow": "Ce spun clienții",
+      "title": "Rezultate care se văd și se simt.",
+      "description": "Un proiect reușit nu înseamnă doar un site frumos. Înseamnă mai multă claritate pentru client, mai multă încredere în brand și un parcurs digital care generează rezultate.",
+      "quote": "Am simțit că lucrăm cu cineva care înțelege businessul nostru, nu doar designul. Rezultatul vorbește de la sine.",
+      "author": "Fondator, clinică medicală privată",
+      "stats": [
+        "70+ proiecte livrate în România",
+        "Clinici, e-commerce, servicii, HoReCa",
+        "Proces clar de la prima discuție"
+      ]
+    },
+    "culture": {
+      "eyebrow": "Filozofia noastră",
+      "title": "Gândim de ansamblu. Website, mesaj, promovare și experiență — totul funcționează împreună.",
+      "description": "Nu livrăm site-uri în izolare. Gândim prezența ta digitală ca un întreg: cum arată, ce spune, cum convinge și cum convertește. Fiecare decizie servește același obiectiv."
+    }
+  },
+  "whatWeDo": {
+    "hero": {
+      "pageLabel": "Servicii",
+      "title": "Ce construim pentru tine.",
+      "description": "Website-uri premium, landing page-uri de conversie, magazine online, strategie digitală, campanii și identitate vizuală. Tot ce are nevoie prezența ta online ca să funcționeze.",
+      "primaryCta": "Începe un proiect",
+      "secondaryCta": "Vezi proiecte",
+      "heroBadge": "Servicii",
+      "heroStats": [
+        {
+          "value": "6",
+          "label": "Tipuri de proiecte"
+        },
+        {
+          "value": "70+",
+          "label": "Proiecte livrate"
+        },
+        {
+          "value": "Premium",
+          "label": "Standard constant"
+        }
+      ],
+      "heroPoints": [
+        "Website-uri care arată bine și generează cereri — nu doar o broșură digitală.",
+        "Landing page-uri și campanii orientate spre conversie, nu spre estetică fără scop.",
+        "Strategie și identitate coerentă pentru un brand recunoscut și de încredere."
+      ],
+      "heroNote": "Ce poți comanda"
+    },
+    "capabilities": {
+      "eyebrow": "Ce construim",
+      "title": "Șase servicii. Un singur standard.",
+      "description": "Poți veni cu o nevoie simplă sau cu un proiect complex. Indiferent, ajungi la același nivel de calitate, claritate și atenție la detalii."
+    },
+    "serviceColumns": [
+      {
+        "title": "Website-uri de prezentare",
+        "points": [
+          "Design premium, rapid și clar",
+          "Inspiră încredere din prima secundă",
+          "Optimizat pentru cereri de contact",
+          "Potrivit pentru: servicii, clinici, consultanță, B2B"
+        ]
+      },
+      {
+        "title": "Landing page-uri de conversie",
+        "points": [
+          "Structură orientată spre acțiune",
+          "Construit pentru campanii și oferte",
+          "Fără distrageri, cu CTA clar",
+          "Potrivit pentru: reclame, lansări, oferte speciale"
+        ]
+      },
+      {
+        "title": "Magazine online",
+        "points": [
+          "Experiență de cumpărare clară",
+          "Ușor de folosit pe orice dispozitiv",
+          "Optimizat pentru vânzare directă",
+          "Potrivit pentru: produse fizice, digitale, servicii la abonament"
+        ]
+      }
+    ],
+    "statsCards": [
+      {
+        "label": "Strategie digitală",
+        "text": "Clarificăm direcția brandului tău online: mesaj, structură, funnel și priorități înainte de execuție."
+      },
+      {
+        "label": "Campanii și promovare",
+        "text": "Conectăm imaginea cu performanța prin campanii, conținut și execuție coerentă pe toate canalele."
+      },
+      {
+        "label": "Identitate vizuală digitală",
+        "text": "Un look coerent, premium și recognoscibil în toate punctele de contact — site, social, reclame."
+      }
+    ],
+    "deliveryArchitecture": {
+      "eyebrow": "Cum arată un proiect SKY.RO",
+      "title": "De la prima discuție la un site care funcționează.",
+      "body": "Fiecare proiect urmează aceeași logică: înțelegem, clarificăm, construim și lansăm. Simplu și previzibil.",
+      "layerLabel": "Etapă",
+      "layers": [
+        {
+          "id": "01",
+          "title": "Înțelegem businessul și obiectivul",
+          "body": "Analizăm contextul, publicul și ce vrei să obții. Nu pornim din presupuneri."
+        },
+        {
+          "id": "02",
+          "title": "Fixăm direcția și structura",
+          "body": "Strategie, mesaj, structură de pagini și logica de conversie — înainte de design."
+        },
+        {
+          "id": "03",
+          "title": "Design, development și conținut",
+          "body": "Construim atent, coerent, cu atenție la detalii și la performanță."
+        },
+        {
+          "id": "04",
+          "title": "Lansare și optimizare",
+          "body": "Publicăm, testăm și rafinăm. Rămânem alături după lansare."
+        }
+      ]
+    },
+    "engagement": {
+      "eyebrow": "Cum colaborăm",
+      "title": "Proiect punctual sau colaborare continuă.",
+      "description": "Poți veni cu un proiect bine definit sau poți opta pentru un parteneriat pe termen mai lung. Același standard, indiferent de formă.",
+      "projectMode": {
+        "label": "Proiect",
+        "title": "Un site, un redesign, sau o campanie.",
+        "body": "Definim scopul, lucrăm cu cap, livrăm rezultatul. Potrivit când ai o nevoie clară și un termen definit."
+      },
+      "partnershipMode": {
+        "label": "Parteneriat",
+        "title": "Prezență digitală în evoluție continuă.",
+        "body": "Suntem alături pe termen lung: optimizări, conținut, campanii și ajustări periodice. Potrivit când vrei să crești constant."
+      },
+      "cta": "Hai să vorbim"
+    }
+  },
+  "work": {
+    "hero": {
+      "pageLabel": "Proiecte",
+      "title": "Proiecte construite cu cap, nu doar cu gust.",
+      "description": "Fiecare proiect din portofoliu pornește de la aceeași idee: imaginea contează, dar fără structură, claritate și strategie, nu este suficientă. Asta e diferența.",
+      "primaryCta": "Vreau ceva similar",
+      "secondaryCta": "Descoperă serviciile",
+      "heroBadge": "Portofoliu",
+      "heroStats": [
+        {
+          "value": "70+",
+          "label": "Proiecte livrate"
+        },
+        {
+          "value": "10+",
+          "label": "Industrii"
+        },
+        {
+          "value": "Toate",
+          "label": "Disponibile live"
+        }
+      ],
+      "heroPoints": [
+        "Design și obiective de business care merg în aceeași direcție.",
+        "Proiecte reale: clinici, e-commerce, servicii, educație, HoReCa.",
+        "Fiecare site poate fi vizitat live — nu prezentăm mockup-uri."
+      ],
+      "heroNote": "Portofoliu live"
+    },
+    "showcase": {
+      "eyebrow": "Portofoliu",
+      "title": "Proiecte live din portofoliu.",
+      "description": "Vizualizează proiectele reale. Fiecare poate fi accesat live — nu prezentăm capturi sau mockup-uri."
+    },
+    "featuredWork": [
+      {
+        "link": "https://haionline.ro",
+        "title": "haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://5dent.haionline.ro",
+        "title": "5dent.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://abtdental.haionline.ro",
+        "title": "abtdental.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://agident.haionline.ro",
+        "title": "agident.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://asociatiapensionariloritalieni.haionline.ro",
+        "title": "asociatiapensionariloritalieni.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://artz-dent.haionline.ro",
+        "title": "artz-dent.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://avocatgeaninadragu.haionline.ro",
+        "title": "avocatgeaninadragu.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://beautyskin.haionline.ro",
+        "title": "beautyskin.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://biocaredental.haionline.ro",
+        "title": "biocaredental.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://casaardeleana.haionline.ro",
+        "title": "casaardeleana.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://cascodentar.haionline.ro",
+        "title": "cascodentar.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://casemodularebuzau.haionline.ro",
+        "title": "casemodularebuzau.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://clinicilepink.haionline.ro",
+        "title": "clinicilepink.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://companiamica.haionline.ro",
+        "title": "companiamica.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://constructiidurabile.haionline.ro",
+        "title": "constructiidurabile.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://dadudental.haionline.ro",
+        "title": "dadudental.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://deosdental.haionline.ro",
+        "title": "deosdental.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://dentimar.haionline.ro",
+        "title": "dentimar.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://dentone.haionline.ro",
+        "title": "dentone.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://dianabeauty.haionline.ro",
+        "title": "dianabeauty.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://dianaciobanu.haionline.ro",
+        "title": "dianaciobanu.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://doctordezambete.haionline.ro",
+        "title": "doctordezambete.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://dpdental.haionline.ro",
+        "title": "dpdental.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://drbogdan.haionline.ro",
+        "title": "drbogdan.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://drdameh.haionline.ro",
+        "title": "drdameh.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://drgheorghiade.haionline.ro",
+        "title": "drgheorghiade.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://dristordent.haionline.ro",
+        "title": "dristordent.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://duodent.haionline.ro",
+        "title": "duodent.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://estheticdentalcenter.haionline.ro",
+        "title": "estheticdentalcenter.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://eviakids.haionline.ro",
+        "title": "eviakids.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://factorysalon.haionline.ro",
+        "title": "factorysalon.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://flordent.haionline.ro",
+        "title": "flordent.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://getnic.haionline.ro",
+        "title": "getnic.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://glambody.haionline.ro",
+        "title": "glambody.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://gradinitaoac.haionline.ro",
+        "title": "gradinitaoac.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://gradinitasteaua.haionline.ro",
+        "title": "gradinitasteaua.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://hopsieu.haionline.ro",
+        "title": "hopsieu.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://ifloribucuresti.haionline.ro",
+        "title": "ifloribucuresti.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://iratruck.haionline.ro",
+        "title": "iratruck.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://jigaudentalclinic.haionline.ro",
+        "title": "jigaudentalclinic.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://kidsco.haionline.ro",
+        "title": "kidsco.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://kinetoperfect.haionline.ro",
+        "title": "kinetoperfect.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://mikodental.haionline.ro",
+        "title": "mikodental.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://miradent.haionline.ro",
+        "title": "miradent.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://numeris.haionline.ro",
+        "title": "numeris.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://optica87.haionline.ro",
+        "title": "optica87.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://pinkup.haionline.ro",
+        "title": "pinkup.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://prolife.haionline.ro",
+        "title": "prolife.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://quantica720.haionline.ro",
+        "title": "quantica720.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://rana-art-dent.haionline.ro",
+        "title": "rana-art-dent.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://renartdesign.haionline.ro",
+        "title": "renartdesign.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://restaurantnicoresti.haionline.ro",
+        "title": "restaurantnicoresti.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://saloneliza.haionline.ro",
+        "title": "saloneliza.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://salonmalibu.haionline.ro",
+        "title": "salonmalibu.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://salonnicol.haionline.ro",
+        "title": "salonnicol.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://scoaladebeauty.haionline.ro",
+        "title": "scoaladebeauty.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://sebdental.haionline.ro",
+        "title": "sebdental.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://sunnylandkids.haionline.ro",
+        "title": "sunnylandkids.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://ultraestetic.haionline.ro",
+        "title": "ultraestetic.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://ultimeledorinte.haionline.ro",
+        "title": "ultimeledorinte.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://vanestetic.haionline.ro",
+        "title": "vanestetic.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://vitaldent.haionline.ro",
+        "title": "vitaldent.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://worlddentistry.haionline.ro",
+        "title": "worlddentistry.haionline.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://salonbeautyarena.ro",
+        "title": "salonbeautyarena.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://drdent.ro",
+        "title": "drdent.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://hrfluent.com",
+        "title": "hrfluent.com",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://clubulzambetelor.ro",
+        "title": "clubulzambetelor.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://ringabell.ro",
+        "title": "ringabell.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://pilotcenter.net",
+        "title": "pilotcenter.net",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://muzicapentruviata.ro",
+        "title": "muzicapentruviata.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://realview3d.ro",
+        "title": "realview3d.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://enumismatica.ro",
+        "title": "enumismatica.ro",
+        "description": "Proiect digital lansat"
+      },
+      {
+        "link": "https://avidobakery.ro",
+        "title": "avidobakery.ro",
+        "description": "Proiect digital lansat"
+      }
+    ],
+    "outcomes": {
+      "eyebrow": "Rezultate care se văd și se simt",
+      "title": "Ce s-a schimbat după ce am construit împreună.",
+      "description": "Un proiect reușit nu înseamnă doar un site nou. Înseamnă mai multă claritate pentru client, mai multă încredere în brand și un parcurs digital care generează rezultate reale.",
+      "shippedLabel": "Ce am construit",
+      "resultLabel": "Ce s-a schimbat",
+      "linkLabel": "Vezi site-ul",
+      "cases": [
+        {
+          "name": "Dacus",
+          "vertical": "E-commerce",
+          "shipped": "Experiență digitală mai clară și mai bine organizată, cu accent pe structură și navigare",
+          "result": "Un parcurs mai simplu pentru utilizator și o bază mai bună pentru creșterea conversiilor",
+          "href": "https://dacus.ro"
+        },
+        {
+          "name": "DrDent.ro",
+          "vertical": "Clinică dentară",
+          "shipped": "Repoziționare digitală spre o direcție mai premium și mai clară pentru servicii",
+          "result": "Comunicare mai bună, mai multă încredere din prima interacțiune, mai multe programări online",
+          "href": "https://drdent.ro"
+        },
+        {
+          "name": "HR Fluent",
+          "vertical": "Servicii pentru companii",
+          "shipped": "Transformarea imaginii digitale într-un instrument mai clar de prezentare și validare",
+          "result": "Structură mai bună, mesaj mai coerent și experiență mai profesionistă pentru potențialii clienți",
+          "href": "https://hrfluent.com"
+        },
+        {
+          "name": "Pilot Center",
+          "vertical": "Instruire și certificare",
+          "shipped": "Actualizarea platformei cu pagini de curs mai clare și un formular de contact mai vizibil",
+          "result": "Parcurs mai simplu pentru vizitatori și creștere vizibilă a cererilor de informații",
+          "href": "https://pilotcenter.net"
+        },
+        {
+          "name": "Enumismatica.ro",
+          "vertical": "Comerț de nișă",
+          "shipped": "Refacere completă a site-ului cu accent pe claritate și pe experiența colecționarului",
+          "result": "Vizitatori mai implicați, timp mai mare pe site și un parcurs de cumpărare mai natural",
+          "href": "https://enumismatica.ro"
+        },
+        {
+          "name": "Clubul Zâmbetelor",
+          "vertical": "Clinică pediatrică",
+          "shipped": "Site nou cu focus pe atmosferă, claritate și facilitate pentru programări online",
+          "result": "Prezență digitală mai caldă și mai de încredere, cu o rată mai mare de programări online",
+          "href": "https://clubulzambetelor.ro"
+        }
+      ]
+    },
+    "positioning": {
+      "body": "Proiecte construite cu cap — unde designul și obiectivele de business merg în aceeași direcție."
+    },
+    "threeBlocks": [
+      {
+        "title": "Mai multă claritate",
+        "body": "Vizitatorii înțeleg rapid ce oferi și de ce e relevant pentru ei."
+      },
+      {
+        "title": "Mai multă încredere",
+        "body": "Un site bine construit inspiră profesionalism și credibilitate instant."
+      },
+      {
+        "title": "Mai multe cereri",
+        "body": "Structura și mesajul corect transformă interesul în acțiune."
+      }
+    ],
+    "cta": "Vreau ceva similar"
+  },
+  "contact": {
+    "hero": {
+      "pageLabel": "Contact",
+      "title": "Spune-ne ce vrei să construim.",
+      "description": "Fie că ai nevoie de un website nou, un redesign, o pagină de conversie sau o direcție mai clară pentru prezența ta online, putem începe de aici. Trimite-ne câteva detalii și revenim cu o direcție clară, pași concreți și o estimare realistă.",
+      "primaryCta": "Începe un proiect",
+      "secondaryCta": "Programează o discuție",
+      "heroBadge": "Contact",
+      "heroStats": [
+        {
+          "value": "Aceeași zi",
+          "label": "Timp de răspuns"
+        },
+        {
+          "value": "Fără angajamente",
+          "label": "Prima discuție"
+        },
+        {
+          "value": "Estimare clară",
+          "label": "Ce primești"
+        }
+      ],
+      "heroPoints": [
+        "Descrie pe scurt proiectul sau situația actuală.",
+        "Primești o estimare clară și o direcție concretă.",
+        "Decidem împreună dacă și cum colaborăm."
+      ],
+      "heroNote": "Fără presiune"
+    },
+    "directChannels": {
+      "eyebrow": "Canale directe",
+      "title": "Vorbești direct cu noi, nu cu un bot sau un sales rep.",
+      "description": "Echipa care răspunde este aceeași care va lucra la proiectul tău."
+    },
+    "contactChannels": [
+      {
+        "title": "E-mail",
+        "value": "hello@sky.ro",
+        "href": "mailto:hello@sky.ro",
+        "detail": "Pentru un brief detaliat, estimări și calendar de lucru."
+      },
+      {
+        "title": "Telefon / WhatsApp",
+        "value": "+40 720 088 880",
+        "href": "tel:+40720088880",
+        "detail": "Pentru o discuție scurtă de orientare."
+      }
+    ],
+    "brief": {
+      "title": "Ce ne ajută să îți dăm un răspuns util de la prima interacțiune.",
+      "body": "Nu trebuie să trimiți un document elaborat. Câteva detalii simple ne ajută să înțelegem contextul și să venim cu o direcție relevantă.",
+      "steps": [
+        "Cu ce tip de business lucrezi",
+        "Ce vrei să obții — mai multe cereri, un redesign, o campanie sau altceva",
+        "Dacă ai deja un site și ce nu funcționează la el",
+        "Ce termen ai în minte și bugetul orientativ"
+      ]
+    },
+    "response": {
+      "label": "Când primești răspuns",
+      "value": "În aceeași zi lucrătoare",
+      "body": "Revenim întotdeauna în aceeași zi lucrătoare cu o primă evaluare și pașii următori.",
+      "directEmail": "hello@sky.ro"
+    },
+    "form": {
+      "namePlaceholder": "Numele tău",
+      "emailPlaceholder": "Adresa de e-mail",
+      "briefPlaceholder": "Descrie pe scurt ce vrei să construiești sau ce nu funcționează acum",
+      "submitLabel": "Trimite"
+    },
+    "cta": "Descoperă serviciile"
+  }
+}
