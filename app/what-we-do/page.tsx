@@ -33,7 +33,7 @@ export default function WhatWeDoPage() {
       heroNote={whatWeDoText.hero.heroNote}
       raysOrigin="top-right"
     >
-      <section className="section-divider relative py-14 sm:py-18">
+      <section className="section-divider relative py-12 sm:py-18">
         <Container>
           <SectionIntro
             eyebrow={whatWeDoText.capabilities.eyebrow}
@@ -41,7 +41,7 @@ export default function WhatWeDoPage() {
             description={whatWeDoText.capabilities.description}
           />
 
-          <div className="mobile-snap-row -mx-1 mt-8 flex gap-3 overflow-x-auto px-1 pb-1 lg:mx-0 lg:grid lg:grid-cols-3 lg:gap-4 lg:overflow-visible lg:px-0 lg:pb-0">
+          <div className="mobile-snap-row -mx-1 mt-6 flex gap-2.5 overflow-x-auto px-1 pb-1 lg:mx-0 lg:mt-8 lg:grid lg:grid-cols-3 lg:gap-4 lg:overflow-visible lg:px-0 lg:pb-0">
             {serviceColumns.map((service, i) => (
               <motion.article
                 key={service.title}
@@ -49,10 +49,10 @@ export default function WhatWeDoPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-10%" }}
                 transition={m.t(i * 0.06, 0.78)}
-                className="sky-surface-soft reveal-blur mobile-snap-card min-w-[84%] shrink-0 rounded-[24px] p-5 lg:min-w-0 lg:p-6"
+                className="sky-surface-soft reveal-blur mobile-snap-card min-w-[80%] shrink-0 rounded-[20px] p-4 lg:min-w-0 lg:rounded-[24px] lg:p-6"
               >
-                <h3 className="text-2xl font-semibold tracking-tight text-white">{service.title}</h3>
-                <ul className="mt-4 space-y-2.5 text-sm text-white/72">
+                <h3 className="text-xl font-semibold tracking-tight text-white lg:text-2xl">{service.title}</h3>
+                <ul className="mt-3 space-y-2 text-[13px] text-white/72 lg:mt-4 lg:space-y-2.5 lg:text-sm">
                   {service.points.map((point) => (
                     <li key={point} className="flex items-center gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
@@ -64,48 +64,48 @@ export default function WhatWeDoPage() {
             ))}
           </div>
 
-          <div className="mobile-snap-row -mx-1 mt-6 flex gap-3 overflow-x-auto px-1 pb-1 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 md:pb-0">
+          <div className="mobile-snap-row -mx-1 mt-5 flex gap-2.5 overflow-x-auto px-1 pb-1 md:mx-0 md:mt-6 md:grid md:grid-cols-3 md:overflow-visible md:px-0 md:pb-0">
             {whatWeDoText.statsCards.map((card, index) => (
               <article
                 key={card.label}
                 className={[
-                  "sky-surface-soft mobile-snap-card min-w-[84%] shrink-0 rounded-2xl p-4 md:min-w-0",
+                  "sky-surface-soft mobile-snap-card min-w-[80%] shrink-0 rounded-xl p-3.5 md:min-w-0 md:rounded-2xl md:p-4",
                   index === 2 ? "md:col-span-1" : "",
                 ].join(" ")}
               >
-                <p className="text-[11px] uppercase tracking-[0.2em] text-white/55">{card.text}</p>
-                <p className="mt-2 text-2xl font-semibold tracking-tight text-white">{card.label}</p>
+                <p className="text-[10px] uppercase tracking-[0.16em] text-white/55 md:text-[11px] md:tracking-[0.2em]">{card.text}</p>
+                <p className="mt-1.5 text-xl font-semibold tracking-tight text-white md:mt-2 md:text-2xl">{card.label}</p>
               </article>
             ))}
           </div>
         </Container>
       </section>
 
-      <section className="section-divider relative py-8 sm:py-14">
+      <section className="section-divider relative py-7 sm:py-14">
         <Container>
-          <div className="mobile-snap-row reveal-blur -mx-1 mt-8 flex gap-4 overflow-x-auto px-1 pb-1 sm:mt-10 sm:grid sm:grid-cols-12 sm:gap-8 sm:overflow-visible sm:px-0 sm:pb-0 lg:items-end">
-            <div className="mobile-snap-card min-w-[90%] shrink-0 sm:col-span-5 sm:min-w-0 lg:col-span-5">
-              <div className="rounded-2xl bg-black/45 p-6 backdrop-blur-xl">
-                <div className="text-[11px] uppercase tracking-[0.24em] text-white/55">{whatWeDoText.deliveryArchitecture.eyebrow}</div>
-                <h4 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">{whatWeDoText.deliveryArchitecture.title}</h4>
-                <p className="mt-4 text-xs leading-relaxed text-white/72 sm:text-sm">
+          <div className="mobile-snap-row reveal-blur -mx-1 mt-6 flex gap-3 overflow-x-auto px-1 pb-1 sm:mt-10 sm:grid sm:grid-cols-12 sm:gap-8 sm:overflow-visible sm:px-0 sm:pb-0 lg:items-end">
+            <div className="mobile-snap-card min-w-[86%] shrink-0 sm:col-span-5 sm:min-w-0 lg:col-span-5">
+              <div className="rounded-xl bg-black/45 p-4 backdrop-blur-xl sm:rounded-2xl sm:p-6">
+                <div className="text-[10px] uppercase tracking-[0.2em] text-white/55 sm:text-[11px] sm:tracking-[0.24em]">{whatWeDoText.deliveryArchitecture.eyebrow}</div>
+                <h4 className="mt-2.5 text-xl font-semibold tracking-tight text-white sm:mt-3 sm:text-3xl">{whatWeDoText.deliveryArchitecture.title}</h4>
+                <p className="mt-3 text-[11px] leading-relaxed text-white/72 sm:mt-4 sm:text-sm">
                   {whatWeDoText.deliveryArchitecture.body}
                 </p>
               </div>
             </div>
 
-            <div className="mobile-snap-card min-w-[94%] shrink-0 sm:col-span-7 sm:min-w-0 lg:col-span-7">
+            <div className="mobile-snap-card min-w-[90%] shrink-0 sm:col-span-7 sm:min-w-0 lg:col-span-7">
               <div className="mobile-snap-row -mx-1 flex gap-3 overflow-x-auto px-1 pb-1 sm:hidden">
                 {deliveryLayers.map((layer) => (
                   <article
                     key={`mobile-${layer.id}`}
-                    className="mobile-snap-card min-w-[88%] shrink-0 rounded-[22px] border border-white/12 bg-black/42 p-5"
+                    className="mobile-snap-card min-w-[84%] shrink-0 rounded-[18px] border border-white/12 bg-black/42 p-4"
                   >
-                    <div className="text-xs uppercase tracking-[0.24em] text-white/55">
+                    <div className="text-[11px] uppercase tracking-[0.2em] text-white/55">
                       {layer.id} / {whatWeDoText.deliveryArchitecture.layerLabel}
                     </div>
-                    <h4 className="mt-3 text-2xl font-semibold tracking-tight text-white">{layer.title}</h4>
-                    <p className="mt-3 text-sm text-white/74">{layer.body}</p>
+                    <h4 className="mt-2.5 text-xl font-semibold tracking-tight text-white">{layer.title}</h4>
+                    <p className="mt-2.5 text-[13px] text-white/74">{layer.body}</p>
                   </article>
                 ))}
               </div>
@@ -141,7 +141,7 @@ export default function WhatWeDoPage() {
         </Container>
       </section>
 
-      <section className="section-divider relative py-10 sm:py-16">
+      <section className="section-divider relative py-8 sm:py-16">
         <Container>
           <SectionIntro
             eyebrow={whatWeDoText.engagement.eyebrow}
@@ -150,17 +150,17 @@ export default function WhatWeDoPage() {
             center
           />
 
-          <div className="mobile-snap-row -mx-1 mt-8 flex gap-4 overflow-x-auto px-1 pb-1 md:mx-0 md:grid md:grid-cols-2 md:overflow-visible md:px-0 md:pb-0">
+          <div className="mobile-snap-row -mx-1 mt-6 flex gap-3 overflow-x-auto px-1 pb-1 md:mx-0 md:mt-8 md:grid md:grid-cols-2 md:overflow-visible md:px-0 md:pb-0">
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={m.t(0.03, 0.75)}
-              className="sky-surface-soft reveal-blur mobile-snap-card min-w-[88%] shrink-0 rounded-[26px] p-6 sm:min-w-0 sm:p-8"
+              className="sky-surface-soft reveal-blur mobile-snap-card min-w-[84%] shrink-0 rounded-[22px] p-4 sm:min-w-0 sm:rounded-[26px] sm:p-8"
             >
-              <p className="text-xs uppercase tracking-[0.24em] text-white/55">{whatWeDoText.engagement.projectMode.label}</p>
-              <h4 className="mt-3 text-3xl font-semibold tracking-tight text-white">{whatWeDoText.engagement.projectMode.title}</h4>
-              <p className="mt-4 text-sm text-white/72">{whatWeDoText.engagement.projectMode.body}</p>
+              <p className="text-[11px] uppercase tracking-[0.2em] text-white/55 sm:text-xs sm:tracking-[0.24em]">{whatWeDoText.engagement.projectMode.label}</p>
+              <h4 className="mt-2.5 text-2xl font-semibold tracking-tight text-white sm:mt-3 sm:text-3xl">{whatWeDoText.engagement.projectMode.title}</h4>
+              <p className="mt-3 text-[13px] text-white/72 sm:mt-4 sm:text-sm">{whatWeDoText.engagement.projectMode.body}</p>
             </motion.div>
 
             <motion.div
@@ -168,15 +168,15 @@ export default function WhatWeDoPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={m.t(0.08, 0.75)}
-              className="sky-surface-soft reveal-blur mobile-snap-card min-w-[88%] shrink-0 rounded-[26px] p-6 sm:min-w-0 sm:p-8"
+              className="sky-surface-soft reveal-blur mobile-snap-card min-w-[84%] shrink-0 rounded-[22px] p-4 sm:min-w-0 sm:rounded-[26px] sm:p-8"
             >
-              <p className="text-xs uppercase tracking-[0.24em] text-white/55">{whatWeDoText.engagement.partnershipMode.label}</p>
-              <h4 className="mt-3 text-3xl font-semibold tracking-tight text-white">{whatWeDoText.engagement.partnershipMode.title}</h4>
-              <p className="mt-4 text-sm text-white/72">{whatWeDoText.engagement.partnershipMode.body}</p>
+              <p className="text-[11px] uppercase tracking-[0.2em] text-white/55 sm:text-xs sm:tracking-[0.24em]">{whatWeDoText.engagement.partnershipMode.label}</p>
+              <h4 className="mt-2.5 text-2xl font-semibold tracking-tight text-white sm:mt-3 sm:text-3xl">{whatWeDoText.engagement.partnershipMode.title}</h4>
+              <p className="mt-3 text-[13px] text-white/72 sm:mt-4 sm:text-sm">{whatWeDoText.engagement.partnershipMode.body}</p>
             </motion.div>
           </div>
 
-          <div className="mt-8 flex justify-center">
+          <div className="mt-6 flex justify-center sm:mt-8">
             <SkyButton href="/contact">{whatWeDoText.engagement.cta}</SkyButton>
           </div>
         </Container>

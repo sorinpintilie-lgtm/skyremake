@@ -254,7 +254,7 @@ html {
 .mobile-snap-row {
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  scroll-padding-inline: 0.75rem;
+  scroll-padding-inline: 0.6rem;
   overscroll-behavior-x: contain;
 }
 
@@ -457,7 +457,7 @@ html {
 
   a,
   button {
-    min-height: 42px;
+    min-height: 40px;
   }
 
   .face-meta {
@@ -470,9 +470,9 @@ html {
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 0.38rem;
+    gap: 0.34rem;
     border-radius: 16px;
-    padding: 0.5rem 0.6rem;
+    padding: 0.46rem 0.56rem;
   }
 
   .face-meta.active {
@@ -490,12 +490,12 @@ html {
   }
 
   .face-title {
-    font-size: 0.8rem;
+    font-size: 0.76rem;
     line-height: 1.25;
   }
 
   .face-description {
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     line-height: 1.32;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -510,8 +510,36 @@ html {
   }
 
   .action-button {
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-divider {
+    padding-top: clamp(0.48rem, 1.4vw, 0.72rem) !important;
+    padding-bottom: clamp(0.48rem, 1.4vw, 0.72rem) !important;
+  }
+
+  .mobile-snap-row {
+    scroll-padding-inline: 0.5rem;
+  }
+
+  .hero-rays {
+    opacity: 0.16;
+  }
+
+  .face-meta {
+    left: 0.45rem;
+    right: 0.45rem;
+    bottom: 0.42rem;
+    border-radius: 14px;
+    padding: 0.42rem 0.5rem;
+  }
+
+  .face-link-indicator {
+    font-size: 0.66rem;
+    padding: 0.28rem 0.46rem;
   }
 }
 
@@ -548,13 +576,13 @@ html {
 
 @media (max-width: 640px) {
   .card-swap-container {
-    transform: scale(0.7);
+    transform: scale(0.66);
   }
 }
 
 @media (max-width: 420px) {
   .card-swap-container {
-    transform: scale(0.64);
+    transform: scale(0.6);
   }
 }
 
