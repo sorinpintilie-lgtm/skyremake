@@ -77,12 +77,12 @@
   "home": {
     "hero": {
       "eyebrow": "Website-uri și sisteme de marketing",
-      "title": "Construim experiențe digitale care transformă traficul în cereri și vânzări.",
-      "subhead": "Construim site-uri premium, pagini de conversie și sisteme de marketing bine gândite — pentru business-uri care vor claritate, performanță și mai mulți clienți.",
+      "title": "Construim ecosisteme digitale care aduc rezultate.",
+      "subhead": "Unim strategia, pagina web, comunicarea în rețele sociale și campaniile, ca oamenii să înțeleagă rapid oferta și să acționeze.",
       "primaryCta": "Vezi proiectele",
       "secondaryCta": "Cere un audit",
       "meta": "Website-uri · Landing pages · E-commerce · Strategie digitală",
-      "note": "Răspundem în aceeași zi lucrătoare",
+      "note": "Răspundem în mai puțin de 24 de ore",
       "mobilePills": [
         "Design premium",
         "Conversie reală"
@@ -96,16 +96,16 @@
       "cta": "Cere un audit gratuit",
       "stats": [
         {
-          "value": "70+",
-          "label": "Proiecte livrate"
-        },
-        {
           "value": "34%",
-          "label": "Creștere medie cereri"
+          "label": "creștere a cererilor"
         },
         {
           "value": "2,2s",
-          "label": "Viteză medie"
+          "label": "încărcare pe mobil"
+        },
+        {
+          "value": "20+",
+          "label": "proiecte publicate"
         }
       ]
     },
@@ -172,10 +172,10 @@
       "body": "Nu începem cu Figma și nu propunem culori înainte să înțelegem businessul. Fiecare proiect SKY.RO pornește de la obiective reale, mesaj clar și o logică de comunicare solidă. Abia după aceea construim ceva care arată bine."
     },
     "bentoNarrative": {
-      "eyebrow": "Ce construim",
-      "title": "Prezențe digitale premium, gândite să convertească.",
-      "body": "Design care susține conversia. Execuție atentă, fără improvizații. Gândire de ansamblu — website, mesaj, promovare și experiență — totul coeziv.",
-      "workedWithTitle": "Business-uri cu care am lucrat",
+      "eyebrow": "Capabilități",
+      "title": "Execuție practică, orientată spre rezultat.",
+      "body": "Planificare, sistem vizual, dezvoltare și verificare într-un proces coerent.",
+      "workedWithTitle": "Am colaborat cu",
       "workedWith": [
         {
           "name": "5Dent Clinic",
@@ -193,19 +193,19 @@
       "metrics": [
         {
           "value": "34%",
-          "label": "creștere medie a cererilor după lansare"
-        },
-        {
-          "value": "70+",
-          "label": "proiecte digitale livrate"
+          "label": "creștere a cererilor, în proiecte recente"
         },
         {
           "value": "2,2s",
-          "label": "timp mediu de încărcare pe mobil"
+          "label": "țintă de încărcare pe mobil"
+        },
+        {
+          "value": "20+",
+          "label": "proiecte publicate"
         }
       ],
-      "quote": "Procesul a fost clar de la prima discuție. Site-ul a generat cereri din prima săptămână după lansare.",
-      "quoteAuthor": "Manager, clinică medicală privată"
+      "quote": "Procesul a rămas clar și stabil de la prima discuție până la publicare.",
+      "quoteAuthor": "Fondator, magazin online"
     },
     "interactiveShowcase": {
       "eyebrow": "Selecție interactivă",
@@ -682,16 +682,6 @@
           "title": "Testare în utilizare reală",
           "benefit": "Validăm afișarea, lizibilitatea și interacțiunea înainte de publicare.",
           "proof": "Verificare"
-        },
-        {
-          "title": "Îmbunătățire continuă",
-          "benefit": "Urmărim datele de folosire și ajustăm acolo unde este nevoie.",
-          "proof": "Optimizare"
-        },
-        {
-          "title": "Publicare și urmărire",
-          "benefit": "Lansăm cu pași clari și monitorizăm funcționarea după publicare.",
-          "proof": "Publicare"
         }
       ],
       "toggleMore": "Arată mai multe",

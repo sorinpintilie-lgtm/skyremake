@@ -77,18 +77,18 @@
   "home": {
     "hero": {
       "eyebrow": "",
-      "title": "We build digital growth systems that drive results.",
-      "subhead": "We align strategy, your site, social channels, and paid campaigns so people understand your offer fast and take action.",
+      "title": "We build digital ecosystems that bring results.",
+      "subhead": "We unite strategy, website, social media, and campaigns so people quickly understand the offer and take action.",
       "primaryCta": "View work",
       "secondaryCta": "Start a project",
-      "meta": "Sites, social channels, paid flows, and conversion paths that stay clear, fast, and scalable.",
+      "meta": "Websites · Landing pages · E-commerce · Digital strategy",
       "note": "We reply in under 24 hours",
       "mobilePills": [
-        "Clear structure",
-        "Reliable mobile behavior"
+        "Premium design",
+        "Real conversion"
       ],
-      "imageTag": "Interface",
-      "imageNote": "Text and imagery stay readable on all screen sizes."
+      "imageTag": "Project",
+      "imageNote": "Design that looks good and works properly."
     },
     "signatureDirection": {
       "eyebrow": "Direction",
@@ -97,8 +97,8 @@
     },
     "bentoNarrative": {
       "eyebrow": "Capabilities",
-      "title": "Practical execution focused on outcomes.",
-      "body": "Planning, visual system, development, and review in one consistent process.",
+      "title": "Practical execution focused on results.",
+      "body": "Planning, visual system, development, and verification in a coherent process.",
       "workedWithTitle": "Worked with",
       "workedWith": [
         {
@@ -117,7 +117,7 @@
       "metrics": [
         {
           "value": "34%",
-          "label": "more inquiries on recent projects"
+          "label": "inquiry growth, on recent projects"
         },
         {
           "value": "2.2s",
@@ -128,7 +128,7 @@
           "label": "projects published"
         }
       ],
-      "quote": "The process stayed clear and stable from kickoff to launch.",
+      "quote": "The process stayed clear and stable from first discussion to publishing.",
       "quoteAuthor": "Founder, online store"
     },
     "interactiveShowcase": {
@@ -588,7 +588,7 @@
           "proof": "Analysis"
         },
         {
-          "title": "Consistent visual system",
+          "title": "Coherent visual system",
           "benefit": "Typography, spacing, and components follow one clear logic.",
           "proof": "Design"
         },
@@ -603,19 +603,9 @@
           "proof": "Messaging"
         },
         {
-          "title": "Review on real devices",
-          "benefit": "We check readability, spacing, and interaction before publishing.",
-          "proof": "Review"
-        },
-        {
-          "title": "Continuous improvement",
-          "benefit": "We use usage data to refine what matters most.",
-          "proof": "Optimization"
-        },
-        {
-          "title": "Publish and monitor",
-          "benefit": "We launch with clear steps and track behavior after release.",
-          "proof": "Release"
+          "title": "Testing in real use",
+          "benefit": "We check display, readability, and interaction before publishing.",
+          "proof": "Verification"
         }
       ],
       "toggleMore": "Show more",
