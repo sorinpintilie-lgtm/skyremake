@@ -18,6 +18,10 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
+  if (!APP_SECRET) {
+    return new NextResponse('Server error', { status: 500 });
+  }
+
   const body = await request.text();
   const signature = request.headers.get('x-hub-signature-256');
 
