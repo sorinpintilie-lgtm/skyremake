@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import crypto from 'crypto';
 
-const VERIFY_TOKEN = process.env.WHATSAPP_VERIFY_TOKEN;
-const APP_SECRET = process.env.WHATSAPP_APP_SECRET;
+const VERIFY_TOKEN = process.env.whatsapp_verify_token;
+const APP_SECRET = process.env.whatsapp_secret;
 
 export async function GET(request: NextRequest) {
   const url = new URL(request.url);
