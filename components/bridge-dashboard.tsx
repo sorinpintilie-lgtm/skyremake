@@ -2,15 +2,6 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-type Conversation = {
-  contactId: string;
-  contactName: string | null;
-  lastMessageAt: string;
-  lastPreview: string;
-  unreadCount: number;
-  lastDirection: 'inbound' | 'outbound';
-};
-
 type Message = {
   messageId: string;
   direction: 'inbound' | 'outbound';
@@ -24,71 +15,88 @@ type Message = {
   acknowledged: boolean;
 };
 
+type Conversation = {
+  contactId: string;
+  contactName: string | null;
+  lastMessageAt: string;
+  lastPreview: string;
+  unreadCount: number;
+  lastDirection: 'inbound' | 'outbound';
+};
+
+function buildConversations(items: Message[]): Conversation[] {
+  const map = new Map<string, Conversation>();
+  for (const message of items) {
+    const current = map.get(message.contactId);
+    if (!current || current.lastMessageAt < message.receivedAt) {
+      map.set(message.contactId, {
+        contactId: message.contactId,
+        contactName: message.contactName,
+        lastMessageAt: message.receivedAt,
+        lastPreview: message.preview,
+        unreadCount: message.direction === 'inbound' && !message.acknowledged ? 1 : 0,
+        lastDirection: message.direction,
+      });
+    } else if (message.direction === 'inbound' && !message.acknowledged) {
+      current.unreadCount += 1;
+    }
+  }
+  return Array.from(map.values()).sort((a, b) => (a.lastMessageAt < b.lastMessageAt ? 1 : -1));
+}
+
 export default function BridgeDashboard() {
-  const [conversations, setConversations] = useState<Conversation[]>([]);
+  const [allMessages, setAllMessages] = useState<Message[]>([]);
   const [selected, setSelected] = useState<string>('');
-  const [messages, setMessages] = useState<Message[]>([]);
   const [draft, setDraft] = useState('');
   const [manualTo, setManualTo] = useState('');
   const [error, setError] = useState('');
   const [sending, setSending] = useState(false);
 
-  const loadConversations = useCallback(async () => {
-    const res = await fetch('/api/bridge/conversations', { cache: 'no-store' });
+  const loadInbox = useCallback(async () => {
+    const res = await fetch('/api/bridge/messages', { cache: 'no-store' });
     const data = await res.json();
     if (data.ok) {
-      setConversations(data.items);
-      if ((!selected || !data.items.some((item: Conversation) => item.contactId === selected)) && data.items[0]?.contactId) {
-        setSelected(data.items[0].contactId);
-      }
-    }
-  }, [selected]);
-
-  const loadMessages = useCallback(async (contactId: string) => {
-    if (!contactId) return;
-    const res = await fetch(`/api/bridge/messages?contactId=${encodeURIComponent(contactId)}`, { cache: 'no-store' });
-    const data = await res.json();
-    if (data.ok) {
-      setMessages(data.items);
-      const unacked = data.items.filter((item: Message) => item.direction === 'inbound' && !item.acknowledged).map((item: Message) => item.messageId);
-      if (unacked.length) {
-        await fetch('/api/bridge/messages', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ messageIds: unacked }),
-        });
-      }
+      setAllMessages(data.items);
     }
   }, []);
 
   useEffect(() => {
     const initial = setTimeout(() => {
-      void loadConversations();
+      void loadInbox();
     }, 0);
     const id = setInterval(() => {
-      void loadConversations();
-    }, 15000);
-    return () => {
-      clearTimeout(initial);
-      clearInterval(id);
-    };
-  }, [loadConversations]);
-
-  useEffect(() => {
-    if (!selected) return;
-    const initial = setTimeout(() => {
-      void loadMessages(selected);
-    }, 0);
-    const id = setInterval(() => {
-      void loadMessages(selected);
+      void loadInbox();
     }, 12000);
     return () => {
       clearTimeout(initial);
       clearInterval(id);
     };
-  }, [selected]);
+  }, [loadInbox]);
 
+  const conversations = useMemo(() => buildConversations(allMessages), [allMessages]);
   const selectedConversation = useMemo(() => conversations.find((item) => item.contactId === selected) ?? null, [conversations, selected]);
+  const messages = useMemo(() => allMessages.filter((item) => item.contactId === selected), [allMessages, selected]);
+
+  useEffect(() => {
+    if ((!selected || !conversations.some((item) => item.contactId === selected)) && conversations[0]?.contactId) {
+      const nextContactId = conversations[0].contactId;
+      const timer = setTimeout(() => setSelected(nextContactId), 0);
+      return () => clearTimeout(timer);
+    }
+  }, [conversations, selected]);
+
+  useEffect(() => {
+    const unacked = messages.filter((item) => item.direction === 'inbound' && !item.acknowledged).map((item) => item.messageId);
+    if (!unacked.length) return;
+    const initial = setTimeout(() => {
+      void fetch('/api/bridge/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messageIds: unacked }),
+      }).then(() => loadInbox());
+    }, 0);
+    return () => clearTimeout(initial);
+  }, [messages, loadInbox]);
 
   async function sendMessage() {
     const to = (selectedConversation?.contactId || manualTo).trim();
@@ -97,21 +105,19 @@ export default function BridgeDashboard() {
     setError('');
     const res = await fetch('/api/bridge/send', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ to, text: draft.trim() }),
     });
     const data = await res.json().catch(() => ({}));
     setSending(false);
     if (!res.ok || !data.ok) {
-      setError(data?.error || 'Mesajul nu a putut fi trimis.');
+      setError(data?.details?.error?.message || data?.error || 'Mesajul nu a putut fi trimis.');
       return;
     }
     setDraft('');
     if (!selectedConversation) setManualTo('');
-    await loadConversations();
-    await loadMessages(to);
+    await loadInbox();
+    setSelected(to);
   }
 
   async function logout() {
@@ -126,6 +132,7 @@ export default function BridgeDashboard() {
           <div>
             <div className="text-[11px] uppercase tracking-[0.24em] text-white/45">Hidden inbox</div>
             <h1 className="mt-1 text-2xl font-semibold tracking-tight">WhatsApp Bridge</h1>
+            <div className="mt-1 text-xs text-white/45">{conversations.length} conversații · {allMessages.length} mesaje în cache</div>
           </div>
           <button onClick={logout} className="rounded-full border border-white/15 bg-white/[0.04] px-4 py-2 text-sm text-white/80 hover:bg-white/[0.1]">Logout</button>
         </div>
@@ -182,7 +189,7 @@ export default function BridgeDashboard() {
               ) : null}
               <textarea value={draft} onChange={(e) => setDraft(e.target.value)} rows={4} placeholder="Scrie mesajul aici..." className="resize-none rounded-2xl border border-white/12 bg-black/25 px-4 py-3 text-sm text-white placeholder:text-white/35 outline-none" />
               <div className="flex items-center justify-between gap-3">
-                {error ? <div className="text-sm text-red-300">{error}</div> : <div className="text-xs uppercase tracking-[0.18em] text-white/36">Polling 12–15s</div>}
+                {error ? <div className="max-w-[70%] text-sm text-red-300">{error}</div> : <div className="text-xs uppercase tracking-[0.18em] text-white/36">Polling 12s · sursă: Netlify Blobs</div>}
                 <button onClick={sendMessage} disabled={sending} className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black transition hover:bg-white/90 disabled:opacity-50">{sending ? 'Se trimite...' : 'Trimite mesajul'}</button>
               </div>
             </div>

@@ -9,11 +9,7 @@ export async function GET(request: NextRequest) {
 
   const url = new URL(request.url);
   const contactId = url.searchParams.get('contactId') ?? '';
-  if (!contactId) {
-    return NextResponse.json({ ok: false, error: 'Missing contactId' }, { status: 400 });
-  }
-
-  const items = await listInboxMessages({ contactId, limit: 200 });
+  const items = await listInboxMessages({ contactId: contactId || undefined, limit: contactId ? 400 : 800 });
   return NextResponse.json({ ok: true, items: items.sort((a, b) => (a.receivedAt > b.receivedAt ? 1 : -1)) });
 }
 
