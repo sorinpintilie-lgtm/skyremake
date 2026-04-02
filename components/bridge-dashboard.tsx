@@ -28,10 +28,16 @@ function normalizeContactId(value: string | null | undefined) {
   return (value ?? '').replace(/\D/g, '');
 }
 
+function getConversationKey(message: Message) {
+  return message.direction === 'inbound'
+    ? normalizeContactId(message.from || message.contactId)
+    : normalizeContactId(message.to || message.contactId);
+}
+
 function buildConversations(items: Message[]): Conversation[] {
   const map = new Map<string, Conversation>();
   for (const message of items) {
-    const key = normalizeContactId(message.contactId);
+    const key = getConversationKey(message);
     if (!key) continue;
     const current = map.get(key);
     if (!current || current.lastMessageAt < message.receivedAt) {
@@ -84,7 +90,7 @@ export default function BridgeDashboard() {
   const normalizedSelected = useMemo(() => normalizeContactId(selected), [selected]);
   const selectedConversation = useMemo(() => conversations.find((item) => item.contactId === normalizedSelected) ?? null, [conversations, normalizedSelected]);
   const messages = useMemo(
-    () => allMessages.filter((item) => normalizeContactId(item.contactId) === normalizedSelected),
+    () => allMessages.filter((item) => getConversationKey(item) === normalizedSelected),
     [allMessages, normalizedSelected],
   );
 
