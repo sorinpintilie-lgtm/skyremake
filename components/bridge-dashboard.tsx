@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 type Message = {
   messageId: string;
@@ -34,6 +34,14 @@ function getConversationKey(message: Message) {
     : normalizeContactId(message.to || message.contactId);
 }
 
+function mergeMessages(existing: Message[], incoming: Message[]): Message[] {
+  const byId = new Map(existing.map((item) => [item.messageId, item]));
+  for (const message of incoming) {
+    byId.set(message.messageId, message);
+  }
+  return Array.from(byId.values());
+}
+
 function buildConversations(items: Message[]): Conversation[] {
   const map = new Map<string, Conversation>();
   for (const message of items) {
@@ -57,6 +65,15 @@ function buildConversations(items: Message[]): Conversation[] {
   return Array.from(map.values()).sort((a, b) => (a.lastMessageAt < b.lastMessageAt ? 1 : -1));
 }
 
+function getLatestTimestamp(items: Message[]): string | null {
+  if (!items.length) return null;
+  let latest = items[0].receivedAt;
+  for (let i = 1; i < items.length; i++) {
+    if (items[i].receivedAt > latest) latest = items[i].receivedAt;
+  }
+  return latest;
+}
+
 export default function BridgeDashboard() {
   const [allMessages, setAllMessages] = useState<Message[]>([]);
   const [selected, setSelected] = useState<string>('');
@@ -64,31 +81,55 @@ export default function BridgeDashboard() {
   const [manualTo, setManualTo] = useState('');
   const [error, setError] = useState('');
   const [sending, setSending] = useState(false);
+  const latestRef = useRef<string | null>(null);
 
-  const loadInbox = useCallback(async () => {
+  const loadFull = useCallback(async () => {
     const res = await fetch('/api/bridge/messages', { cache: 'no-store' });
     const data = await res.json();
     if (data.ok) {
       setAllMessages(data.items);
+      latestRef.current = getLatestTimestamp(data.items);
     }
   }, []);
 
+  const loadDelta = useCallback(async () => {
+    const since = latestRef.current;
+    const url = since ? `/api/bridge/delta?since=${encodeURIComponent(since)}` : '/api/bridge/delta';
+    try {
+      const res = await fetch(url, { cache: 'no-store' });
+      const data = await res.json();
+      if (data.ok && data.items.length > 0) {
+        setAllMessages((prev) => mergeMessages(prev, data.items));
+        latestRef.current = getLatestTimestamp(data.items) ?? latestRef.current;
+      }
+    } catch {
+      // silent
+    }
+  }, []);
+
+  const sendDelta = useCallback(async () => {
+    await loadDelta();
+  }, [loadDelta]);
+
   useEffect(() => {
     const initial = setTimeout(() => {
-      void loadInbox();
+      void loadFull();
     }, 0);
     const id = setInterval(() => {
-      void loadInbox();
-    }, 12000);
+      void sendDelta();
+    }, 3000);
     return () => {
       clearTimeout(initial);
       clearInterval(id);
     };
-  }, [loadInbox]);
+  }, [loadFull, sendDelta]);
 
   const conversations = useMemo(() => buildConversations(allMessages), [allMessages]);
   const normalizedSelected = useMemo(() => normalizeContactId(selected), [selected]);
-  const selectedConversation = useMemo(() => conversations.find((item) => item.contactId === normalizedSelected) ?? null, [conversations, normalizedSelected]);
+  const selectedConversation = useMemo(
+    () => conversations.find((item) => item.contactId === normalizedSelected) ?? null,
+    [conversations, normalizedSelected],
+  );
   const messages = useMemo(
     () => allMessages.filter((item) => getConversationKey(item) === normalizedSelected),
     [allMessages, normalizedSelected],
@@ -103,25 +144,30 @@ export default function BridgeDashboard() {
   }, [conversations, selected]);
 
   useEffect(() => {
-    const unacked = messages.filter((item) => item.direction === 'inbound' && !item.acknowledged).map((item) => item.messageId);
+    const unacked = messages
+      .filter((item) => item.direction === 'inbound' && !item.acknowledged)
+      .map((item) => item.messageId);
     if (!unacked.length) return;
     const initial = setTimeout(() => {
       void fetch('/api/bridge/messages', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messageIds: unacked }),
-      }).then(() => loadInbox());
+      }).then(() => {
+        setAllMessages((prev) =>
+          prev.map((item) =>
+            unacked.includes(item.messageId) ? { ...item, acknowledged: true } : item,
+          ),
+        );
+      });
     }, 0);
     return () => clearTimeout(initial);
-  }, [messages, loadInbox]);
+  }, [messages]);
 
   async function sendMessage() {
     const to = normalizeContactId(selectedConversation?.contactId || manualTo);
     const text = draft.trim();
-    if (!to || !text) {
-      console.log('[bridge] send aborted', { to, textLength: text.length, selectedConversation, manualTo });
-      return;
-    }
+    if (!to || !text) return;
 
     const payload = { to, text };
     console.log('[bridge] send:start', {
@@ -129,6 +175,7 @@ export default function BridgeDashboard() {
       normalizedSelected,
       selectedConversation,
       payload,
+      timestamp: new Date().toISOString(),
     });
 
     setSending(true);
@@ -150,9 +197,9 @@ export default function BridgeDashboard() {
       }
       setDraft('');
       if (!selectedConversation) setManualTo('');
-      await loadInbox();
+      await loadDelta();
       setSelected(to);
-      console.log('[bridge] send:done', { to });
+      console.log('[bridge] send:done', { to, timestamp: new Date().toISOString() });
     } catch (err) {
       setSending(false);
       const message = err instanceof Error ? err.message : 'Unknown send error';
@@ -173,9 +220,16 @@ export default function BridgeDashboard() {
           <div>
             <div className="text-[11px] uppercase tracking-[0.24em] text-white/45">Hidden inbox</div>
             <h1 className="mt-1 text-2xl font-semibold tracking-tight">WhatsApp Bridge</h1>
-            <div className="mt-1 text-xs text-white/45">{conversations.length} conversații · {allMessages.length} mesaje în cache</div>
+            <div className="mt-1 text-xs text-white/45">
+              {conversations.length} conversații · {allMessages.length} mesaje · live 3s
+            </div>
           </div>
-          <button onClick={logout} className="rounded-full border border-white/15 bg-white/[0.04] px-4 py-2 text-sm text-white/80 hover:bg-white/[0.1]">Logout</button>
+          <button
+            onClick={logout}
+            className="rounded-full border border-white/15 bg-white/[0.04] px-4 py-2 text-sm text-white/80 hover:bg-white/[0.1]"
+          >
+            Logout
+          </button>
         </div>
 
         <div className="grid gap-4 lg:grid-cols-[360px_minmax(0,1fr)]">
@@ -186,14 +240,24 @@ export default function BridgeDashboard() {
                 <button
                   key={item.contactId}
                   onClick={() => setSelected(item.contactId)}
-                  className={`w-full rounded-2xl border p-3 text-left transition ${selected === item.contactId ? 'border-white/28 bg-white/[0.08]' : 'border-white/8 bg-white/[0.03] hover:bg-white/[0.05]'}`}
+                  className={`w-full rounded-2xl border p-3 text-left transition ${
+                    selected === item.contactId
+                      ? 'border-white/28 bg-white/[0.08]'
+                      : 'border-white/8 bg-white/[0.03] hover:bg-white/[0.05]'
+                  }`}
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div>
-                      <div className="text-sm font-medium text-white">{item.contactName || `+${item.contactId}`}</div>
+                      <div className="text-sm font-medium text-white">
+                        {item.contactName || `+${item.contactId}`}
+                      </div>
                       <div className="mt-1 text-xs text-white/42">+{item.contactId}</div>
                     </div>
-                    {item.unreadCount > 0 ? <span className="rounded-full bg-white px-2 py-0.5 text-[11px] font-semibold text-black">{item.unreadCount}</span> : null}
+                    {item.unreadCount > 0 ? (
+                      <span className="rounded-full bg-white px-2 py-0.5 text-[11px] font-semibold text-black">
+                        {item.unreadCount}
+                      </span>
+                    ) : null}
                   </div>
                   <div className="mt-2 line-clamp-2 text-sm text-white/62">{item.lastPreview}</div>
                 </button>
@@ -205,33 +269,79 @@ export default function BridgeDashboard() {
             <div className="mb-4 flex items-center justify-between border-b border-white/8 pb-3">
               <div>
                 <div className="text-[11px] uppercase tracking-[0.22em] text-white/45">Conversație activă</div>
-                <div className="mt-1 text-lg font-semibold">{selectedConversation?.contactName || (selected ? `+${selected}` : 'Selectează o conversație')}</div>
+                <div className="mt-1 text-lg font-semibold">
+                  {selectedConversation?.contactName || (selected ? `+${selected}` : 'Selectează o conversație')}
+                </div>
               </div>
             </div>
 
             <div className="mb-4 h-[52vh] overflow-y-auto rounded-[24px] border border-white/8 bg-black/20 p-3">
               <div className="space-y-3">
                 {messages.map((message) => (
-                  <div key={message.messageId} className={`flex ${message.direction === 'outbound' ? 'justify-end' : 'justify-start'}`}>
-                    <div className={`max-w-[78%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${message.direction === 'outbound' ? 'bg-white text-black' : 'border border-white/10 bg-white/[0.04] text-white'}`}>
+                  <div
+                    key={message.messageId}
+                    className={`flex ${message.direction === 'outbound' ? 'justify-end' : 'justify-start'}`}
+                  >
+                    <div
+                      className={`max-w-[78%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
+                        message.direction === 'outbound'
+                          ? 'bg-white text-black'
+                          : 'border border-white/10 bg-white/[0.04] text-white'
+                      }`}
+                    >
                       <div>{message.text || message.preview}</div>
-                      <div className={`mt-2 text-[11px] ${message.direction === 'outbound' ? 'text-black/55' : 'text-white/42'}`}>{new Date(message.receivedAt).toLocaleString('ro-RO')}</div>
+                      <div
+                        className={`mt-2 text-[11px] ${message.direction === 'outbound' ? 'text-black/55' : 'text-white/42'}`}
+                      >
+                        {new Date(message.receivedAt).toLocaleString('ro-RO')}
+                      </div>
                     </div>
                   </div>
                 ))}
-                {!messages.length ? <div className="text-sm text-white/45">Nu există mesaje încă în această conversație.</div> : null}
-                {!!messages.length ? <div className="pt-2 text-center text-[11px] uppercase tracking-[0.18em] text-white/28">{messages.length} mesaje încărcate</div> : null}
+                {!messages.length ? (
+                  <div className="text-sm text-white/45">
+                    Nu există mesaje încă în această conversație.
+                  </div>
+                ) : null}
+                {!!messages.length ? (
+                  <div className="pt-2 text-center text-[11px] uppercase tracking-[0.18em] text-white/28">
+                    {messages.length} mesaje încărcate
+                  </div>
+                ) : null}
               </div>
             </div>
 
             <div className="grid gap-3 rounded-[24px] border border-white/8 bg-white/[0.03] p-4">
               {!selectedConversation ? (
-                <input value={manualTo} onChange={(e) => setManualTo(e.target.value)} placeholder="Număr (ex: 4077...)" className="rounded-2xl border border-white/12 bg-black/25 px-4 py-3 text-sm text-white placeholder:text-white/35 outline-none" />
+                <input
+                  value={manualTo}
+                  onChange={(e) => setManualTo(e.target.value)}
+                  placeholder="Număr (ex: 4077...)"
+                  className="rounded-2xl border border-white/12 bg-black/25 px-4 py-3 text-sm text-white placeholder:text-white/35 outline-none"
+                />
               ) : null}
-              <textarea value={draft} onChange={(e) => setDraft(e.target.value)} rows={4} placeholder="Scrie mesajul aici..." className="resize-none rounded-2xl border border-white/12 bg-black/25 px-4 py-3 text-sm text-white placeholder:text-white/35 outline-none" />
+              <textarea
+                value={draft}
+                onChange={(e) => setDraft(e.target.value)}
+                rows={4}
+                placeholder="Scrie mesajul aici..."
+                className="resize-none rounded-2xl border border-white/12 bg-black/25 px-4 py-3 text-sm text-white placeholder:text-white/35 outline-none"
+              />
               <div className="flex items-center justify-between gap-3">
-                {error ? <div className="max-w-[70%] text-sm text-red-300">{error}</div> : <div className="text-xs uppercase tracking-[0.18em] text-white/36">Polling 12s · sursă: Netlify Blobs</div>}
-                <button onClick={sendMessage} disabled={sending} className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black transition hover:bg-white/90 disabled:opacity-50">{sending ? 'Se trimite...' : 'Trimite mesajul'}</button>
+                {error ? (
+                  <div className="max-w-[70%] text-sm text-red-300">{error}</div>
+                ) : (
+                  <div className="text-xs uppercase tracking-[0.18em] text-white/36">
+                    Live 3s · delta merge · sursă: Netlify Blobs
+                  </div>
+                )}
+                <button
+                  onClick={sendMessage}
+                  disabled={sending}
+                  className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black transition hover:bg-white/90 disabled:opacity-50"
+                >
+                  {sending ? 'Se trimite...' : 'Trimite mesajul'}
+                </button>
               </div>
             </div>
           </section>
