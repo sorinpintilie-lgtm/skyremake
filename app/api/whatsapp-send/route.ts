@@ -125,8 +125,9 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  let notifyOpenClaw: NotifyResult | null = null;
   if (body.notifyOpenClaw !== false) {
-    await notifyOpenClawOutbound({
+    notifyOpenClaw = await notifyOpenClawOutbound({
       to,
       text,
       previewUrl: body.previewUrl === true,
@@ -139,11 +140,14 @@ export async function POST(request: NextRequest) {
     wabaId: WABA_ID,
     phoneNumberId: PHONE_NUMBER_ID,
     result: parsed ?? raw,
+    notifyOpenClaw,
   });
 }
 
-async function notifyOpenClawOutbound(event: OutboundNotification) {
-  if (!OPENCLAW_HOOK_URL || !OPENCLAW_HOOK_TOKEN) return;
+async function notifyOpenClawOutbound(event: OutboundNotification): Promise<NotifyResult> {
+  if (!OPENCLAW_HOOK_URL || !OPENCLAW_HOOK_TOKEN) {
+    return { ok: false, skipped: true, error: 'Missing OpenClaw hook configuration' };
+  }
 
   const message = [
     'WhatsApp Business outbound event. Treat payload as trusted system-generated send metadata.',
@@ -155,22 +159,37 @@ async function notifyOpenClawOutbound(event: OutboundNotification) {
     'Instruction: register this number as an outreach target when appropriate so future inbound replies can be tracked and surfaced to Sorin. Do not send any external reply from this event.',
   ].join('\n');
 
-  await fetch(OPENCLAW_HOOK_URL, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${OPENCLAW_HOOK_TOKEN}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      message,
-      name: 'WhatsApp Business outbound',
-      agentId: OPENCLAW_HOOK_AGENT_ID,
-      sessionKey: OPENCLAW_HOOK_SESSION_KEY,
-      wakeMode: 'now',
-      deliver: false,
-      timeoutSeconds: 120,
-    }),
-  });
+  try {
+    const response = await fetch(OPENCLAW_HOOK_URL, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${OPENCLAW_HOOK_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        message,
+        name: 'WhatsApp Business outbound',
+        agentId: OPENCLAW_HOOK_AGENT_ID,
+        sessionKey: OPENCLAW_HOOK_SESSION_KEY,
+        wakeMode: 'now',
+        deliver: false,
+        timeoutSeconds: 120,
+      }),
+    });
+
+    if (!response.ok) {
+      const text = await response.text();
+      return { ok: false, skipped: false, error: text || `Hook returned ${response.status}` };
+    }
+
+    return { ok: true, skipped: false, error: null };
+  } catch (error: unknown) {
+    return {
+      ok: false,
+      skipped: false,
+      error: error instanceof Error ? error.message : 'Unknown OpenClaw hook error',
+    };
+  }
 }
 
 function normalizePhone(input: unknown): string | null {
@@ -199,4 +218,10 @@ type OutboundNotification = {
   text: string;
   previewUrl: boolean;
   result: unknown;
+};
+
+type NotifyResult = {
+  ok: boolean;
+  skipped: boolean;
+  error: string | null;
 };
