@@ -24,13 +24,19 @@ type Conversation = {
   lastDirection: 'inbound' | 'outbound';
 };
 
+function normalizeContactId(value: string | null | undefined) {
+  return (value ?? '').replace(/\D/g, '');
+}
+
 function buildConversations(items: Message[]): Conversation[] {
   const map = new Map<string, Conversation>();
   for (const message of items) {
-    const current = map.get(message.contactId);
+    const key = normalizeContactId(message.contactId);
+    if (!key) continue;
+    const current = map.get(key);
     if (!current || current.lastMessageAt < message.receivedAt) {
-      map.set(message.contactId, {
-        contactId: message.contactId,
+      map.set(key, {
+        contactId: key,
         contactName: message.contactName,
         lastMessageAt: message.receivedAt,
         lastPreview: message.preview,
@@ -39,6 +45,7 @@ function buildConversations(items: Message[]): Conversation[] {
       });
     } else if (message.direction === 'inbound' && !message.acknowledged) {
       current.unreadCount += 1;
+      if (!current.contactName && message.contactName) current.contactName = message.contactName;
     }
   }
   return Array.from(map.values()).sort((a, b) => (a.lastMessageAt < b.lastMessageAt ? 1 : -1));
@@ -74,8 +81,12 @@ export default function BridgeDashboard() {
   }, [loadInbox]);
 
   const conversations = useMemo(() => buildConversations(allMessages), [allMessages]);
-  const selectedConversation = useMemo(() => conversations.find((item) => item.contactId === selected) ?? null, [conversations, selected]);
-  const messages = useMemo(() => allMessages.filter((item) => item.contactId === selected), [allMessages, selected]);
+  const normalizedSelected = useMemo(() => normalizeContactId(selected), [selected]);
+  const selectedConversation = useMemo(() => conversations.find((item) => item.contactId === normalizedSelected) ?? null, [conversations, normalizedSelected]);
+  const messages = useMemo(
+    () => allMessages.filter((item) => normalizeContactId(item.contactId) === normalizedSelected),
+    [allMessages, normalizedSelected],
+  );
 
   useEffect(() => {
     if ((!selected || !conversations.some((item) => item.contactId === selected)) && conversations[0]?.contactId) {
@@ -99,25 +110,49 @@ export default function BridgeDashboard() {
   }, [messages, loadInbox]);
 
   async function sendMessage() {
-    const to = (selectedConversation?.contactId || manualTo).trim();
-    if (!to || !draft.trim()) return;
-    setSending(true);
-    setError('');
-    const res = await fetch('/api/bridge/send', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ to, text: draft.trim() }),
-    });
-    const data = await res.json().catch(() => ({}));
-    setSending(false);
-    if (!res.ok || !data.ok) {
-      setError(data?.details?.error?.message || data?.error || 'Mesajul nu a putut fi trimis.');
+    const to = normalizeContactId(selectedConversation?.contactId || manualTo);
+    const text = draft.trim();
+    if (!to || !text) {
+      console.log('[bridge] send aborted', { to, textLength: text.length, selectedConversation, manualTo });
       return;
     }
-    setDraft('');
-    if (!selectedConversation) setManualTo('');
-    await loadInbox();
-    setSelected(to);
+
+    const payload = { to, text };
+    console.log('[bridge] send:start', {
+      selected,
+      normalizedSelected,
+      selectedConversation,
+      payload,
+    });
+
+    setSending(true);
+    setError('');
+
+    try {
+      const res = await fetch('/api/bridge/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({}));
+      console.log('[bridge] send:response', { status: res.status, ok: res.ok, data });
+      setSending(false);
+      if (!res.ok || !data.ok) {
+        setError(data?.details?.error?.message || data?.error || 'Mesajul nu a putut fi trimis.');
+        console.error('[bridge] send:error', { status: res.status, data });
+        return;
+      }
+      setDraft('');
+      if (!selectedConversation) setManualTo('');
+      await loadInbox();
+      setSelected(to);
+      console.log('[bridge] send:done', { to });
+    } catch (err) {
+      setSending(false);
+      const message = err instanceof Error ? err.message : 'Unknown send error';
+      setError(message);
+      console.error('[bridge] send:exception', err);
+    }
   }
 
   async function logout() {
