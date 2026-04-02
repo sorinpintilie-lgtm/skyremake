@@ -38,7 +38,9 @@ export default function BridgeDashboard() {
     const data = await res.json();
     if (data.ok) {
       setConversations(data.items);
-      if (!selected && data.items[0]?.contactId) setSelected(data.items[0].contactId);
+      if ((!selected || !data.items.some((item: Conversation) => item.contactId === selected)) && data.items[0]?.contactId) {
+        setSelected(data.items[0].contactId);
+      }
     }
   }, [selected]);
 
@@ -93,11 +95,10 @@ export default function BridgeDashboard() {
     if (!to || !draft.trim()) return;
     setSending(true);
     setError('');
-    const res = await fetch('/api/whatsapp-send', {
+    const res = await fetch('/api/bridge/send', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: 'Bearer 2mKZ0xbBs2Bof9ySf5fArOon8ZBldaLE',
       },
       body: JSON.stringify({ to, text: draft.trim() }),
     });
@@ -171,6 +172,7 @@ export default function BridgeDashboard() {
                   </div>
                 ))}
                 {!messages.length ? <div className="text-sm text-white/45">Nu există mesaje încă în această conversație.</div> : null}
+                {!!messages.length ? <div className="pt-2 text-center text-[11px] uppercase tracking-[0.18em] text-white/28">{messages.length} mesaje încărcate</div> : null}
               </div>
             </div>
 
