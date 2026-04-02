@@ -56,8 +56,9 @@ Behavior:
 - verifies Meta challenge on `GET`
 - verifies `x-hub-signature-256` on `POST`
 - normalizes inbound message and status events
-- forwards each event to OpenClaw via `/hooks/agent`
-- returns `502` if forwarding fails so delivery problems are visible in logs
+- stores inbound WhatsApp Business messages in Netlify Blobs
+- exposes `/api/whatsapp-inbox` for authenticated inbox reads
+- exposes `/api/whatsapp-inbox/ack` to mark messages as acknowledged
 - exposes `/api/whatsapp-send` for authenticated outbound text sending through WhatsApp Business API
 
 Important:
