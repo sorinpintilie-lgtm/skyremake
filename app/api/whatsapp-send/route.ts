@@ -20,13 +20,22 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ ok: false, error: 'Unauthorized' }, { status: 401 });
   }
 
+  const phoneChars = Array.from(PHONE_NUMBER_ID ?? '');
+  const wabaChars = Array.from(WABA_ID ?? '');
+
   return NextResponse.json({
     ok: true,
     runtime: {
       phoneNumberId: PHONE_NUMBER_ID ?? null,
+      phoneNumberIdJson: JSON.stringify(PHONE_NUMBER_ID ?? null),
       phoneNumberIdLength: PHONE_NUMBER_ID?.length ?? null,
+      phoneNumberIdChars: phoneChars,
+      phoneNumberIdCharCodes: phoneChars.map((char) => char.charCodeAt(0)),
+      phoneNumberIdLastChar: phoneChars.length ? phoneChars[phoneChars.length - 1] : null,
       wabaId: WABA_ID ?? null,
+      wabaIdJson: JSON.stringify(WABA_ID ?? null),
       wabaIdLength: WABA_ID?.length ?? null,
+      wabaIdChars: wabaChars,
       hasAccessToken: Boolean(ACCESS_TOKEN),
       graphApiVersion: GRAPH_API_VERSION,
     },
@@ -92,6 +101,7 @@ export async function POST(request: NextRequest) {
   const parsed = tryParseJson(raw);
 
   if (!response.ok) {
+    const phoneChars = Array.from(PHONE_NUMBER_ID);
     return NextResponse.json(
       {
         ok: false,
@@ -99,7 +109,11 @@ export async function POST(request: NextRequest) {
         status: response.status,
         runtime: {
           phoneNumberId: PHONE_NUMBER_ID,
+          phoneNumberIdJson: JSON.stringify(PHONE_NUMBER_ID),
           phoneNumberIdLength: PHONE_NUMBER_ID.length,
+          phoneNumberIdChars: phoneChars,
+          phoneNumberIdCharCodes: phoneChars.map((char) => char.charCodeAt(0)),
+          phoneNumberIdLastChar: phoneChars[phoneChars.length - 1] ?? null,
           wabaId: WABA_ID,
           wabaIdLength: WABA_ID.length,
           hasAccessToken: Boolean(ACCESS_TOKEN),
