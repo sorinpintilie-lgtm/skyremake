@@ -10,6 +10,29 @@ const OPENCLAW_HOOK_TOKEN = process.env.OPENCLAW_HOOK_TOKEN;
 const OPENCLAW_HOOK_AGENT_ID = process.env.OPENCLAW_HOOK_AGENT_ID ?? 'main';
 const OPENCLAW_HOOK_SESSION_KEY = process.env.OPENCLAW_HOOK_SESSION_KEY ?? 'hook:whatsapp-business';
 
+export async function GET(request: NextRequest) {
+  if (!SEND_AUTH_TOKEN) {
+    return NextResponse.json({ ok: false, error: 'Missing sender auth token configuration' }, { status: 500 });
+  }
+
+  const authHeader = request.headers.get('authorization');
+  if (!authHeader || authHeader !== `Bearer ${SEND_AUTH_TOKEN}`) {
+    return NextResponse.json({ ok: false, error: 'Unauthorized' }, { status: 401 });
+  }
+
+  return NextResponse.json({
+    ok: true,
+    runtime: {
+      phoneNumberId: PHONE_NUMBER_ID ?? null,
+      phoneNumberIdLength: PHONE_NUMBER_ID?.length ?? null,
+      wabaId: WABA_ID ?? null,
+      wabaIdLength: WABA_ID?.length ?? null,
+      hasAccessToken: Boolean(ACCESS_TOKEN),
+      graphApiVersion: GRAPH_API_VERSION,
+    },
+  });
+}
+
 export async function POST(request: NextRequest) {
   if (!ACCESS_TOKEN || !PHONE_NUMBER_ID || !WABA_ID) {
     return NextResponse.json(
@@ -74,6 +97,14 @@ export async function POST(request: NextRequest) {
         ok: false,
         error: 'WhatsApp Business API request failed',
         status: response.status,
+        runtime: {
+          phoneNumberId: PHONE_NUMBER_ID,
+          phoneNumberIdLength: PHONE_NUMBER_ID.length,
+          wabaId: WABA_ID,
+          wabaIdLength: WABA_ID.length,
+          hasAccessToken: Boolean(ACCESS_TOKEN),
+          graphApiVersion: GRAPH_API_VERSION,
+        },
         details: parsed ?? raw,
       },
       { status: response.status },
