@@ -29,8 +29,33 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## WhatsApp Business webhook -> OpenClaw
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`app/api/webhook/route.ts` is wired for Meta WhatsApp Business inbound events and forwards normalized events into OpenClaw hook ingress.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Required environment variables:
+
+- `WHATSAPP_VERIFY_TOKEN`
+- `WHATSAPP_SECRET`
+- `OPENCLAW_HOOK_URL` — example: `http://YOUR_OPENCLAW_HOST:18789/hooks/agent`
+- `OPENCLAW_HOOK_TOKEN`
+
+Optional environment variables:
+
+- `OPENCLAW_HOOK_AGENT_ID` — default: `main`
+- `OPENCLAW_HOOK_SESSION_KEY` — default: `hook:whatsapp-business`
+- `OPENCLAW_HOOK_TIMEOUT_MS` — default: `15000`
+
+Behavior:
+
+- verifies Meta challenge on `GET`
+- verifies `x-hub-signature-256` on `POST`
+- normalizes inbound message and status events
+- forwards each event to OpenClaw via `/hooks/agent`
+- returns `502` if forwarding fails so delivery problems are visible in logs
+
+Important:
+
+- The OpenClaw gateway must be reachable from your Netlify function.
+- `OPENCLAW_HOOK_TOKEN` must match `hooks.token` in your OpenClaw config.
+- If your gateway is loopback-only, you need a public or private reachable URL in front of it before Netlify can call it.
