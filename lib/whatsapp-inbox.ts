@@ -49,8 +49,12 @@ export async function listInboxMessages(options?: { onlyUnacknowledged?: boolean
   ]);
 
   const blobs = [...inbound.blobs, ...outbound.blobs]
-    .sort((a, b) => (a.key < b.key ? 1 : -1))
-    .slice(0, Math.max(limit * 2, limit));
+    .sort((a, b) => {
+      const aTs = getBlobTimestamp(a);
+      const bTs = getBlobTimestamp(b);
+      return bTs - aTs;
+    })
+    .slice(0, Math.max(limit * 4, limit));
 
   const rows = await Promise.all(
     blobs.map(async (blob) => {
@@ -88,6 +92,13 @@ export async function listConversationSummaries(limit = 100) {
   return Array.from(map.values())
     .sort((a, b) => (a.lastMessageAt < b.lastMessageAt ? 1 : -1))
     .slice(0, limit);
+}
+
+function getBlobTimestamp(blob: unknown) {
+  if (!blob || typeof blob !== 'object') return 0;
+  const value = blob as { uploaded_at?: string; uploadedAt?: string };
+  const raw = value.uploaded_at ?? value.uploadedAt ?? null;
+  return raw ? Date.parse(raw) || 0 : 0;
 }
 
 export async function acknowledgeInboxMessage(messageId: string) {
