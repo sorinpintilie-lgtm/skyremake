@@ -39,12 +39,17 @@ Required environment variables:
 - `WHATSAPP_SECRET`
 - `OPENCLAW_HOOK_URL` — example: `http://YOUR_OPENCLAW_HOST:18789/hooks/agent`
 - `OPENCLAW_HOOK_TOKEN`
+- `WHATSAPP_BUSINESS_PHONE_NUMBER_ID`
+- `WHATSAPP_BUSINESS_WABA_ID`
+- `WHATSAPP_BUSINESS_ACCESS_TOKEN`
 
 Optional environment variables:
 
 - `OPENCLAW_HOOK_AGENT_ID` — default: `main`
 - `OPENCLAW_HOOK_SESSION_KEY` — default: `hook:whatsapp-business`
 - `OPENCLAW_HOOK_TIMEOUT_MS` — default: `15000`
+- `WHATSAPP_SEND_AUTH_TOKEN` — bearer token for `/api/whatsapp-send`; defaults to `OPENCLAW_HOOK_TOKEN`
+- `WHATSAPP_GRAPH_API_VERSION` — default: `v21.0`
 
 Behavior:
 
@@ -53,6 +58,7 @@ Behavior:
 - normalizes inbound message and status events
 - forwards each event to OpenClaw via `/hooks/agent`
 - returns `502` if forwarding fails so delivery problems are visible in logs
+- exposes `/api/whatsapp-send` for authenticated outbound text sending through WhatsApp Business API
 
 Important:
 
