@@ -82,6 +82,7 @@ export default function BridgeDashboard() {
   const [error, setError] = useState('');
   const [sending, setSending] = useState(false);
   const latestRef = useRef<string | null>(null);
+  const autoSelectedRef = useRef(false);
 
   const loadFull = useCallback(async () => {
     const res = await fetch('/api/bridge/messages', { cache: 'no-store' });
@@ -136,12 +137,15 @@ export default function BridgeDashboard() {
   );
 
   useEffect(() => {
-    if ((!selected || !conversations.some((item) => item.contactId === selected)) && conversations[0]?.contactId) {
-      const nextContactId = conversations[0].contactId;
-      const timer = setTimeout(() => setSelected(nextContactId), 0);
+    if (autoSelectedRef.current) return;
+    if (!conversations.length) return;
+    autoSelectedRef.current = true;
+    const firstId = conversations[0].contactId;
+    if (firstId) {
+      const timer = setTimeout(() => setSelected(firstId), 0);
       return () => clearTimeout(timer);
     }
-  }, [conversations, selected]);
+  }, [conversations]);
 
   useEffect(() => {
     const unacked = messages
@@ -165,18 +169,26 @@ export default function BridgeDashboard() {
   }, [messages]);
 
   async function sendMessage() {
-    const to = normalizeContactId(selectedConversation?.contactId || manualTo);
+    const selectedId = normalizedSelected;
+    const contactName = selectedConversation?.contactName;
+    const to = selectedId || normalizeContactId(manualTo);
     const text = draft.trim();
     if (!to || !text) return;
 
-    const payload = { to, text };
+    const targetLabel = contactName ? `${contactName} (+${to})` : `+${to}`;
     console.log('[bridge] send:start', {
-      selected,
-      normalizedSelected,
-      selectedConversation,
-      payload,
+      selectedId,
+      contactName,
+      to,
+      targetLabel,
+      text,
       timestamp: new Date().toISOString(),
     });
+
+    if (!selectedId) {
+      setError(`Se trimite către: ${targetLabel}. Confirmă manual că e corect.`);
+      return;
+    }
 
     setSending(true);
     setError('');
@@ -185,21 +197,19 @@ export default function BridgeDashboard() {
       const res = await fetch('/api/bridge/send', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ to, text }),
       });
       const data = await res.json().catch(() => ({}));
-      console.log('[bridge] send:response', { status: res.status, ok: res.ok, data });
+      console.log('[bridge] send:response', { status: res.status, ok: res.ok, data, targetLabel });
       setSending(false);
       if (!res.ok || !data.ok) {
         setError(data?.details?.error?.message || data?.error || 'Mesajul nu a putut fi trimis.');
-        console.error('[bridge] send:error', { status: res.status, data });
+        console.error('[bridge] send:error', { status: res.status, data, targetLabel });
         return;
       }
       setDraft('');
-      if (!selectedConversation) setManualTo('');
       await loadDelta();
-      setSelected(to);
-      console.log('[bridge] send:done', { to, timestamp: new Date().toISOString() });
+      console.log('[bridge] send:done', { to, targetLabel, timestamp: new Date().toISOString() });
     } catch (err) {
       setSending(false);
       const message = err instanceof Error ? err.message : 'Unknown send error';
