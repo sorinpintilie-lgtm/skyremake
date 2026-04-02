@@ -4,6 +4,7 @@ import { acknowledgeInboxMessage, listInboxMessages } from '@/lib/whatsapp-inbox
 const READ_AUTH_TOKEN = process.env.WHATSAPP_READ_AUTH_TOKEN ?? process.env.WHATSAPP_SEND_AUTH_TOKEN ?? process.env.OPENCLAW_HOOK_TOKEN;
 const SEND_AUTH_TOKEN = process.env.WHATSAPP_SEND_AUTH_TOKEN ?? process.env.OPENCLAW_HOOK_TOKEN;
 const OWNER_PHONE = process.env.WHATSAPP_OWNER_PHONE ?? '40773902533';
+const MAX_BATCH = Number(process.env.WHATSAPP_NOTIFY_BATCH_SIZE ?? '10');
 
 export async function POST(request: NextRequest) {
   if (!READ_AUTH_TOKEN || !SEND_AUTH_TOKEN) {
@@ -15,11 +16,13 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ ok: false, error: 'Unauthorized' }, { status: 401 });
   }
 
-  const inboxItems = await listInboxMessages({ onlyUnacknowledged: true, limit: 20 });
+  const inboxItems = await listInboxMessages({ onlyUnacknowledged: true, limit: 50 });
   const ownerDigits = OWNER_PHONE.replace(/\D/g, '');
-  const candidate = inboxItems.find((item) => (item.from ?? '') !== ownerDigits);
+  const candidates = inboxItems
+    .filter((item) => (item.from ?? '') !== ownerDigits)
+    .slice(0, Math.max(1, Math.min(MAX_BATCH, 20)));
 
-  if (!candidate) {
+  if (!candidates.length) {
     return NextResponse.json({ ok: true, notified: false, reason: 'No unacknowledged client messages' });
   }
 
@@ -31,7 +34,7 @@ export async function POST(request: NextRequest) {
     },
     body: JSON.stringify({
       to: ownerDigits,
-      text: buildOwnerNotification(candidate),
+      text: buildOwnerNotification(candidates),
       notifyOpenClaw: false,
     }),
   });
@@ -46,29 +49,38 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const acked = await acknowledgeInboxMessage(candidate.messageId);
+  const acked = await Promise.all(candidates.map((item) => acknowledgeInboxMessage(item.messageId)));
 
   return NextResponse.json({
     ok: true,
     notified: true,
-    item: acked,
+    count: candidates.length,
+    items: acked.filter(Boolean),
     notification: parsed ?? raw,
   });
 }
 
-function buildOwnerNotification(item: {
+function buildOwnerNotification(items: Array<{
   from: string | null;
   contactName: string | null;
   preview: string;
   receivedAt: string;
-}) {
-  const phone = item.from ? `+${item.from}` : '(necunoscut)';
-  return [
-    `Mesaj nou pe WhatsApp Business de la ${item.contactName || phone}.`,
-    `Număr: ${phone}`,
-    `Primit la: ${item.receivedAt}`,
-    `Rezumat: ${item.preview}`,
-  ].join('\n');
+}>) {
+  const header = items.length === 1
+    ? 'Ai 1 mesaj nou pe WhatsApp Business:'
+    : `Ai ${items.length} mesaje noi pe WhatsApp Business:`;
+
+  const lines = items.map((item, index) => {
+    const phone = item.from ? `+${item.from}` : '(necunoscut)';
+    return [
+      `${index + 1}. ${item.contactName || phone}`,
+      `Număr: ${phone}`,
+      `Primit la: ${item.receivedAt}`,
+      `Rezumat: ${item.preview}`,
+    ].join('\n');
+  });
+
+  return [header, '', ...lines].join('\n\n');
 }
 
 function tryParseJson(input: string): unknown {
