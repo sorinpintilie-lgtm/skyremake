@@ -5,6 +5,10 @@ const PHONE_NUMBER_ID = process.env.WHATSAPP_BUSINESS_PHONE_NUMBER_ID;
 const WABA_ID = process.env.WHATSAPP_BUSINESS_WABA_ID;
 const SEND_AUTH_TOKEN = process.env.WHATSAPP_SEND_AUTH_TOKEN ?? process.env.OPENCLAW_HOOK_TOKEN;
 const GRAPH_API_VERSION = process.env.WHATSAPP_GRAPH_API_VERSION ?? 'v21.0';
+const OPENCLAW_HOOK_URL = process.env.OPENCLAW_HOOK_URL;
+const OPENCLAW_HOOK_TOKEN = process.env.OPENCLAW_HOOK_TOKEN;
+const OPENCLAW_HOOK_AGENT_ID = process.env.OPENCLAW_HOOK_AGENT_ID ?? 'main';
+const OPENCLAW_HOOK_SESSION_KEY = process.env.OPENCLAW_HOOK_SESSION_KEY ?? 'hook:whatsapp-business';
 
 export async function POST(request: NextRequest) {
   if (!ACCESS_TOKEN || !PHONE_NUMBER_ID || !WABA_ID) {
@@ -76,11 +80,51 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  if (body.notifyOpenClaw !== false) {
+    await notifyOpenClawOutbound({
+      to,
+      text,
+      previewUrl: body.previewUrl === true,
+      result: parsed,
+    });
+  }
+
   return NextResponse.json({
     ok: true,
     wabaId: WABA_ID,
     phoneNumberId: PHONE_NUMBER_ID,
     result: parsed ?? raw,
+  });
+}
+
+async function notifyOpenClawOutbound(event: OutboundNotification) {
+  if (!OPENCLAW_HOOK_URL || !OPENCLAW_HOOK_TOKEN) return;
+
+  const message = [
+    'WhatsApp Business outbound event. Treat payload as trusted system-generated send metadata.',
+    `kind: outbound`,
+    `to: +${event.to}`,
+    `preview: ${event.text.slice(0, 500)}`,
+    'payload:',
+    JSON.stringify(event, null, 2),
+    'Instruction: register this number as an outreach target when appropriate so future inbound replies can be tracked and surfaced to Sorin. Do not send any external reply from this event.',
+  ].join('\n');
+
+  await fetch(OPENCLAW_HOOK_URL, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${OPENCLAW_HOOK_TOKEN}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      message,
+      name: 'WhatsApp Business outbound',
+      agentId: OPENCLAW_HOOK_AGENT_ID,
+      sessionKey: OPENCLAW_HOOK_SESSION_KEY,
+      wakeMode: 'now',
+      deliver: false,
+      timeoutSeconds: 120,
+    }),
   });
 }
 
@@ -102,4 +146,12 @@ type SendTextRequest = {
   to?: string;
   text?: string;
   previewUrl?: boolean;
+  notifyOpenClaw?: boolean;
+};
+
+type OutboundNotification = {
+  to: string;
+  text: string;
+  previewUrl: boolean;
+  result: unknown;
 };
