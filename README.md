@@ -50,6 +50,10 @@ Optional environment variables:
 - `OPENCLAW_HOOK_TIMEOUT_MS` — default: `15000`
 - `WHATSAPP_SEND_AUTH_TOKEN` — bearer token for `/api/whatsapp-send`; defaults to `OPENCLAW_HOOK_TOKEN`
 - `WHATSAPP_GRAPH_API_VERSION` — default: `v21.0`
+- `WHATSAPP_NOTIFY_BATCH_SIZE` — default: `10`
+- `WHATSAPP_DASHBOARD_USERNAME` — login username for `/bridge`
+- `WHATSAPP_DASHBOARD_PASSWORD` — login password for `/bridge`
+- `WHATSAPP_DASHBOARD_SESSION_SECRET` — random long secret used for login session cookie
 
 Behavior:
 

@@ -110,7 +110,10 @@ export async function POST(request: NextRequest) {
     if (!event.message?.id) continue;
     await saveInboxMessage({
       messageId: event.message.id,
+      direction: 'inbound',
+      contactId: event.from ?? 'unknown',
       from: event.from,
+      to: event.displayPhoneNumber?.replace(/\D/g, '') ?? null,
       contactName: event.contact?.profile?.name ?? null,
       receivedAt: event.receivedAt,
       timestamp: event.message.timestamp,

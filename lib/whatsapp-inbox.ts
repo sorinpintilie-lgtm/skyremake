@@ -4,7 +4,10 @@ const STORE_NAME = 'whatsapp-inbox';
 
 type InboxMessage = {
   messageId: string;
+  direction: 'inbound' | 'outbound';
+  contactId: string;
   from: string | null;
+  to: string | null;
   contactName: string | null;
   receivedAt: string;
   timestamp: string | null;
@@ -25,36 +28,66 @@ export function getWhatsappInboxStore() {
 
 export async function saveInboxMessage(message: InboxMessage) {
   const store = getWhatsappInboxStore();
-  const key = inboxKey(message.messageId);
+  const key = inboxKey(message.direction, message.messageId);
   await store.setJSON(key, message);
 }
 
 export async function getInboxMessage(messageId: string): Promise<InboxMessage | null> {
   const store = getWhatsappInboxStore();
-  const value = await store.get(inboxKey(messageId), { type: 'json' });
-  return (value as InboxMessage | null) ?? null;
+  const inbound = await store.get(inboxKey('inbound', messageId), { type: 'json' });
+  if (inbound) return inbound as InboxMessage;
+  const outbound = await store.get(inboxKey('outbound', messageId), { type: 'json' });
+  return (outbound as InboxMessage | null) ?? null;
 }
 
-export async function listInboxMessages(options?: { onlyUnacknowledged?: boolean; limit?: number }) {
+export async function listInboxMessages(options?: { onlyUnacknowledged?: boolean; limit?: number; contactId?: string }) {
   const store = getWhatsappInboxStore();
   const limit = options?.limit ?? 100;
-  const { blobs } = await store.list({ prefix: 'inbound/', paginate: false });
+  const [inbound, outbound] = await Promise.all([
+    store.list({ prefix: 'inbound/', paginate: false }),
+    store.list({ prefix: 'outbound/', paginate: false }),
+  ]);
+
+  const blobs = [...inbound.blobs, ...outbound.blobs]
+    .sort((a, b) => (a.key < b.key ? 1 : -1))
+    .slice(0, Math.max(limit * 2, limit));
 
   const rows = await Promise.all(
-    blobs
-      .sort((a, b) => (a.key < b.key ? 1 : -1))
-      .slice(0, limit)
-      .map(async (blob) => {
-        const value = await store.get(blob.key, { type: 'json' });
-        return value as InboxMessage | null;
-      }),
+    blobs.map(async (blob) => {
+      const value = await store.get(blob.key, { type: 'json' });
+      return value as InboxMessage | null;
+    }),
   );
 
-  const filtered = rows.filter((row): row is InboxMessage => Boolean(row));
-  if (options?.onlyUnacknowledged) {
-    return filtered.filter((row) => row.acknowledged !== true);
+  let filtered = rows.filter((row): row is InboxMessage => Boolean(row));
+  if (options?.onlyUnacknowledged) filtered = filtered.filter((row) => row.acknowledged !== true);
+  if (options?.contactId) filtered = filtered.filter((row) => row.contactId === options.contactId);
+  return filtered.slice(0, limit);
+}
+
+export async function listConversationSummaries(limit = 100) {
+  const messages = await listInboxMessages({ limit: 500 });
+  const map = new Map<string, { contactId: string; contactName: string | null; lastMessageAt: string; lastPreview: string; unreadCount: number; lastDirection: 'inbound' | 'outbound' }>();
+
+  for (const message of messages) {
+    const current = map.get(message.contactId);
+    if (!current || current.lastMessageAt < message.receivedAt) {
+      map.set(message.contactId, {
+        contactId: message.contactId,
+        contactName: message.contactName,
+        lastMessageAt: message.receivedAt,
+        lastPreview: message.preview,
+        unreadCount: message.direction === 'inbound' && !message.acknowledged ? 1 : 0,
+        lastDirection: message.direction,
+      });
+    } else if (message.direction === 'inbound' && !message.acknowledged) {
+      current.unreadCount += 1;
+    }
   }
-  return filtered;
+
+  return Array.from(map.values())
+    .sort((a, b) => (a.lastMessageAt < b.lastMessageAt ? 1 : -1))
+    .slice(0, limit);
 }
 
 export async function acknowledgeInboxMessage(messageId: string) {
@@ -71,8 +104,8 @@ export async function acknowledgeInboxMessage(messageId: string) {
   return updated;
 }
 
-export function inboxKey(messageId: string) {
-  return `inbound/${messageId}.json`;
+export function inboxKey(direction: 'inbound' | 'outbound', messageId: string) {
+  return `${direction}/${messageId}.json`;
 }
 
 export type { InboxMessage };

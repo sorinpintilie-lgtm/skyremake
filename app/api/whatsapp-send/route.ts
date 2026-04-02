@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { saveInboxMessage as saveOutboundMessage } from '@/lib/whatsapp-inbox';
 
 const ACCESS_TOKEN = process.env.WHATSAPP_BUSINESS_ACCESS_TOKEN;
 const PHONE_NUMBER_ID = process.env.WHATSAPP_BUSINESS_PHONE_NUMBER_ID;
@@ -125,6 +126,31 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  const messageId = extractMessageId(parsed);
+
+  if (messageId) {
+    const now = new Date().toISOString();
+    await saveOutboundMessage({
+      messageId,
+      direction: 'outbound',
+      contactId: to,
+      from: PHONE_NUMBER_ID,
+      to,
+      contactName: null,
+      receivedAt: now,
+      timestamp: now,
+      type: 'text',
+      preview: text,
+      text,
+      phoneNumberId: PHONE_NUMBER_ID,
+      displayPhoneNumber: null,
+      acknowledged: true,
+      acknowledgedAt: now,
+      source: 'whatsapp-business',
+      raw: parsed,
+    });
+  }
+
   let notifyOpenClaw: NotifyResult | null = null;
   if (body.notifyOpenClaw !== false) {
     notifyOpenClaw = await notifyOpenClawOutbound({
@@ -196,6 +222,13 @@ function normalizePhone(input: unknown): string | null {
   if (typeof input !== 'string') return null;
   const digits = input.replace(/\D/g, '');
   return digits.length > 0 ? digits : null;
+}
+
+function extractMessageId(input: unknown): string | null {
+  if (!input || typeof input !== 'object') return null;
+  const value = input as { messages?: Array<{ id?: string }> };
+  const id = value.messages?.[0]?.id;
+  return typeof id === 'string' ? id : null;
 }
 
 function tryParseJson(input: string): unknown {
