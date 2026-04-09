@@ -146,6 +146,16 @@ export async function POST(request: NextRequest) {
       displayPhoneNumber: null,
       acknowledged: true,
       acknowledgedAt: now,
+      deliveryStatus: 'accepted',
+      statusUpdatedAt: now,
+      statusHistory: [
+        {
+          status: 'accepted',
+          timestamp: now,
+          receivedAt: now,
+          errors: null,
+        },
+      ],
       source: 'whatsapp-business',
       raw: parsed,
     });

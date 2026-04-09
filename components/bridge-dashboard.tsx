@@ -13,6 +13,8 @@ type Message = {
   preview: string;
   text: string | null;
   acknowledged: boolean;
+  deliveryStatus?: 'accepted' | 'sent' | 'delivered' | 'read' | 'failed' | 'unknown' | null;
+  statusUpdatedAt?: string | null;
 };
 
 type Conversation = {
@@ -304,6 +306,7 @@ export default function BridgeDashboard() {
                         className={`mt-2 text-[11px] ${message.direction === 'outbound' ? 'text-black/55' : 'text-white/42'}`}
                       >
                         {new Date(message.receivedAt).toLocaleString('ro-RO')}
+                        {message.direction === 'outbound' && message.deliveryStatus ? ` · ${message.deliveryStatus}` : ''}
                       </div>
                     </div>
                   </div>

@@ -2,6 +2,8 @@ import { getStore } from '@netlify/blobs';
 
 const STORE_NAME = 'whatsapp-inbox';
 
+type DeliveryStatus = 'accepted' | 'sent' | 'delivered' | 'read' | 'failed' | 'unknown';
+
 type InboxMessage = {
   messageId: string;
   direction: 'inbound' | 'outbound';
@@ -18,6 +20,14 @@ type InboxMessage = {
   displayPhoneNumber: string | null;
   acknowledged: boolean;
   acknowledgedAt: string | null;
+  deliveryStatus: DeliveryStatus | null;
+  statusUpdatedAt: string | null;
+  statusHistory: Array<{
+    status: DeliveryStatus;
+    timestamp: string | null;
+    receivedAt: string;
+    errors?: unknown[] | null;
+  }>;
   source: 'whatsapp-business';
   raw: unknown;
 };
@@ -38,6 +48,34 @@ export async function getInboxMessage(messageId: string): Promise<InboxMessage |
   if (inbound) return inbound as InboxMessage;
   const outbound = await store.get(inboxKey('outbound', messageId), { type: 'json' });
   return (outbound as InboxMessage | null) ?? null;
+}
+
+export async function updateOutboundStatus(messageId: string, statusUpdate: {
+  status: DeliveryStatus;
+  timestamp: string | null;
+  receivedAt: string;
+  errors?: unknown[] | null;
+}) {
+  const current = await getInboxMessage(messageId);
+  if (!current || current.direction !== 'outbound') return null;
+
+  const updated: InboxMessage = {
+    ...current,
+    deliveryStatus: statusUpdate.status,
+    statusUpdatedAt: statusUpdate.receivedAt,
+    statusHistory: [
+      ...(current.statusHistory ?? []),
+      {
+        status: statusUpdate.status,
+        timestamp: statusUpdate.timestamp,
+        receivedAt: statusUpdate.receivedAt,
+        errors: statusUpdate.errors ?? null,
+      },
+    ],
+  };
+
+  await saveInboxMessage(updated);
+  return updated;
 }
 
 export async function listInboxMessages(options?: { onlyUnacknowledged?: boolean; limit?: number; contactId?: string }) {
@@ -119,4 +157,4 @@ export function inboxKey(direction: 'inbound' | 'outbound', messageId: string) {
   return `${direction}/${messageId}.json`;
 }
 
-export type { InboxMessage };
+export type { InboxMessage, DeliveryStatus };

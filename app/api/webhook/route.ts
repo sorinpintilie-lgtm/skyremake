@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import crypto from 'crypto';
-import { saveInboxMessage } from '@/lib/whatsapp-inbox';
+import { saveInboxMessage, updateOutboundStatus } from '@/lib/whatsapp-inbox';
 
 const VERIFY_TOKEN = process.env.WHATSAPP_VERIFY_TOKEN ?? process.env.whatsapp_verify_token;
 const APP_SECRET = process.env.WHATSAPP_SECRET ?? process.env.whatsapp_secret;
@@ -105,6 +105,7 @@ export async function POST(request: NextRequest) {
 
   const events = normalizePayload(payload);
   const messages = events.filter((event) => event.kind === 'message' && event.message?.id);
+  const statuses = events.filter((event) => event.kind === 'status' && event.status?.id);
 
   for (const event of messages) {
     if (!event.message?.id) continue;
@@ -124,6 +125,9 @@ export async function POST(request: NextRequest) {
       displayPhoneNumber: event.displayPhoneNumber,
       acknowledged: false,
       acknowledgedAt: null,
+      deliveryStatus: null,
+      statusUpdatedAt: null,
+      statusHistory: [],
       source: 'whatsapp-business',
       raw: {
         kind: event.kind,
@@ -137,11 +141,21 @@ export async function POST(request: NextRequest) {
     });
   }
 
+  for (const event of statuses) {
+    if (!event.status?.id) continue;
+    await updateOutboundStatus(event.status.id, {
+      status: normalizeDeliveryStatus(event.status.status),
+      timestamp: event.status.timestamp,
+      receivedAt: event.receivedAt,
+      errors: event.status.errors,
+    });
+  }
+
   return NextResponse.json({
     ok: true,
     processed: events.length,
     messages: messages.length,
-    statuses: events.filter((event) => event.kind === 'status').length,
+    statuses: statuses.length,
   });
 }
 
@@ -268,6 +282,15 @@ function normalizeMessage(message: IncomingMessage) {
     context: message?.context ?? null,
     rawTypePayload: isRecord(message[type]) ? message[type] : null,
   };
+}
+
+function normalizeDeliveryStatus(status: string | null | undefined) {
+  const value = String(status ?? '').toLowerCase();
+  if (value === 'sent') return 'sent';
+  if (value === 'delivered') return 'delivered';
+  if (value === 'read') return 'read';
+  if (value === 'failed') return 'failed';
+  return 'unknown';
 }
 
 function normalizeStatus(status: IncomingStatus) {
