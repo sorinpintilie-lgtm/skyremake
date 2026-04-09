@@ -143,11 +143,17 @@ export async function POST(request: NextRequest) {
 
   for (const event of statuses) {
     if (!event.status?.id) continue;
+    const firstError = Array.isArray(event.status.errors) && event.status.errors.length > 0
+      ? event.status.errors[0] as { message?: string; code?: number }
+      : null;
+
     await updateOutboundStatus(event.status.id, {
       status: normalizeDeliveryStatus(event.status.status),
       timestamp: event.status.timestamp,
       receivedAt: event.receivedAt,
       errors: event.status.errors,
+      errorMessage: firstError?.message ?? null,
+      errorCode: typeof firstError?.code === 'number' ? firstError.code : null,
     });
   }
 

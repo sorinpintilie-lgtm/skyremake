@@ -15,6 +15,13 @@ type Message = {
   acknowledged: boolean;
   deliveryStatus?: 'accepted' | 'sent' | 'delivered' | 'read' | 'failed' | 'unknown' | null;
   statusUpdatedAt?: string | null;
+  statusHistory?: Array<{
+    status: 'accepted' | 'sent' | 'delivered' | 'read' | 'failed' | 'unknown';
+    timestamp: string | null;
+    receivedAt: string;
+    errorMessage?: string | null;
+    errorCode?: number | null;
+  }>;
 };
 
 type Conversation = {
@@ -289,28 +296,38 @@ export default function BridgeDashboard() {
 
             <div className="mb-4 h-[52vh] overflow-y-auto rounded-[24px] border border-white/8 bg-black/20 p-3">
               <div className="space-y-3">
-                {messages.map((message) => (
-                  <div
-                    key={message.messageId}
-                    className={`flex ${message.direction === 'outbound' ? 'justify-end' : 'justify-start'}`}
-                  >
+                {messages.map((message) => {
+                  const lastStatus = message.statusHistory?.[message.statusHistory.length - 1] ?? null;
+                  const failureReason = message.deliveryStatus === 'failed'
+                    ? lastStatus?.errorMessage || (lastStatus?.errorCode ? `Error ${lastStatus.errorCode}` : 'Unknown failure')
+                    : null;
+
+                  return (
                     <div
-                      className={`max-w-[78%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
-                        message.direction === 'outbound'
-                          ? 'bg-white text-black'
-                          : 'border border-white/10 bg-white/[0.04] text-white'
-                      }`}
+                      key={message.messageId}
+                      className={`flex ${message.direction === 'outbound' ? 'justify-end' : 'justify-start'}`}
                     >
-                      <div>{message.text || message.preview}</div>
                       <div
-                        className={`mt-2 text-[11px] ${message.direction === 'outbound' ? 'text-black/55' : 'text-white/42'}`}
+                        className={`max-w-[78%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
+                          message.direction === 'outbound'
+                            ? 'bg-white text-black'
+                            : 'border border-white/10 bg-white/[0.04] text-white'
+                        }`}
                       >
-                        {new Date(message.receivedAt).toLocaleString('ro-RO')}
-                        {message.direction === 'outbound' && message.deliveryStatus ? ` · ${message.deliveryStatus}` : ''}
+                        <div>{message.text || message.preview}</div>
+                        <div
+                          className={`mt-2 text-[11px] ${message.direction === 'outbound' ? 'text-black/55' : 'text-white/42'}`}
+                        >
+                          {new Date(message.receivedAt).toLocaleString('ro-RO')}
+                          {message.direction === 'outbound' && message.deliveryStatus ? ` · ${message.deliveryStatus}` : ''}
+                        </div>
+                        {failureReason ? (
+                          <div className="mt-1 text-[11px] text-red-500">{failureReason}</div>
+                        ) : null}
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
                 {!messages.length ? (
                   <div className="text-sm text-white/45">
                     Nu există mesaje încă în această conversație.

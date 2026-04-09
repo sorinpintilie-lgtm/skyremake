@@ -27,6 +27,8 @@ type InboxMessage = {
     timestamp: string | null;
     receivedAt: string;
     errors?: unknown[] | null;
+    errorMessage?: string | null;
+    errorCode?: number | null;
   }>;
   source: 'whatsapp-business';
   raw: unknown;
@@ -55,6 +57,8 @@ export async function updateOutboundStatus(messageId: string, statusUpdate: {
   timestamp: string | null;
   receivedAt: string;
   errors?: unknown[] | null;
+  errorMessage?: string | null;
+  errorCode?: number | null;
 }) {
   const current = await getInboxMessage(messageId);
   if (!current || current.direction !== 'outbound') return null;
@@ -70,6 +74,8 @@ export async function updateOutboundStatus(messageId: string, statusUpdate: {
         timestamp: statusUpdate.timestamp,
         receivedAt: statusUpdate.receivedAt,
         errors: statusUpdate.errors ?? null,
+        errorMessage: statusUpdate.errorMessage ?? null,
+        errorCode: statusUpdate.errorCode ?? null,
       },
     ],
   };
