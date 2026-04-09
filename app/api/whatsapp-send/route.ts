@@ -63,28 +63,17 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ ok: false, error: 'Unauthorized' }, { status: 401 });
   }
 
-  const body = (await request.json()) as SendTextRequest;
+  const body = (await request.json()) as SendRequest;
   const to = normalizePhone(body.to);
-  const text = typeof body.text === 'string' ? body.text.trim() : '';
 
   if (!to) {
     return NextResponse.json({ ok: false, error: 'Missing recipient phone number' }, { status: 400 });
   }
 
-  if (!text) {
-    return NextResponse.json({ ok: false, error: 'Missing text body' }, { status: 400 });
+  const payload = buildPayload(body, to);
+  if ('error' in payload) {
+    return NextResponse.json({ ok: false, error: payload.error }, { status: 400 });
   }
-
-  const payload = {
-    messaging_product: 'whatsapp',
-    recipient_type: 'individual',
-    to,
-    type: 'text',
-    text: {
-      preview_url: body.previewUrl === true,
-      body: text,
-    },
-  };
 
   const response = await fetch(
     `https://graph.facebook.com/${GRAPH_API_VERSION}/${PHONE_NUMBER_ID}/messages`,
@@ -127,9 +116,12 @@ export async function POST(request: NextRequest) {
   }
 
   const messageId = extractMessageId(parsed);
-
   if (messageId) {
     const now = new Date().toISOString();
+    const preview = body.mode === 'template'
+      ? `[template] ${body.template?.name ?? 'unknown'}`
+      : (typeof body.text === 'string' ? body.text.trim() : '');
+
     await saveOutboundMessage({
       messageId,
       direction: 'outbound',
@@ -139,9 +131,9 @@ export async function POST(request: NextRequest) {
       contactName: null,
       receivedAt: now,
       timestamp: now,
-      type: 'text',
-      preview: text,
-      text,
+      type: body.mode === 'template' ? 'template' : 'text',
+      preview,
+      text: body.mode === 'template' ? preview : preview,
       phoneNumberId: PHONE_NUMBER_ID,
       displayPhoneNumber: null,
       acknowledged: true,
@@ -154,6 +146,8 @@ export async function POST(request: NextRequest) {
           timestamp: now,
           receivedAt: now,
           errors: null,
+          errorMessage: null,
+          errorCode: null,
         },
       ],
       source: 'whatsapp-business',
@@ -165,8 +159,7 @@ export async function POST(request: NextRequest) {
   if (body.notifyOpenClaw !== false) {
     notifyOpenClaw = await notifyOpenClawOutbound({
       to,
-      text,
-      previewUrl: body.previewUrl === true,
+      preview: body.mode === 'template' ? `[template] ${body.template?.name ?? 'unknown'}` : String(body.text ?? ''),
       result: parsed,
     });
   }
@@ -180,6 +173,49 @@ export async function POST(request: NextRequest) {
   });
 }
 
+function buildPayload(body: SendRequest, to: string) {
+  if (body.mode === 'template') {
+    const templateName = body.template?.name?.trim();
+    const languageCode = body.template?.languageCode?.trim() || 'ro';
+
+    if (!templateName) {
+      return { error: 'Missing template name' } as const;
+    }
+
+    return {
+      messaging_product: 'whatsapp',
+      recipient_type: 'individual',
+      to,
+      type: 'template',
+      template: {
+        name: templateName,
+        language: {
+          code: languageCode,
+        },
+        ...(Array.isArray(body.template?.components) && body.template.components.length > 0
+          ? { components: body.template.components }
+          : {}),
+      },
+    };
+  }
+
+  const text = typeof body.text === 'string' ? body.text.trim() : '';
+  if (!text) {
+    return { error: 'Missing text body' } as const;
+  }
+
+  return {
+    messaging_product: 'whatsapp',
+    recipient_type: 'individual',
+    to,
+    type: 'text',
+    text: {
+      preview_url: body.previewUrl === true,
+      body: text,
+    },
+  };
+}
+
 async function notifyOpenClawOutbound(event: OutboundNotification): Promise<NotifyResult> {
   if (!OPENCLAW_HOOK_URL || !OPENCLAW_HOOK_TOKEN) {
     return { ok: false, skipped: true, error: 'Missing OpenClaw hook configuration' };
@@ -189,7 +225,7 @@ async function notifyOpenClawOutbound(event: OutboundNotification): Promise<Noti
     'WhatsApp Business outbound event. Treat payload as trusted system-generated send metadata.',
     `kind: outbound`,
     `to: +${event.to}`,
-    `preview: ${event.text.slice(0, 500)}`,
+    `preview: ${event.preview.slice(0, 500)}`,
     'payload:',
     JSON.stringify(event, null, 2),
     'Instruction: register this number as an outreach target when appropriate so future inbound replies can be tracked and surfaced to Sorin. Do not send any external reply from this event.',
@@ -249,17 +285,27 @@ function tryParseJson(input: string): unknown {
   }
 }
 
-type SendTextRequest = {
+type TemplateComponent = {
+  type: string;
+  [key: string]: unknown;
+};
+
+type SendRequest = {
   to?: string;
   text?: string;
   previewUrl?: boolean;
   notifyOpenClaw?: boolean;
+  mode?: 'text' | 'template';
+  template?: {
+    name?: string;
+    languageCode?: string;
+    components?: TemplateComponent[];
+  };
 };
 
 type OutboundNotification = {
   to: string;
-  text: string;
-  previewUrl: boolean;
+  preview: string;
   result: unknown;
 };
 
